@@ -79,6 +79,19 @@ reto:
   tolerancia_aproximada_pct: 10.0   # error <= 10 % -> aproximada; más -> incorrecta
   semilla: 101                      # farmacia ficticia distinta de la demo
 
+web:
+  # Contrato de datos para la web (`exportar-json`). HIPÓTESIS ajustables.
+  acciones_por_tipo:            # acciones semanales por producto, las de más € de cada tipo
+    CADUCA_PRONTO: 8
+    DEVOLVER: 10
+    BAJAR_PEDIDO: 9
+    REPONER: 13
+  importe_minimo_eur: 20        # acciones por debajo no entran en la lista del lunes
+  semanas_ventas: 12            # semanas de ventas por producto para el gráfico
+  semanas_historico: 6          # semanas de histórico de piloto (simulado en el mock)
+  urgencia_alta_eur: 300        # DEVOLVER/BAJAR_PEDIDO con importe >= este valor -> urgencia alta
+  caducidad_alta_dias: 30       # CADUCA_PRONTO a <= N días -> urgencia alta
+
 privacidad:
   # Escaneo de contenido además de cabeceras (DNI/NIE, email, teléfono).
   escanear_contenido: true

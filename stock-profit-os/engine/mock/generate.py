@@ -114,6 +114,10 @@ class MockConfig:
     stockout_share: float = 0.025
     near_expiry_share: float = 0.05
     n_overbought_labs: int = 3
+    rate_scale: float = 1.0  # escala de ventas: <1 para catálogos grandes con facturación realista
+    cost_scale: float = 1.0  # multiplica los costes unitarios
+    cost_sigma: float = 0.7  # dispersión (lognormal) de los costes unitarios
+    label_generics: bool = False  # añade "EFG" a parte de los medicamentos con receta (sin tocar el azar)
 
 
 @dataclass
@@ -181,9 +185,12 @@ def generate(config: MockConfig = MockConfig()) -> MockData:
     is_flu = np.array([f is Family.OTC for f in ref_family]) & (rng.random(n) < 0.25)
     codes = rng.choice(np.arange(600000, 999999), size=n, replace=False).astype(str)
     descriptions = [_description(f, bool(flu), rng) for f, flu in zip(ref_family, is_flu)]
+    if config.label_generics:  # determinista por código: no consume números aleatorios
+        descriptions = [d + " EFG" if f is Family.PRESCRIPTION and int(c) % 3 != 0 else d
+                        for d, f, c in zip(descriptions, ref_family, codes)]
     vat = np.array([FAMILY_SPECS[f].vat for f in ref_family])
     margin = np.array([rng.uniform(*FAMILY_SPECS[f].margin) for f in ref_family])
-    cost = np.round(np.exp(np.array([FAMILY_SPECS[f].cost_log_mean for f in ref_family]) + 0.7 * rng.standard_normal(n)), 2)
+    cost = np.round(np.exp(np.array([FAMILY_SPECS[f].cost_log_mean for f in ref_family]) + config.cost_sigma * rng.standard_normal(n)) * config.cost_scale, 2)
     cost = np.clip(cost, 0.5, 400.0)
     price_ex_vat = np.round(cost / (1 - margin), 2)
     pvp = np.round(price_ex_vat * (1 + vat), 2)
@@ -194,7 +201,7 @@ def generate(config: MockConfig = MockConfig()) -> MockData:
     weekday = np.select([days.weekday == 6, days.weekday == 5], [0.12, 0.7], 1.0)
 
     base_rate = np.exp(np.array([FAMILY_SPECS[f].rate_log_mean for f in ref_family]) + 1.1 * rng.standard_normal(n))
-    base_rate = np.clip(base_rate, 0.03, 15.0)
+    base_rate = np.clip(base_rate * config.rate_scale, 0.03, 15.0)
     season = np.ones((n, len(days)))
     sun_mask = np.array([f is Family.SUNCARE for f in ref_family])
     season[sun_mask] = _seasonality(doy, center=196, width=32, base=0.1, peak=3.0)

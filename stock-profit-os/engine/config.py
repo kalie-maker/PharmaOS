@@ -64,6 +64,16 @@ class ChallengeLimits:
 
 
 @dataclass(frozen=True)
+class WebExportLimits:
+    actions_per_type: dict[str, int]
+    min_amount_eur: float
+    sales_weeks: int
+    history_weeks: int
+    high_urgency_eur: float
+    expiry_high_days: int
+
+
+@dataclass(frozen=True)
 class Thresholds:
     """Umbrales del motor. Todos son hipótesis ajustables (ver config.yaml)."""
 
@@ -91,6 +101,7 @@ class Thresholds:
     quality: QualityLimits
     comparison: ComparisonLimits
     challenge: ChallengeLimits
+    web: WebExportLimits
 
     def coverage_for(self, family: str | None) -> int:
         if family and family in self.target_coverage_by_family:
@@ -161,6 +172,14 @@ def load_thresholds(path: Path | str = DEFAULT_CONFIG_PATH) -> Thresholds:
         comparison=ComparisonLimits(
             done_threshold=float(_get(data, "comparacion.umbral_ejecutada")),
             partial_threshold=float(_get(data, "comparacion.umbral_parcial")),
+        ),
+        web=WebExportLimits(
+            actions_per_type={str(k): int(v) for k, v in _get(data, "web.acciones_por_tipo").items()},
+            min_amount_eur=float(_get(data, "web.importe_minimo_eur")),
+            sales_weeks=int(_get(data, "web.semanas_ventas")),
+            history_weeks=int(_get(data, "web.semanas_historico")),
+            high_urgency_eur=float(_get(data, "web.urgencia_alta_eur")),
+            expiry_high_days=int(_get(data, "web.caducidad_alta_dias")),
         ),
         challenge=ChallengeLimits(
             correct_pct=float(_get(data, "reto.tolerancia_correcta_pct")),

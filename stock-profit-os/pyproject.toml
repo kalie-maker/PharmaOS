@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8"]
+dev = ["pytest>=8", "jsonschema>=4"]  # jsonschema: valida el contrato report.json en tests
 
 [project.scripts]
 stock-profit-os = "engine.cli:main"

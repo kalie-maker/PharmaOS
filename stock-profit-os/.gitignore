@@ -19,3 +19,4 @@ entradas/
 data/demo/
 config/mappings/farmacia_*.yaml
 retos/
+out/

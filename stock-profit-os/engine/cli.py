@@ -264,6 +264,44 @@ def _cmd_score(args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
+def _cmd_export_json(args: argparse.Namespace) -> int:
+    from engine.web_export import build_report, web_mock_config
+
+    try:
+        thresholds = load_thresholds(args.config)
+        if args.mock:
+            import tempfile
+
+            config = web_mock_config(args.referencias, args.semilla)
+            tmp = Path(tempfile.mkdtemp(prefix="pharmaos_mock_"))
+            paths = generate_to(tmp, config)
+            mapping, pharmacy, fictitious = load_mapping("farmatic", args.mapeos), args.farmacia, True
+        else:
+            missing = [n for n in ("ventas", "stock", "compras", "programa") if getattr(args, n) is None]
+            if missing:
+                _err("Error: indica --mock o bien --programa, --ventas, --stock y --compras "
+                     f"(faltan: {', '.join('--' + m for m in missing)})")
+                return EXIT_INPUT_ERROR
+            paths = {"ventas": args.ventas, "stock": args.stock, "compras": args.compras}
+            mapping, pharmacy, fictitious = load_mapping(args.programa, args.mapeos), args.farmacia, False
+        output = run_analysis(paths, mapping, thresholds, pharmacy)
+    except PrivacyError as exc:
+        _err(exc.message())
+        return EXIT_PRIVACY
+    except (ConfigError, IngestError, MetricsError) as exc:
+        _err(f"Error: {exc}")
+        return EXIT_INPUT_ERROR
+    report = build_report(output.metrics, output.ingest["ventas"].data, thresholds, pharmacy,
+                          mapping.program, fictitious)
+    out = Path(args.salida)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(report, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    s = report["resumen"]
+    print(f"{out}: {len(report['productos'])} productos · {s['acciones_total']} acciones · "
+          f"recuperable {eur(s['recuperable_semana_eur'])} · inmovilizado {eur(s['capital_inmovilizado_eur'])}")
+    return EXIT_OK
+
+
 # ---------------------------------------------------------------------------
 # Parser
 # ---------------------------------------------------------------------------
@@ -336,6 +374,20 @@ def build_parser() -> argparse.ArgumentParser:
     pilot.add_argument("--mapeos", type=Path, default=DEFAULT_MAPPINGS_DIR)
     pilot.add_argument("--sinonimos", type=Path, default=DEFAULT_SYNONYMS_PATH)
     pilot.set_defaults(func=_cmd_pilot)
+
+    export = sub.add_parser("exportar-json", help="Genera el report.json (contrato de datos de la web)")
+    export.add_argument("--mock", action="store_true", help="Usa una farmacia ficticia en vez de ficheros")
+    export.add_argument("--referencias", type=int, default=8000, help="Con --mock: nº de referencias")
+    export.add_argument("--semilla", type=int, default=7, help="Con --mock: semilla")
+    export.add_argument("--programa")
+    export.add_argument("--ventas", type=Path)
+    export.add_argument("--stock", type=Path)
+    export.add_argument("--compras", type=Path)
+    export.add_argument("--farmacia", default="Farmacia Demo")
+    export.add_argument("--salida", type=Path, default=Path("out/report.json"))
+    export.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH)
+    export.add_argument("--mapeos", type=Path, default=DEFAULT_MAPPINGS_DIR)
+    export.set_defaults(func=_cmd_export_json)
 
     challenge = sub.add_parser("reto-chat", help="Genera un reto para comparar un chat genérico con PharmaOS")
     challenge.add_argument("--salida", required=True, type=Path)
