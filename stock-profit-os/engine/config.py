@@ -35,6 +35,27 @@ def normalize_label(text: object) -> str:
 
 
 @dataclass(frozen=True)
+class QualityLimits:
+    """Límites de calidad de datos (en %). Hipótesis ajustables."""
+
+    max_pct_missing_cost: float
+    max_pct_negative_stock: float
+    max_pct_dates_out_of_range: float
+    max_pct_missing_description: float
+    max_pct_duplicates: float
+    max_pct_dropped_rows: float
+    max_pct_sales_not_in_stock: float
+    max_age_days: int
+    warning_fraction: float
+
+
+@dataclass(frozen=True)
+class ComparisonLimits:
+    done_threshold: float
+    partial_threshold: float
+
+
+@dataclass(frozen=True)
 class Thresholds:
     """Umbrales del motor. Todos son hipótesis ajustables (ver config.yaml)."""
 
@@ -59,6 +80,8 @@ class Thresholds:
     min_action_impact_eur: float
     privacy_scan_content: bool
     privacy_phone_min_ratio: float
+    quality: QualityLimits
+    comparison: ComparisonLimits
 
     def coverage_for(self, family: str | None) -> int:
         if family and family in self.target_coverage_by_family:
@@ -115,6 +138,21 @@ def load_thresholds(path: Path | str = DEFAULT_CONFIG_PATH) -> Thresholds:
         min_action_impact_eur=float(_get(data, "acciones.impacto_minimo_eur")),
         privacy_scan_content=bool(_get(data, "privacidad.escanear_contenido")),
         privacy_phone_min_ratio=float(_get(data, "privacidad.ratio_minimo_telefono")),
+        quality=QualityLimits(
+            max_pct_missing_cost=float(_get(data, "calidad.max_pct_costes_vacios")),
+            max_pct_negative_stock=float(_get(data, "calidad.max_pct_stock_negativo")),
+            max_pct_dates_out_of_range=float(_get(data, "calidad.max_pct_fechas_fuera_rango")),
+            max_pct_missing_description=float(_get(data, "calidad.max_pct_sin_descripcion")),
+            max_pct_duplicates=float(_get(data, "calidad.max_pct_duplicados")),
+            max_pct_dropped_rows=float(_get(data, "calidad.max_pct_filas_descartadas")),
+            max_pct_sales_not_in_stock=float(_get(data, "calidad.max_pct_ventas_sin_stock")),
+            max_age_days=int(_get(data, "calidad.antiguedad_maxima_dias")),
+            warning_fraction=float(_get(data, "calidad.fraccion_aviso")),
+        ),
+        comparison=ComparisonLimits(
+            done_threshold=float(_get(data, "comparacion.umbral_ejecutada")),
+            partial_threshold=float(_get(data, "comparacion.umbral_parcial")),
+        ),
     )
     _validate_thresholds(t)
     return t
@@ -127,6 +165,8 @@ def _validate_thresholds(t: Thresholds) -> None:
         raise ConfigError("consumo.ventana_corta_dias no puede superar ventana_larga_dias")
     if not 0 < t.abc_a_cut < t.abc_b_cut <= 1:
         raise ConfigError("abc: debe cumplirse 0 < corte_a < corte_b <= 1")
+    if not 0 < t.comparison.partial_threshold < t.comparison.done_threshold <= 1:
+        raise ConfigError("comparacion: debe cumplirse 0 < umbral_parcial < umbral_ejecutada <= 1")
     if t.max_main_actions < 1:
         raise ConfigError("acciones.max_principales debe ser >= 1")
 

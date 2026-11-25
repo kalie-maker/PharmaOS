@@ -54,6 +54,25 @@ acciones:
   max_referencias_por_accion: 20  # HIPÓTESIS: "devuelve estas 20 primero"
   impacto_minimo_eur: 50        # HIPÓTESIS: acciones por debajo no se muestran
 
+calidad:
+  # Por encima de estos porcentajes la calidad de datos se considera BAJA y el
+  # informe lo indica al principio. Todos son HIPÓTESIS.
+  max_pct_costes_vacios: 5.0          # % de referencias con stock sin coste válido
+  max_pct_stock_negativo: 2.0         # % de referencias con stock negativo
+  max_pct_fechas_fuera_rango: 1.0     # % de filas con fechas futuras o demasiado antiguas
+  max_pct_sin_descripcion: 10.0       # % de referencias de stock sin descripción
+  max_pct_duplicados: 2.0             # % de filas/códigos duplicados
+  max_pct_filas_descartadas: 5.0      # % de filas descartadas en la ingesta
+  max_pct_ventas_sin_stock: 20.0      # % de códigos vendidos que no aparecen en stock
+  antiguedad_maxima_dias: 730         # fechas de venta/compra más antiguas = fuera de rango
+  # Nivel "aceptable" si algún indicador supera este porcentaje del máximo.
+  fraccion_aviso: 0.5
+
+comparacion:
+  # Avance mínimo (fracción del problema inicial reducida) para dar una acción por hecha.
+  umbral_ejecutada: 0.70        # HIPÓTESIS
+  umbral_parcial: 0.25          # HIPÓTESIS
+
 privacidad:
   # Escaneo de contenido además de cabeceras (DNI/NIE, email, teléfono).
   escanear_contenido: true

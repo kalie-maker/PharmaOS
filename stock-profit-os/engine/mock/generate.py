@@ -229,7 +229,7 @@ def generate(config: MockConfig = MockConfig()) -> MockData:
 
     # --- Stock -------------------------------------------------------------------
     recent_rate = expected[:, -30:].mean(axis=1)
-    coverage = rng.uniform(15, 60, size=n)
+    coverage = rng.uniform(10, 40, size=n)
     overstock_idx = rng.choice(remaining, size=int(round(config.overstock_share * n)), replace=False)
     coverage[overstock_idx] = rng.uniform(120, 300, size=len(overstock_idx))
     coverage[is_overbought] *= rng.uniform(2.5, 4.0, size=int(is_overbought.sum()))
