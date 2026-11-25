@@ -130,8 +130,10 @@ def compare(before: dict[str, Any], after: dict[str, Any], limits: ComparisonLim
 
     recovered = sum(i.reduccion for i in indicators if i.id in
                     {"sin_movimiento_critico_eur", "sobrestock_eur", "riesgo_caducidad_eur"} and i.reduccion > 0)
+    stock_freed = max(0.0, float(before["totales"]["valor_stock"]) - float(after["totales"]["valor_stock"]))
     return {
         "farmacia": after["farmacia"],
+        "stock_liberado_eur": round(stock_freed, 2),
         "antes": before["periodo"]["fecha_referencia"],
         "despues": after["periodo"]["fecha_referencia"],
         "dias": (d1 - d0).days,
@@ -145,12 +147,17 @@ def compare(before: dict[str, Any], after: dict[str, Any], limits: ComparisonLim
     }
 
 
+def headline(c: dict[str, Any]) -> str:
+    return (f"En {c['dias']} días has liberado {eur0(c['stock_liberado_eur'])} de stock a coste. "
+            f"El stock problemático (sin movimiento, sobrestock y caducidad) ha bajado "
+            f"{eur0(c['reduccion_total_eur'])}.")
+
+
 def render_text(c: dict[str, Any]) -> str:
     lines = [
         f"{c['farmacia']}: del {spanish_date(c['antes'])} al {spanish_date(c['despues'])} ({c['dias']} días)",
         "",
-        f"Reducción de stock problemático: {eur0(c['reduccion_total_eur'])} "
-        "(sin movimiento + sobrestock + caducidad)",
+        headline(c),
         "",
         f"{'Indicador':<30}{'Antes':>15}{'Después':>15}{'Reducción':>15}{'%':>9}",
     ]
@@ -173,8 +180,7 @@ def render_markdown(c: dict[str, Any]) -> str:
     out = [
         f"# {c['farmacia']} — Evolución del {spanish_date(c['antes'])} al {spanish_date(c['despues'])}",
         "",
-        f"**Reducción de stock problemático: {eur0(c['reduccion_total_eur'])}** "
-        "(sin movimiento + sobrestock + caducidad).",
+        f"**{headline(c)}**",
         "",
         "| Indicador | Antes | Después | Reducción | % |",
         "|---|---:|---:|---:|---:|",

@@ -89,7 +89,7 @@ def test_cli_anonymize_removes_pharmacy_name(tmp_path: Path, small_mock_paths) -
     for path in report_dir.glob("ejemplo.*"):
         text = path.read_text(encoding="utf-8")
         assert "Calle Mayor" not in text
-        assert "Farmacia de ejemplo" in text
+        assert "Farmacia Demo" in text
     data = json.loads((report_dir / "ejemplo.json").read_text(encoding="utf-8"))
     assert data["anonimizado"] is True
 

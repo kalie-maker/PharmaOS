@@ -18,6 +18,7 @@ from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
 from engine import __version__
 from engine.actions import ActionPlan, priority_label
+from engine.anonymize import Anonymizer
 from engine.config import Thresholds
 from engine.formatting import FILTERS
 from engine.metrics import MetricsResult
@@ -25,7 +26,6 @@ from engine.narrative import Narrator, narrate
 from engine.schemas import FAMILY_LABELS, Family
 
 SCHEMA_VERSION = 1
-ANONYMOUS_NAME = "Farmacia de ejemplo"
 TEMPLATES_DIR = Path(__file__).resolve().parent / "templates"
 ANNEX_ROWS = 25
 
@@ -77,7 +77,7 @@ def build_results(
     pharmacy: str,
     program: str | None = None,
     quality: dict[str, Any] | None = None,
-    anonymize: bool = False,
+    anonymizer: Anonymizer | None = None,
     narrator: Narrator | None = None,
 ) -> dict[str, Any]:
     refs = metrics.refs
@@ -105,8 +105,9 @@ def build_results(
     results: dict[str, Any] = {
         "version_esquema": SCHEMA_VERSION,
         "motor": f"stock-profit-os {__version__}",
-        "farmacia": ANONYMOUS_NAME if anonymize else pharmacy,
-        "anonimizado": anonymize,
+        "farmacia": pharmacy,
+        "anonimizado": False,
+        "cifras_escaladas": False,
         "programa": program,
         "periodo": {
             "fecha_referencia": clean(metrics.reference_date),
@@ -158,6 +159,8 @@ def build_results(
         }),
         "referencias": snapshot,
     }
+    if anonymizer is not None:
+        return anonymizer.apply(results, narrator)
     return narrate(results, narrator)
 
 

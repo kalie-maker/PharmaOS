@@ -3,8 +3,38 @@
 Motor determinista que analiza las exportaciones del programa de gestión de una farmacia
 (Farmatic, Nixfarma…) y genera un informe semanal con acciones concretas valoradas en euros.
 
-> Estado: **Fase 4** — preparado para el piloto con datos reales: ingesta robusta,
-> `inspeccionar`, informe de calidad de datos, `comparar` y `--anonimizar`.
+> Estado: **Fase 5** — kit de piloto: comando `piloto` (todo en uno), escenario de demo
+> semana 0 / semana 3, anonimización real y documentación en `docs/piloto/`.
+
+## Kit de piloto
+
+- `docs/piloto/guia-exportacion.md`: qué exportar desde Farmatic/Nixfarma y qué columnas NO incluir.
+- `docs/piloto/acuerdo-piloto.md`: plantilla de acuerdo (revisar con un abogado).
+- `docs/piloto/checklist-piloto.md`: pasos internos de la semana 0 a la semana 3.
+
+Todo de una vez para cada farmacia (carpeta con ficheros que contengan `ventas`, `stock` y
+`compras` en el nombre; si no, se identifican por su contenido):
+
+```bash
+python -m engine.cli piloto --carpeta entradas/farmacia_1 --programa farmatic --nombre "Farmacia X"
+```
+
+Inspecciona, para si hay datos personales, si el mapeo no existe (crea un borrador), está en
+borrador o incompleto, o si la calidad es baja (`--ignorar-calidad` para forzar). Deja el informe en
+`output/<id>/<fecha>/` y, si ya hay un informe anterior de la misma farmacia (`--id`), compara
+automáticamente. Códigos de salida: `0` OK, `1` error, `2` privacidad, `3` parado (mapeo o calidad).
+
+Demo para una visita (datos ficticios):
+
+```bash
+python -m engine.cli generar-mock --escenario semana3 --salida data/demo
+python -m engine.cli piloto --carpeta data/demo/semana0 --programa farmatic --nombre "Farmacia Demo" --id demo
+python -m engine.cli piloto --carpeta data/demo/semana3 --programa farmatic --nombre "Farmacia Demo" --id demo
+```
+
+Informe de ejemplo anónimo: `analizar ... --anonimizar [--escalar-cifras]` (farmacia → "Farmacia Demo",
+laboratorios → "Laboratorio A, B…", productos → "familia · REF-0001", € × factor aleatorio 0,7–1,3).
+`comparar --anonimizar` aplica los mismos alias y factor a los dos informes.
 
 ## Instalación
 

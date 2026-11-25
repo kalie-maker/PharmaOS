@@ -36,7 +36,7 @@ MIN_SCORE = 0.60  # por debajo no se propone
 REVIEW_SCORE = 0.85  # por debajo se marca REVISAR
 _SAMPLE = 2000
 _MAX_FAMILY_LABELS = 80
-_FILENAME_HINTS = {"ventas": ("venta",), "stock": ("stock", "existencia", "inventario"),
+FILENAME_HINTS = {"ventas": ("venta",), "stock": ("stock", "existencia", "inventario"),
                    "compras": ("compra", "albaran", "entrada", "pedido")}
 # Compatibilidad tipo detectado -> tipo canónico.
 _TYPE_FACTOR: dict[ColumnType, dict[str, float]] = {
@@ -248,7 +248,7 @@ def inspect_file(
         raise InspectError(f"Tipo desconocido '{dataset}'. Usa: {', '.join(DATASETS)}")
     synonyms, family_keywords = load_synonyms(synonyms_path, mappings_dir)
     labels = {s for words in synonyms.values() for s in words}
-    hint = dataset or next((d for d, words in _FILENAME_HINTS.items()
+    hint = dataset or next((d for d, words in FILENAME_HINTS.items()
                             if any(w in normalize_label(path.stem) for w in words)), None)
     table = read_table(path, ReadOptions(), labels, sheet, chooser, hint=hint, option="--hoja")
     df = table.df

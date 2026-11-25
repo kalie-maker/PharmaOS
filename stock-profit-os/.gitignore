@@ -13,3 +13,8 @@ output/*
 # Datos mock: se regeneran con `python -m engine.cli generar-mock`
 data/sample/*
 !data/sample/.gitkeep
+
+# Datos reales de farmacias piloto: nunca en git
+entradas/
+data/demo/
+config/mappings/farmacia_*.yaml

@@ -16,6 +16,7 @@ from datetime import date
 from pathlib import Path
 
 from engine import compare as cmp
+from engine.anonymize import Anonymizer
 from engine.config import (
     DEFAULT_CONFIG_PATH,
     DEFAULT_MAPPINGS_DIR,
@@ -29,6 +30,8 @@ from engine.ingest import IngestError, SheetCandidate
 from engine.inspection import InspectError, inspect_file, write_draft
 from engine.metrics import MetricsError
 from engine.mock.generate import MockConfig, generate_to
+from engine.mock.scenario import generate_week3_scenario
+from engine.pilot import STOP_PRIVACY, PilotStop, run_pilot
 from engine.pipeline import load_and_check, run_analysis
 from engine.privacy import PrivacyError
 from engine.report import write_reports
@@ -37,6 +40,7 @@ from engine.schemas import DATASETS
 EXIT_OK = 0
 EXIT_INPUT_ERROR = 1
 EXIT_PRIVACY = 2
+EXIT_STOPPED = 3  # piloto detenido: mapeo pendiente o calidad baja
 
 
 def _err(message: str) -> None:
@@ -66,6 +70,15 @@ def _chooser(args: argparse.Namespace):
 
 def _cmd_generate_mock(args: argparse.Namespace) -> int:
     config = MockConfig(n_refs=args.referencias, seed=args.semilla, end_date=args.fecha_fin)
+    if args.escenario == "semana3":
+        scenario = generate_week3_scenario(args.salida, config)
+        print(f"Escenario de demo generado en {args.salida} (semana 0 y semana 3, misma farmacia ficticia):")
+        for week in ("semana0", "semana3"):
+            print(f"  {week}: {Path(args.salida) / week}")
+        for key, value in scenario["resumen"].items():
+            print(f"    {key.replace('_', ' ')}: {value}")
+        print(f"Instrucciones: {Path(args.salida) / 'LEEME.md'}")
+        return EXIT_OK
     paths = generate_to(args.salida, config)
     print(f"Datos mock generados (semilla {config.seed}, {config.n_refs} referencias):")
     for name, path in paths.items():
@@ -86,7 +99,8 @@ def _cmd_analyze(args: argparse.Namespace) -> int:
             _print_ingest(ingest)
             print("\n".join(quality.lines()))
             return EXIT_OK
-        output = run_analysis(paths, mapping, thresholds, args.farmacia, args.anonimizar, sheets, _chooser(args))
+        anonymizer = Anonymizer(scale=args.escalar_cifras) if args.anonimizar else None
+        output = run_analysis(paths, mapping, thresholds, args.farmacia, anonymizer, sheets, _chooser(args))
     except PrivacyError as exc:
         _err(exc.message())
         return EXIT_PRIVACY
@@ -99,7 +113,8 @@ def _cmd_analyze(args: argparse.Namespace) -> int:
     _print_ingest(output.ingest)
     print("\n".join(output.quality.lines()))
     print()
-    prefix = args.prefijo or f"informe_{output.results['periodo']['fecha_referencia']}"
+    default = "ejemplo" if args.anonimizar else "informe"
+    prefix = args.prefijo or f"{default}_{output.results['periodo']['fecha_referencia']}"
     report_paths = write_reports(output.results, args.salida, prefix)
     print(output.results["resumen"])
     for action in output.results["acciones"]:
@@ -184,6 +199,9 @@ def _cmd_compare(args: argparse.Namespace) -> int:
     try:
         thresholds = load_thresholds(args.config)
         before, after = cmp.load_results(args.antes), cmp.load_results(args.despues)
+        if args.anonimizar:
+            anonymizer = Anonymizer(scale=args.escalar_cifras)  # mismos alias y factor en ambos
+            before, after = anonymizer.apply(before), anonymizer.apply(after)
         result = cmp.compare(before, after, thresholds.comparison)
     except (cmp.CompareError, ConfigError) as exc:
         _err(f"Error: {exc}")
@@ -196,6 +214,22 @@ def _cmd_compare(args: argparse.Namespace) -> int:
         (out / f"{stem}.md").write_text(cmp.render_markdown(result), encoding="utf-8")
         (out / f"{stem}.json").write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"\nGuardado en {out / stem}.md y .json")
+    return EXIT_OK
+
+
+def _cmd_pilot(args: argparse.Namespace) -> int:
+    try:
+        outcome = run_pilot(
+            args.carpeta, args.programa, args.nombre, args.salida, args.id, args.mapeos, args.config,
+            args.sinonimos, args.ignorar_calidad, _chooser(args),
+        )
+    except PilotStop as exc:
+        _err(f"\nPARADO ({exc.reason}): {exc}")
+        return EXIT_PRIVACY if exc.reason == STOP_PRIVACY else EXIT_STOPPED
+    except (ConfigError, IngestError, InspectError) as exc:
+        _err(f"Error: {exc}")
+        return EXIT_INPUT_ERROR
+    print(f"\nListo. Revisa a mano {outcome.reports['html']} antes de entregarlo.")
     return EXIT_OK
 
 
@@ -214,6 +248,8 @@ def build_parser() -> argparse.ArgumentParser:
     mock.add_argument("--referencias", type=int, default=MockConfig.n_refs)
     mock.add_argument("--fecha-fin", type=date.fromisoformat, default=MockConfig.end_date,
                       help="Último día de ventas (AAAA-MM-DD)")
+    mock.add_argument("--escenario", choices=["base", "semana3"], default="base",
+                      help="semana3: genera semana0/ y semana3/ de la misma farmacia para la demo de comparar")
     mock.set_defaults(func=_cmd_generate_mock)
 
     analyze = sub.add_parser("analizar", help="Analiza las exportaciones y genera el informe")
@@ -225,7 +261,9 @@ def build_parser() -> argparse.ArgumentParser:
     analyze.add_argument("--salida", type=Path, default=Path("output"))
     analyze.add_argument("--prefijo", help="Nombre base de los ficheros (por defecto informe_<fecha>)")
     analyze.add_argument("--anonimizar", action="store_true",
-                         help="Sustituye el nombre de la farmacia por uno genérico (para enseñar el informe)")
+                         help="Farmacia, laboratorios y productos anónimos (para enseñar el informe)")
+    analyze.add_argument("--escalar-cifras", action="store_true",
+                         help="Con --anonimizar: multiplica los € por un factor aleatorio entre 0,7 y 1,3")
     analyze.add_argument("--solo-calidad", action="store_true", help="Solo muestra la calidad de los datos")
     for dataset in DATASETS:
         analyze.add_argument(f"--hoja-{dataset}", help=f"Hoja del Excel de {dataset}")
@@ -250,13 +288,31 @@ def build_parser() -> argparse.ArgumentParser:
     comp.add_argument("--antes", required=True, type=Path)
     comp.add_argument("--despues", required=True, type=Path)
     comp.add_argument("--salida", type=Path, help="Carpeta donde guardar la comparación en MD y JSON")
+    comp.add_argument("--anonimizar", action="store_true")
+    comp.add_argument("--escalar-cifras", action="store_true")
     comp.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH)
     comp.set_defaults(func=_cmd_compare)
+
+    pilot = sub.add_parser("piloto", help="Flujo completo para una farmacia: inspeccionar, calidad, informe")
+    pilot.add_argument("--carpeta", required=True, type=Path, help="Carpeta con las 3 exportaciones")
+    pilot.add_argument("--programa", required=True, help="Nombre del mapeo (se crea un borrador si no existe)")
+    pilot.add_argument("--nombre", required=True, help="Nombre de la farmacia para el informe")
+    pilot.add_argument("--id", help="Identificador de la farmacia en output/ (por defecto, nombre de la carpeta)")
+    pilot.add_argument("--salida", type=Path, default=Path("output"))
+    pilot.add_argument("--ignorar-calidad", action="store_true", help="Generar el informe aunque la calidad sea baja")
+    pilot.add_argument("--no-interactivo", action="store_true")
+    pilot.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH)
+    pilot.add_argument("--mapeos", type=Path, default=DEFAULT_MAPPINGS_DIR)
+    pilot.add_argument("--sinonimos", type=Path, default=DEFAULT_SYNONYMS_PATH)
+    pilot.set_defaults(func=_cmd_pilot)
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if getattr(args, "escalar_cifras", False) and not getattr(args, "anonimizar", False):
+        parser.error("--escalar-cifras requiere --anonimizar")
     return int(args.func(args))
 
 

@@ -63,7 +63,7 @@ def test_order_and_pharmacy_checks(weeks, thresholds) -> None:
         compare(after, before, thresholds.comparison)
     other = dict(after, farmacia="Otra farmacia")
     assert any("distintas" in w for w in compare(before, other, thresholds.comparison)["avisos"])
-    anon = dict(after, farmacia="Farmacia de ejemplo", anonimizado=True)
+    anon = dict(after, farmacia="Farmacia Demo", anonimizado=True)
     assert not compare(before, anon, thresholds.comparison)["avisos"]
 
 
@@ -77,7 +77,7 @@ def test_thresholds_change_status(weeks, thresholds) -> None:
 def test_render(weeks, thresholds) -> None:
     c = compare(*weeks, thresholds.comparison)
     text, md = render_text(c), render_markdown(c)
-    assert "Reducción de stock problemático" in text and "Parece ejecutada" in text
+    assert "has liberado" in text and "Parece ejecutada" in text
     assert md.startswith("# Farmacia Demo")
 
 

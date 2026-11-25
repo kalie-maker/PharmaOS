@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from engine.actions import ActionPlan, build_actions
+from engine.anonymize import Anonymizer
 from engine.config import Mapping, Thresholds
 from engine.ingest import IngestResult, SheetChooser, load_all
 from engine.metrics import MetricsResult, compute_metrics
@@ -36,22 +37,33 @@ def load_and_check(
     return ingest, assess_quality(ingest, thresholds, today)
 
 
-def run_analysis(
-    paths: dict[str, Path | str],
+def analyze_loaded(
+    ingest: dict[str, IngestResult],
+    quality: QualityReport,
     mapping: Mapping,
     thresholds: Thresholds,
     pharmacy: str,
-    anonymize: bool = False,
-    sheets: dict[str, str | None] | None = None,
-    chooser: SheetChooser | None = None,
-    today: date | None = None,
+    anonymizer: Anonymizer | None = None,
 ) -> AnalysisOutput:
-    ingest, quality = load_and_check(paths, mapping, thresholds, sheets, chooser, today)
     data = {name: result.data for name, result in ingest.items()}
     metrics = compute_metrics(data["ventas"], data["stock"], data["compras"], thresholds)
     plan = build_actions(metrics, thresholds)
     results = build_results(
         metrics, plan, thresholds, pharmacy,
-        program=mapping.program, quality=quality.to_dict(), anonymize=anonymize,
+        program=mapping.program, quality=quality.to_dict(), anonymizer=anonymizer,
     )
     return AnalysisOutput(ingest, quality, metrics, plan, results)
+
+
+def run_analysis(
+    paths: dict[str, Path | str],
+    mapping: Mapping,
+    thresholds: Thresholds,
+    pharmacy: str,
+    anonymizer: Anonymizer | None = None,
+    sheets: dict[str, str | None] | None = None,
+    chooser: SheetChooser | None = None,
+    today: date | None = None,
+) -> AnalysisOutput:
+    ingest, quality = load_and_check(paths, mapping, thresholds, sheets, chooser, today)
+    return analyze_loaded(ingest, quality, mapping, thresholds, pharmacy, anonymizer)
