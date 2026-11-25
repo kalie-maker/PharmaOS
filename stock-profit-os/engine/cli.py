@@ -15,6 +15,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
+from engine import challenge as reto
 from engine import compare as cmp
 from engine.anonymize import Anonymizer
 from engine.config import (
@@ -233,6 +234,36 @@ def _cmd_pilot(args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
+def _cmd_challenge(args: argparse.Namespace) -> int:
+    try:
+        thresholds = load_thresholds(args.config)
+        files = reto.create_challenge(args.salida, thresholds, args.semilla, args.referencias)
+    except (ConfigError, reto.ChallengeError) as exc:
+        _err(f"Error: {exc}")
+        return EXIT_INPUT_ERROR
+    print(f"Reto generado en {args.salida}:")
+    for name, path in files.items():
+        print(f"  {name}: {path}")
+    print("Pega prompt.md en el chat junto con ventas.csv, stock.csv y compras.csv. Copia su respuesta en "
+          "una copia de plantilla_respuesta_chat.yaml (p. ej. respuesta_chatgpt.yaml) y ejecuta puntuar-reto.")
+    return EXIT_OK
+
+
+def _cmd_score(args: argparse.Namespace) -> int:
+    try:
+        thresholds = load_thresholds(args.config)
+        expected = reto.load_expected(args.reto)
+        response = reto.load_response(args.respuesta)
+        score = reto.score_response(expected, response, thresholds.challenge)
+    except (ConfigError, reto.ChallengeError) as exc:
+        _err(f"Error: {exc}")
+        return EXIT_INPUT_ERROR
+    paths = reto.write_score(score, args.reto, Path(args.respuesta).stem)
+    print("\n".join(reto.summary_lines(score)))
+    print(f"Informe: {paths['html']}")
+    return EXIT_OK
+
+
 # ---------------------------------------------------------------------------
 # Parser
 # ---------------------------------------------------------------------------
@@ -305,6 +336,19 @@ def build_parser() -> argparse.ArgumentParser:
     pilot.add_argument("--mapeos", type=Path, default=DEFAULT_MAPPINGS_DIR)
     pilot.add_argument("--sinonimos", type=Path, default=DEFAULT_SYNONYMS_PATH)
     pilot.set_defaults(func=_cmd_pilot)
+
+    challenge = sub.add_parser("reto-chat", help="Genera un reto para comparar un chat genérico con PharmaOS")
+    challenge.add_argument("--salida", required=True, type=Path)
+    challenge.add_argument("--semilla", type=int, help="Semilla de la farmacia ficticia (por defecto, config)")
+    challenge.add_argument("--referencias", type=int, help="Nº de referencias (por defecto, 3.000)")
+    challenge.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH)
+    challenge.set_defaults(func=_cmd_challenge)
+
+    score = sub.add_parser("puntuar-reto", help="Puntúa la respuesta de un chat frente a PharmaOS")
+    score.add_argument("--reto", required=True, type=Path, help="Carpeta del reto")
+    score.add_argument("--respuesta", required=True, type=Path, help="YAML con las cifras del chat")
+    score.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH)
+    score.set_defaults(func=_cmd_score)
     return parser
 
 

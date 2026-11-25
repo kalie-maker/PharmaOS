@@ -57,6 +57,13 @@ class ComparisonLimits:
 
 
 @dataclass(frozen=True)
+class ChallengeLimits:
+    correct_pct: float
+    approx_pct: float
+    seed: int
+
+
+@dataclass(frozen=True)
 class Thresholds:
     """Umbrales del motor. Todos son hipótesis ajustables (ver config.yaml)."""
 
@@ -83,6 +90,7 @@ class Thresholds:
     privacy_phone_min_ratio: float
     quality: QualityLimits
     comparison: ComparisonLimits
+    challenge: ChallengeLimits
 
     def coverage_for(self, family: str | None) -> int:
         if family and family in self.target_coverage_by_family:
@@ -153,6 +161,11 @@ def load_thresholds(path: Path | str = DEFAULT_CONFIG_PATH) -> Thresholds:
         comparison=ComparisonLimits(
             done_threshold=float(_get(data, "comparacion.umbral_ejecutada")),
             partial_threshold=float(_get(data, "comparacion.umbral_parcial")),
+        ),
+        challenge=ChallengeLimits(
+            correct_pct=float(_get(data, "reto.tolerancia_correcta_pct")),
+            approx_pct=float(_get(data, "reto.tolerancia_aproximada_pct")),
+            seed=int(_get(data, "reto.semilla")),
         ),
     )
     _validate_thresholds(t)

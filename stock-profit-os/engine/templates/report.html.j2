@@ -5,40 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Informe semanal de stock · {{ r.farmacia }}</title>
 <style>
-  @page { size: A4; margin: 14mm 12mm; }
-  :root { --ink:#1d1d1f; --muted:#6e6e73; --line:#e5e5ea; --soft:#f5f5f7; --accent:#0b5cad; --warn:#9a5b00; --bad:#a1262b; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:#fff; color:var(--ink); font:13px/1.45 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-  .page { max-width: 186mm; margin: 0 auto; padding: 18px 16px 32px; }
-  header { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:2px solid var(--ink); padding-bottom:10px; margin-bottom:16px; gap:12px; flex-wrap:wrap; }
-  h1 { font-size:22px; margin:0; letter-spacing:-0.01em; }
-  .sub { color:var(--muted); font-size:12px; }
-  h2 { font-size:15px; margin:22px 0 8px; }
-  h3 { font-size:13px; margin:16px 0 6px; }
-  .banner { border:1px solid; border-radius:6px; padding:10px 12px; margin-bottom:14px; }
-  .banner.baja { border-color:var(--bad); background:#fdf3f3; color:var(--bad); }
-  .banner.aceptable { border-color:var(--warn); background:#fdf8ef; color:var(--warn); }
-  .banner ul { margin:6px 0 0 18px; padding:0; color:var(--ink); }
-  .kpis { display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; }
-  .kpi { background:var(--soft); border-radius:8px; padding:12px; }
-  .kpi .v { font-size:20px; font-weight:650; letter-spacing:-0.01em; }
-  .kpi .l { color:var(--muted); font-size:11.5px; margin-top:2px; }
-  .summary { margin:14px 0 0; }
-  ol.actions { list-style:none; margin:0; padding:0; counter-reset:a; }
-  ol.actions li { display:grid; grid-template-columns:28px 1fr auto; gap:10px; padding:10px 0; border-bottom:1px solid var(--line); break-inside:avoid; }
-  ol.actions li::before { counter-increment:a; content:counter(a); font-weight:650; color:var(--accent); font-size:15px; }
-  .t { font-weight:600; }
-  .e { color:#3a3a3c; margin-top:2px; }
-  .imp { text-align:right; white-space:nowrap; font-weight:650; }
-  .imp small { display:block; font-weight:500; color:var(--muted); font-size:11px; }
-  table { width:100%; border-collapse:collapse; font-size:11.5px; margin-bottom:6px; }
-  th, td { padding:4px 6px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
-  th { color:var(--muted); font-weight:600; font-size:11px; }
-  td.n, th.n { text-align:right; white-space:nowrap; }
-  .annex { break-before:page; }
-  .note { color:var(--muted); font-size:11px; margin-top:18px; }
-  @media (max-width: 600px) { .kpis { grid-template-columns:1fr; } ol.actions li { grid-template-columns:22px 1fr; } .imp { grid-column:2; text-align:left; } }
-  @media print { .page { padding:0; } }
+{% include "_styles.css.j2" %}
 </style>
 </head>
 <body>

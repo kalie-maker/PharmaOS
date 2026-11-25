@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chat genérico vs PharmaOS</title>
+<style>
+{% include "_styles.css.j2" %}
+  .vs { font-size:12px; color:var(--muted); margin-top:4px; }
+  td.state { white-space:nowrap; }
+  .lead { font-size:14px; margin:14px 0 4px; }
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <div>
+    <h1>Chat genérico vs PharmaOS</h1>
+    <div class="sub">Misma farmacia ficticia, mismos ficheros y mismas definiciones · datos hasta {{ s.fecha_referencia | fecha }}</div>
+  </div>
+  <div class="sub">{{ s.chat }}{% if s.fecha_prueba %} · {{ s.fecha_prueba }}{% endif %}</div>
+</header>
+
+<section class="kpis">
+  <div class="kpi"><div class="v">{{ s.resumen.cifras_correctas }}/{{ s.resumen.cifras_total }}</div><div class="l">Cifras clave correctas del chat (error ≤ {{ s.tolerancias.correcta_pct | num(0) }} %)</div></div>
+  <div class="kpi"><div class="v">{{ s.resumen.acciones_correctas }}/{{ s.resumen.acciones_total }}</div><div class="l">Acciones más rentables acertadas con su importe ({{ s.resumen.acciones_detectadas }} detectadas)</div></div>
+  <div class="kpi"><div class="v">{{ s.resumen.error_absoluto_eur | eur0 }}</div><div class="l">Error acumulado del chat en las cifras en €</div></div>
+</section>
+<p class="lead">PharmaOS calcula cada cifra con código verificado: el mismo resultado cada vez, referencia a referencia.</p>
+
+<h2>Cifras clave</h2>
+<table>
+  <tr><th>Indicador</th><th class="n">PharmaOS</th><th class="n">Chat</th><th class="n">Error</th><th class="n">%</th><th>Resultado</th></tr>
+  {% for f in s.cifras %}
+  <tr>
+    <td>{{ f.nombre }}</td>
+    {% if f.dinero %}
+    <td class="n">{{ f.esperado | eur }}</td><td class="n">{{ f.chat | eur }}</td><td class="n">{{ f.error | eur }}</td>
+    {% elif f.error is not none or f.chat is number %}
+    <td class="n">{{ f.esperado | num }}</td><td class="n">{{ f.chat | num }}</td><td class="n">{{ f.error | num }}</td>
+    {% else %}
+    <td class="n">{{ f.esperado }}</td><td class="n">{{ f.chat or "—" }}</td><td class="n">—</td>
+    {% endif %}
+    <td class="n">{{ f.error_pct | pct }}</td>
+    <td class="state"><span class="badge {{ f.estado | clase }}">{{ f.estado | estado }}</span></td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h2>Las {{ s.resumen.acciones_total }} acciones más rentables</h2>
+<table>
+  <tr><th>#</th><th>Acción (PharmaOS)</th><th class="n">PharmaOS</th><th class="n">Chat</th><th class="n">Error</th><th>Resultado</th></tr>
+  {% for a in s.acciones %}
+  <tr>
+    <td>{{ a.posicion }}</td>
+    <td>{{ a.titulo }}</td>
+    <td class="n">{{ a.importe_eur | eur }}</td>
+    <td class="n">{{ a.chat_importe | eur }}</td>
+    <td class="n">{{ a.error | eur }}{% if a.error_pct is not none %}<div class="vs">{{ a.error_pct | pct }}</div>{% endif %}</td>
+    <td class="state"><span class="badge {{ a.estado | clase }}">{{ a.estado | estado }}</span></td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% if s.acciones_extra_chat %}
+<h3>Acciones propuestas por el chat que no están entre las {{ s.resumen.acciones_total }} más rentables</h3>
+<table>
+  <tr><th>Tipo</th><th>Detalle</th><th class="n">Importe según el chat</th></tr>
+  {% for a in s.acciones_extra_chat %}
+  <tr><td>{{ a.tipo }}</td><td>{{ a.laboratorio or a.descripcion or "—" }}</td><td class="n">{{ a.importe_eur | eur }}</td></tr>
+  {% endfor %}
+</table>
+{% endif %}
+
+<p class="note">Farmacia ficticia generada por PharmaOS. Al chat se le entregaron los mismos tres ficheros y las mismas definiciones de cálculo. Correcta: error ≤ {{ s.tolerancias.correcta_pct | num(0) }} %; aproximada: ≤ {{ s.tolerancias.aproximada_pct | num(0) }} %.{% if s.intentos %} Intentos con el chat: {{ s.intentos }}.{% endif %}{% if s.notas %} Notas: {{ s.notas }}{% endif %}</p>
+</div>
+</body>
+</html>

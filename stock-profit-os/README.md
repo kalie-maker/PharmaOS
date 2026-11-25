@@ -6,6 +6,28 @@ Motor determinista que analiza las exportaciones del programa de gestión de una
 > Estado: **Fase 5** — kit de piloto: comando `piloto` (todo en uno), escenario de demo
 > semana 0 / semana 3, anonimización real y documentación en `docs/piloto/`.
 
+## Reto: chat genérico vs PharmaOS
+
+Prueba manual para las visitas: el mismo problema resuelto por un chat genérico y por el motor.
+
+```bash
+python -m engine.cli reto-chat --salida retos/reto_01
+```
+
+Genera los 3 ficheros de una farmacia ficticia (semilla `reto.semilla` de `config.yaml`), `prompt.md`
+(texto exacto para pegar en el chat, con las definiciones de cálculo y un formato de respuesta fijo),
+`respuestas_esperadas.json` (cifras del motor) y `plantilla_respuesta_chat.yaml`. Copia la plantilla
+(p. ej. `respuesta_chatgpt.yaml`), rellénala a mano con lo que conteste el chat y puntúa:
+
+```bash
+python -m engine.cli puntuar-reto --reto retos/reto_01 --respuesta retos/reto_01/respuesta_chatgpt.yaml
+```
+
+Compara cifra a cifra (error en € y %; correcta ≤ 2 %, aproximada ≤ 10 %, configurable en
+`reto:`) y genera `puntuacion_<respuesta>.html` ("Chat genérico vs PharmaOS", A4) y `.json`.
+Un test recalcula las cifras siguiendo literalmente las definiciones del prompt, sin el motor,
+para garantizar que el reto es justo.
+
 ## Kit de piloto
 
 - `docs/piloto/guia-exportacion.md`: qué exportar desde Farmatic/Nixfarma y qué columnas NO incluir.

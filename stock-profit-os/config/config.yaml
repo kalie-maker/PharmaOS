@@ -73,6 +73,12 @@ comparacion:
   umbral_ejecutada: 0.70        # HIPÓTESIS
   umbral_parcial: 0.25          # HIPÓTESIS
 
+reto:
+  # Puntuación del reto "chat genérico vs PharmaOS". HIPÓTESIS ajustables.
+  tolerancia_correcta_pct: 2.0      # error <= 2 % -> correcta
+  tolerancia_aproximada_pct: 10.0   # error <= 10 % -> aproximada; más -> incorrecta
+  semilla: 101                      # farmacia ficticia distinta de la demo
+
 privacidad:
   # Escaneo de contenido además de cabeceras (DNI/NIE, email, teléfono).
   escanear_contenido: true

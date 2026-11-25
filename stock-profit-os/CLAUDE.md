@@ -18,7 +18,7 @@ y genera un informe semanal con 5–10 acciones priorizadas por impacto en €.
    Los nombres de columna canónicos (`codigo_nacional`, `unidades`…) siguen el modelo de datos.
 
 ## Datos reales
-- `entradas/`, `data/demo/` y `config/mappings/farmacia_*.yaml` están en .gitignore. Nunca subir datos de farmacias.
+- `entradas/`, `data/demo/`, `retos/` y `config/mappings/farmacia_*.yaml` están en .gitignore. Nunca subir datos de farmacias.
 
 ## No hacer
 - Web, API, base de datos, autenticación o app.
@@ -32,6 +32,7 @@ y genera un informe semanal con 5–10 acciones priorizadas por impacto en €.
 - Inspección: `python -m engine.cli inspeccionar --fichero <export> --nombre <mapeo>`
 - Piloto (todo en uno): `python -m engine.cli piloto --carpeta entradas/farmacia_1 --programa farmatic --nombre "Farmacia X"`
 - Demo: `python -m engine.cli generar-mock --escenario semana3 --salida data/demo`
+- Reto: `python -m engine.cli reto-chat --salida retos/reto_01` y `puntuar-reto --reto retos/reto_01 --respuesta <yaml>`
 - Comparación: `python -m engine.cli comparar --antes output/semana0.json --despues output/semana3.json`
 - Análisis: `python -m engine.cli analizar --programa farmatic --ventas data/sample/ventas.csv --stock data/sample/stock.csv --compras data/sample/compras.csv --farmacia "Farmacia Demo" --salida output/`
 
@@ -50,6 +51,8 @@ y genera un informe semanal con 5–10 acciones priorizadas por impacto en €.
 - `engine/anonymize.py` — anonimización de resultados (farmacia, laboratorios, productos, escala de €).
 - `engine/pilot.py` — comando `piloto`: flujo completo por farmacia con paradas claras.
 - `engine/mock/scenario.py` — escenario de demo semana 0 / semana 3.
+- `engine/challenge.py` + `templates/challenge.html.j2` — reto "chat genérico vs PharmaOS" (`reto-chat`, `puntuar-reto`).
+- `engine/templates/_styles.css.j2` — estilos compartidos por todos los HTML.
 - `docs/piloto/` — guía de exportación, plantilla de acuerdo y checklist.
 - `engine/pipeline.py` — orquestación ingesta -> calidad -> métricas -> acciones -> resultados.
 - `engine/mock/generate.py` — farmacia ficticia reproducible (semilla fija).
