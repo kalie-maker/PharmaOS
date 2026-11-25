@@ -196,7 +196,7 @@ notas: ""         # errores de lectura, cifras inventadas, etc.
 
 def response_template() -> str:
     block = "\n".join(
-        f"  - tipo: null\n    laboratorio: null\n    descripcion: \"\"\n    importe_eur: null"
+        "  - tipo: null\n    laboratorio: null\n    descripcion: \"\"\n    importe_eur: null"
         for _ in range(TOP_ACTIONS)
     )
     return TEMPLATE.format(actions=block)
