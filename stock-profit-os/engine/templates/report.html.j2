@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informe semanal de stock · {{ r.farmacia }}</title>
+<style>
+  @page { size: A4; margin: 14mm 12mm; }
+  :root { --ink:#1d1d1f; --muted:#6e6e73; --line:#e5e5ea; --soft:#f5f5f7; --accent:#0b5cad; --warn:#9a5b00; --bad:#a1262b; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#fff; color:var(--ink); font:13px/1.45 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .page { max-width: 186mm; margin: 0 auto; padding: 18px 16px 32px; }
+  header { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:2px solid var(--ink); padding-bottom:10px; margin-bottom:16px; gap:12px; flex-wrap:wrap; }
+  h1 { font-size:22px; margin:0; letter-spacing:-0.01em; }
+  .sub { color:var(--muted); font-size:12px; }
+  h2 { font-size:15px; margin:22px 0 8px; }
+  h3 { font-size:13px; margin:16px 0 6px; }
+  .banner { border:1px solid; border-radius:6px; padding:10px 12px; margin-bottom:14px; }
+  .banner.baja { border-color:var(--bad); background:#fdf3f3; color:var(--bad); }
+  .banner.aceptable { border-color:var(--warn); background:#fdf8ef; color:var(--warn); }
+  .banner ul { margin:6px 0 0 18px; padding:0; color:var(--ink); }
+  .kpis { display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; }
+  .kpi { background:var(--soft); border-radius:8px; padding:12px; }
+  .kpi .v { font-size:20px; font-weight:650; letter-spacing:-0.01em; }
+  .kpi .l { color:var(--muted); font-size:11.5px; margin-top:2px; }
+  .summary { margin:14px 0 0; }
+  ol.actions { list-style:none; margin:0; padding:0; counter-reset:a; }
+  ol.actions li { display:grid; grid-template-columns:28px 1fr auto; gap:10px; padding:10px 0; border-bottom:1px solid var(--line); break-inside:avoid; }
+  ol.actions li::before { counter-increment:a; content:counter(a); font-weight:650; color:var(--accent); font-size:15px; }
+  .t { font-weight:600; }
+  .e { color:#3a3a3c; margin-top:2px; }
+  .imp { text-align:right; white-space:nowrap; font-weight:650; }
+  .imp small { display:block; font-weight:500; color:var(--muted); font-size:11px; }
+  table { width:100%; border-collapse:collapse; font-size:11.5px; margin-bottom:6px; }
+  th, td { padding:4px 6px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:11px; }
+  td.n, th.n { text-align:right; white-space:nowrap; }
+  .annex { break-before:page; }
+  .note { color:var(--muted); font-size:11px; margin-top:18px; }
+  @media (max-width: 600px) { .kpis { grid-template-columns:1fr; } ol.actions li { grid-template-columns:22px 1fr; } .imp { grid-column:2; text-align:left; } }
+  @media print { .page { padding:0; } }
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <div>
+    <h1>{{ r.farmacia }}</h1>
+    <div class="sub">Informe semanal de stock · datos hasta {{ r.periodo.fecha_referencia | fecha }} (ventas desde {{ r.periodo.inicio_ventas | fecha }})</div>
+  </div>
+  <div class="sub">Stock Profit OS</div>
+</header>
+
+{% if r.calidad and r.calidad.nivel != "buena" %}
+<div class="banner {{ r.calidad.nivel }}">
+  <strong>Calidad de datos {{ r.calidad.nivel }}.</strong> {{ r.calidad.mensaje }}
+  <ul>
+  {% for c in r.calidad.comprobaciones if c.estado != "ok" %}
+    <li>{{ c.descripcion }}: {{ c.afectados | num }} ({{ c.porcentaje | pct }})</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<section class="kpis">
+  <div class="kpi"><div class="v">{{ r.cifras_clave.valor_stock_eur | eur }}</div><div class="l">Stock total a coste</div></div>
+  <div class="kpi"><div class="v">{{ r.cifras_clave.sin_movimiento_eur | eur }}</div><div class="l">Inmovilizado sin ventas en {{ r.cifras_clave.sin_movimiento_dias }} días ({{ r.cifras_clave.sin_movimiento_refs | num }} ref.)</div></div>
+  <div class="kpi"><div class="v">{{ r.cifras_clave.riesgo_caducidad_eur | eur }}</div><div class="l">En riesgo por caducidad (≤ {{ r.cifras_clave.riesgo_caducidad_dias }} días)</div></div>
+</section>
+<p class="summary">{{ r.resumen }}</p>
+
+<h2>Acciones de la semana</h2>
+{% if r.acciones %}
+<ol class="actions">
+{% for a in r.acciones %}
+  <li>
+    <div><div class="t">{{ a.titulo }}</div><div class="e">{{ a.explicacion }}</div></div>
+    <div class="imp">{{ a.impact_eur | eur }}<small>Prioridad {{ a.prioridad | lower }}</small></div>
+  </li>
+{% endfor %}
+</ol>
+{% else %}
+<p>No hay acciones con impacto relevante esta semana.</p>
+{% endif %}
+
+<section class="annex">
+<h2>Anexo</h2>
+{% for a in r.acciones %}
+{% if a.references %}
+<h3>{{ loop.index }}. {{ a.titulo }}</h3>
+<table>
+  <tr><th>CN</th><th>Descripción</th><th>Laboratorio</th><th class="n">Uds.</th><th class="n">Importe</th></tr>
+  {% for ref in a.references %}
+  <tr><td>{{ ref.codigo_nacional }}</td><td>{{ ref.descripcion or "—" }}</td><td>{{ ref.laboratorio or "—" }}</td><td class="n">{{ ref.unidades | num }}</td><td class="n">{{ ref.importe_eur | eur }}</td></tr>
+  {% endfor %}
+</table>
+{% endif %}
+{% endfor %}
+
+{% if r.anexo_acciones %}
+<h3>Otras acciones</h3>
+<table>
+  <tr><th>Acción</th><th class="n">Impacto</th></tr>
+  {% for a in r.anexo_acciones %}<tr><td>{{ a.titulo }}</td><td class="n">{{ a.impact_eur | eur }}</td></tr>{% endfor %}
+</table>
+{% endif %}
+
+<h3>Laboratorios (últimos {{ r.umbrales.meses_laboratorio }} meses)</h3>
+<table>
+  <tr><th>Laboratorio</th><th class="n">Compras a coste</th><th class="n">Ventas a coste</th><th class="n">Compras/ventas</th><th class="n">Margen</th></tr>
+  {% for l in r.laboratorios %}
+  <tr><td>{{ l.laboratorio }}{% if l.compra_alta %} ·&nbsp;alto{% endif %}</td><td class="n">{{ l.compras_coste | eur }}</td><td class="n">{{ l.coste_ventas | eur }}</td><td class="n">{{ l.ratio_compras_ventas | num(2) }}</td><td class="n">{{ l.margen_bruto_pct | pct }}</td></tr>
+  {% endfor %}
+</table>
+
+<h3>Familias (últimos 12 meses)</h3>
+<table>
+  <tr><th>Familia</th><th class="n">Ventas sin IVA</th><th class="n">Peso</th><th class="n">Margen bruto</th><th class="n">Stock a coste</th></tr>
+  {% for f in r.familias %}
+  <tr><td>{{ f.nombre }}</td><td class="n">{{ f.ventas_eur | eur }}</td><td class="n">{{ f.peso_ventas_pct | pct }}</td><td class="n">{{ f.margen_bruto_pct | pct }}</td><td class="n">{{ f.valor_stock | eur }}</td></tr>
+  {% endfor %}
+</table>
+
+<p class="note">Cifras calculadas a partir de las exportaciones del programa de gestión{% if r.programa %} ({{ r.programa }}){% endif %}. {{ r.umbrales.nota }} Sin movimiento: {{ r.umbrales.sin_movimiento_dias }} días · reposición {{ r.umbrales.dias_reposicion | num }} + seguridad {{ r.umbrales.dias_seguridad | num }} días · compras/ventas alto &gt; {{ r.umbrales.ratio_compras_ventas_alto | num(2) }}. {{ r.motor }}.</p>
+</section>
+</div>
+</body>
+</html>

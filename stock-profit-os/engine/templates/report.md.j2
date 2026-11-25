@@ -1,0 +1,67 @@
+# {{ r.farmacia }} — Informe semanal de stock
+
+Datos hasta {{ r.periodo.fecha_referencia | fecha }} (ventas desde {{ r.periodo.inicio_ventas | fecha }}).
+
+{% if r.calidad and r.calidad.nivel != "buena" %}
+> **Calidad de datos {{ r.calidad.nivel }}.** {{ r.calidad.mensaje }}
+{% for c in r.calidad.comprobaciones if c.estado != "ok" %}
+> - {{ c.descripcion }}: {{ c.afectados | num }} ({{ c.porcentaje | pct }})
+{% endfor %}
+
+{% endif %}
+| Stock total a coste | Sin ventas en {{ r.cifras_clave.sin_movimiento_dias }} días | En riesgo por caducidad (≤ {{ r.cifras_clave.riesgo_caducidad_dias }} días) |
+|---:|---:|---:|
+| {{ r.cifras_clave.valor_stock_eur | eur }} | {{ r.cifras_clave.sin_movimiento_eur | eur }} ({{ r.cifras_clave.sin_movimiento_refs | num }} ref.) | {{ r.cifras_clave.riesgo_caducidad_eur | eur }} |
+
+{{ r.resumen }}
+
+## Acciones de la semana
+
+{% for a in r.acciones %}
+{{ loop.index }}. **{{ a.titulo }}** — {{ a.impact_eur | eur }} (prioridad {{ a.prioridad | lower }})
+   {{ a.explicacion }}
+{% else %}
+No hay acciones con impacto relevante esta semana.
+{% endfor %}
+
+## Anexo
+{% for a in r.acciones %}
+{% if a.references %}
+
+### {{ loop.index }}. {{ a.titulo }}
+
+| CN | Descripción | Laboratorio | Uds. | Importe |
+|---|---|---|---:|---:|
+{% for ref in a.references %}
+| {{ ref.codigo_nacional }} | {{ ref.descripcion or "—" }} | {{ ref.laboratorio or "—" }} | {{ ref.unidades | num }} | {{ ref.importe_eur | eur }} |
+{% endfor %}
+{% endif %}
+{% endfor %}
+{% if r.anexo_acciones %}
+
+### Otras acciones
+
+| Acción | Impacto |
+|---|---:|
+{% for a in r.anexo_acciones %}
+| {{ a.titulo }} | {{ a.impact_eur | eur }} |
+{% endfor %}
+{% endif %}
+
+### Laboratorios (últimos {{ r.umbrales.meses_laboratorio }} meses)
+
+| Laboratorio | Compras a coste | Ventas a coste | Compras/ventas | Margen |
+|---|---:|---:|---:|---:|
+{% for l in r.laboratorios %}
+| {{ l.laboratorio }}{% if l.compra_alta %} (alto){% endif %} | {{ l.compras_coste | eur }} | {{ l.coste_ventas | eur }} | {{ l.ratio_compras_ventas | num(2) }} | {{ l.margen_bruto_pct | pct }} |
+{% endfor %}
+
+### Familias (últimos 12 meses)
+
+| Familia | Ventas sin IVA | Peso | Margen bruto | Stock a coste |
+|---|---:|---:|---:|---:|
+{% for f in r.familias %}
+| {{ f.nombre }} | {{ f.ventas_eur | eur }} | {{ f.peso_ventas_pct | pct }} | {{ f.margen_bruto_pct | pct }} | {{ f.valor_stock | eur }} |
+{% endfor %}
+
+_{{ r.umbrales.nota }} {{ r.motor }}._

@@ -40,7 +40,9 @@ def test_cli_generate_and_analyze(tmp_path: Path, capsys) -> None:
         "--farmacia", "Farmacia Demo", "--salida", str(tmp_path / "output"),
     ])
     assert code == EXIT_OK
-    assert "ingesta validada" in capsys.readouterr().out
+    out_text = capsys.readouterr().out
+    assert "análisis completado" in out_text
+    assert list((tmp_path / "output").glob("informe_*.html"))
 
 
 def test_cli_privacy_rejection_exit_code(tmp_path: Path, capsys) -> None:

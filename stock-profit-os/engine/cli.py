@@ -13,7 +13,11 @@ from datetime import date
 from pathlib import Path
 
 from engine.config import DEFAULT_CONFIG_PATH, DEFAULT_MAPPINGS_DIR, ConfigError, load_mapping, load_thresholds
-from engine.ingest import IngestError, load_all
+from engine.formatting import eur, number
+from engine.ingest import IngestError
+from engine.metrics import MetricsError
+from engine.pipeline import run_analysis
+from engine.report import write_reports
 from engine.mock.generate import MockConfig, generate_to
 from engine.privacy import PrivacyError
 
@@ -35,25 +39,32 @@ def _cmd_analyze(args: argparse.Namespace) -> int:
     try:
         thresholds = load_thresholds(args.config)
         mapping = load_mapping(args.programa, args.mapeos)
-        results = load_all(
-            {"ventas": args.ventas, "stock": args.stock, "compras": args.compras}, mapping, thresholds
+        output = run_analysis(
+            {"ventas": args.ventas, "stock": args.stock, "compras": args.compras},
+            mapping, thresholds, args.farmacia,
         )
     except PrivacyError as exc:
         print(exc.message(), file=sys.stderr)
         return EXIT_PRIVACY
-    except (ConfigError, IngestError) as exc:
+    except (ConfigError, IngestError, MetricsError) as exc:
         print(f"Error: {exc}", file=sys.stderr)
         return EXIT_INPUT_ERROR
 
-    print(f"{args.farmacia} — ingesta validada (programa: {mapping.program})")
-    for name, result in results.items():
-        print(f"  {name}: {len(result.data):,} filas".replace(",", "."))
+    print(f"{args.farmacia} — análisis completado (programa: {mapping.program})")
+    for name, result in output.ingest.items():
+        print(f"  {name}: {number(len(result.data))} filas")
         if result.ignored_columns:
             print(f"    columnas ignoradas: {', '.join(result.ignored_columns)}")
         for warning in result.warnings:
             print(f"    aviso: {warning}")
-    # Fase 2 y 3: métricas, acciones e informe.
-    print("Métricas, acciones e informe: pendientes (fases 2 y 3).")
+    prefix = args.prefijo or f"informe_{output.results['periodo']['fecha_referencia']}"
+    paths = write_reports(output.results, args.salida, prefix)
+    print(output.results["resumen"])
+    for action in output.results["acciones"]:
+        print(f"  {action['priority']:>2}. {eur(action['impact_eur']):>14}  {action['titulo']}")
+    print("Informe:")
+    for kind, path in paths.items():
+        print(f"  {kind}: {path}")
     return EXIT_OK
 
 
@@ -76,6 +87,7 @@ def build_parser() -> argparse.ArgumentParser:
     analyze.add_argument("--compras", required=True, type=Path)
     analyze.add_argument("--farmacia", required=True)
     analyze.add_argument("--salida", type=Path, default=Path("output"))
+    analyze.add_argument("--prefijo", help="Nombre base de los ficheros (por defecto informe_<fecha>)")
     analyze.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH)
     analyze.add_argument("--mapeos", type=Path, default=DEFAULT_MAPPINGS_DIR)
     analyze.set_defaults(func=_cmd_analyze)
