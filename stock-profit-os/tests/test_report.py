@@ -101,3 +101,16 @@ def test_end_to_end_full_mock(full_mock, farmatic, thresholds, tmp_path) -> None
     assert 0.08 <= share_dead <= 0.15
     assert not math.isnan(r["totales"]["valor_stock"])
     write_reports(r, tmp_path / "out", "e2e")
+
+
+def test_mock_overstock_is_realistic_and_ranking_varies(farmatic, thresholds, tmp_path) -> None:
+    from engine.mock.generate import MockConfig, generate
+
+    first_actions = set()
+    for seed in (42, 7, 2):
+        paths = generate(MockConfig(seed=seed)).write(tmp_path / str(seed))
+        totals = (r := run_analysis(paths, farmatic, thresholds, "X").results)["totales"]
+        assert 0.10 <= totals["sobrestock_eur"] / totals["valor_stock"] <= 0.30
+        assert 0.05 <= totals["sin_movimiento_critico_eur"] / totals["valor_stock"] <= 0.20
+        first_actions.add(r["acciones"][0]["type"])
+    assert len(first_actions) > 1  # "reducir pedido" no sale siempre la primera

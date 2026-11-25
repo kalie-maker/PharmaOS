@@ -48,16 +48,17 @@ class FamilySpec:
     margin: tuple[float, float]  # margen sobre PVP sin IVA
     cost_log_mean: float  # coste unitario ~ lognormal
     rate_log_mean: float  # unidades/día ~ lognormal
+    coverage_days: tuple[float, float]  # cobertura habitual de una farmacia bien gestionada
 
 
 FAMILY_SPECS: dict[Family, FamilySpec] = {
-    Family.PRESCRIPTION: FamilySpec(0.44, 0.04, (0.24, 0.29), 1.8, -1.7),
-    Family.OTC: FamilySpec(0.15, 0.04, (0.30, 0.38), 1.5, -2.1),
-    Family.DERMOCOSMETICS: FamilySpec(0.15, 0.21, (0.35, 0.45), 2.4, -2.7),
-    Family.NUTRITION: FamilySpec(0.06, 0.10, (0.30, 0.40), 2.3, -2.7),
-    Family.HYGIENE: FamilySpec(0.10, 0.21, (0.30, 0.40), 1.3, -2.3),
-    Family.ORTHOPEDICS: FamilySpec(0.04, 0.10, (0.35, 0.45), 2.6, -3.1),
-    Family.SUNCARE: FamilySpec(0.06, 0.21, (0.35, 0.45), 2.4, -2.5),
+    Family.PRESCRIPTION: FamilySpec(0.44, 0.04, (0.24, 0.29), 1.8, -1.7, (7, 30)),
+    Family.OTC: FamilySpec(0.15, 0.04, (0.30, 0.38), 1.5, -2.1, (15, 45)),
+    Family.DERMOCOSMETICS: FamilySpec(0.15, 0.21, (0.35, 0.45), 2.4, -2.7, (20, 60)),
+    Family.NUTRITION: FamilySpec(0.06, 0.10, (0.30, 0.40), 2.3, -2.7, (20, 60)),
+    Family.HYGIENE: FamilySpec(0.10, 0.21, (0.30, 0.40), 1.3, -2.3, (15, 45)),
+    Family.ORTHOPEDICS: FamilySpec(0.04, 0.10, (0.35, 0.45), 2.6, -3.1, (30, 90)),
+    Family.SUNCARE: FamilySpec(0.06, 0.21, (0.35, 0.45), 2.4, -2.5, (20, 60)),
 }
 
 _ACTIVES = [
@@ -109,7 +110,7 @@ class MockConfig:
     n_labs: int = 50
     dead_share: float = 0.10  # sin ventas en 180+ días
     slow_share: float = 0.04  # sin ventas entre 90 y 180 días
-    overstock_share: float = 0.06
+    overstock_share: float = 0.04
     stockout_share: float = 0.025
     near_expiry_share: float = 0.05
     n_overbought_labs: int = 3
@@ -172,7 +173,8 @@ def generate(config: MockConfig = MockConfig()) -> MockData:
         ref_lab[mask] = rng.choice(candidates, size=int(mask.sum()), p=zipf / zipf.sum())
 
     lab_sizes = pd.Series(ref_lab).value_counts()
-    overbought = [str(lab) for lab in lab_sizes.index[1 : 1 + config.n_overbought_labs]]
+    # Laboratorios medianos (no los dos mayores): sobrecompra visible pero no dominante.
+    overbought = [str(lab) for lab in lab_sizes.index[2 : 2 + config.n_overbought_labs]]
     is_overbought = np.isin(ref_lab, overbought)
 
     # --- Productos -------------------------------------------------------------
@@ -229,12 +231,14 @@ def generate(config: MockConfig = MockConfig()) -> MockData:
 
     # --- Stock -------------------------------------------------------------------
     recent_rate = expected[:, -30:].mean(axis=1)
-    coverage = rng.uniform(10, 40, size=n)
+    low = np.array([FAMILY_SPECS[f].coverage_days[0] for f in ref_family])
+    high = np.array([FAMILY_SPECS[f].coverage_days[1] for f in ref_family])
+    coverage = rng.uniform(low, high)
     overstock_idx = rng.choice(remaining, size=int(round(config.overstock_share * n)), replace=False)
-    coverage[overstock_idx] = rng.uniform(120, 300, size=len(overstock_idx))
-    coverage[is_overbought] *= rng.uniform(2.5, 4.0, size=int(is_overbought.sum()))
+    coverage[overstock_idx] = rng.uniform(75, 150, size=len(overstock_idx))
+    coverage[is_overbought] *= rng.uniform(1.5, 2.2, size=int(is_overbought.sum()))
     stock_units = np.maximum(np.round(recent_rate * coverage), 1)
-    stock_units[dead_idx] = rng.integers(1, 9, size=len(dead_idx))
+    stock_units[dead_idx] = rng.integers(1, 13, size=len(dead_idx))
 
     fast = np.setdiff1d(np.where(base_rate >= np.quantile(base_rate, 0.75))[0], dead_idx)
     stockout_idx = rng.choice(fast, size=min(len(fast), int(round(config.stockout_share * n))), replace=False)
@@ -264,7 +268,7 @@ def generate(config: MockConfig = MockConfig()) -> MockData:
     p_days = config.purchase_days
     window_units = units[:, -p_days:]
     window_dates = days[-p_days:]
-    factor = np.where(is_overbought, rng.uniform(1.5, 1.8, size=n), rng.uniform(0.9, 1.1, size=n))
+    factor = np.where(is_overbought, rng.uniform(1.45, 1.7, size=n), rng.uniform(0.9, 1.1, size=n))
     factor[overstock_idx] = np.maximum(factor[overstock_idx], 1.3)
     rows: list[tuple[str, str, str, int, float]] = []
     for i in range(n):
