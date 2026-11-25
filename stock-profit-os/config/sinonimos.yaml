@@ -1,0 +1,28 @@
+# ---------------------------------------------------------------------------
+# Sinónimos para `inspeccionar`: ayudan a proponer un mapeo automático.
+# Se combinan con los alias de todos los ficheros de config/mappings/.
+# Editable: añade aquí los encabezados reales que vayas encontrando.
+# ---------------------------------------------------------------------------
+columnas:
+  fecha: ["fecha", "fecha venta", "fecha operacion", "fecha albaran", "fecha entrada", "fecha recepcion", "dia", "f venta", "f albaran"]
+  codigo_nacional: ["codigo nacional", "cod nacional", "cn", "codigo", "cod articulo", "codigo articulo", "cod producto", "referencia", "ref"]
+  descripcion: ["descripcion", "denominacion", "articulo", "producto", "nombre articulo", "nombre producto", "desc"]
+  laboratorio: ["laboratorio", "lab", "proveedor", "fabricante", "marca"]
+  familia: ["familia", "subfamilia", "categoria", "seccion", "grupo"]
+  unidades: ["unidades", "uds", "cantidad", "cant", "unidades vendidas", "unidades recibidas", "unid"]
+  importe_venta_sin_iva: ["importe sin iva", "importe s iva", "base imponible", "importe neto", "venta neta", "imp neto", "total sin iva", "importe venta"]
+  coste_unitario: ["coste unitario", "precio coste", "p coste", "pvc", "pmc", "coste medio", "precio medio coste", "coste"]
+  stock_unidades: ["stock", "stock actual", "existencias", "unidades stock", "stock disponible"]
+  pvp: ["pvp", "precio venta", "p v p", "pvp iva"]
+  fecha_caducidad: ["caducidad", "fecha caducidad", "f caducidad", "cad", "vencimiento"]
+  coste_total: ["importe coste", "coste total", "total coste", "importe compra", "total compra", "importe albaran", "importe"]
+
+# Palabras clave de etiquetas de familia -> familia canónica (se busca contenido, sin tildes).
+familias:
+  medicamento_receta: ["receta", "especialidad", "financiad", "eftr", "rx"]
+  otc: ["efp", "publicitari", "sin receta", "otc", "automedicacion"]
+  dermocosmetica: ["derm", "cosmet", "parafarmacia"]
+  nutricion: ["nutri", "dietet", "infantil", "aliment", "complemento"]
+  higiene: ["higien", "bucal", "dental", "aseo"]
+  ortopedia: ["ortop"]
+  solares: ["solar", "fotoprot"]

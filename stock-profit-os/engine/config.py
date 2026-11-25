@@ -15,6 +15,7 @@ from engine.schemas import DATASETS, SCHEMAS, Family
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_CONFIG_PATH = PROJECT_ROOT / "config" / "config.yaml"
 DEFAULT_MAPPINGS_DIR = PROJECT_ROOT / "config" / "mappings"
+DEFAULT_SYNONYMS_PATH = PROJECT_ROOT / "config" / "sinonimos.yaml"
 
 
 class ConfigError(ValueError):
@@ -193,6 +194,7 @@ class Mapping:
     columns: dict[str, dict[str, list[str]]]
     # etiqueta normalizada -> familia canónica
     families: dict[str, Family] = field(default_factory=dict)
+    draft: bool = False
 
     def map_family(self, label: object) -> Family | None:
         """Devuelve la familia canónica o None si la etiqueta no está mapeada."""
@@ -233,7 +235,10 @@ def parse_mapping(data: dict[str, Any], source: str = "<mapeo>") -> Mapping:
     for dataset in DATASETS:
         spec = files.get(dataset)
         if not spec:
-            raise ConfigError(f"{source}: falta la sección ficheros.{dataset}")
+            raise ConfigError(
+                f"{source}: falta la sección ficheros.{dataset}. Genérala con "
+                f"`python -m engine.cli inspeccionar --fichero <{dataset}> --tipo {dataset}`"
+            )
         schema = SCHEMAS[dataset]
         unknown = set(spec) - set(schema.column_names)
         if unknown:
@@ -260,4 +265,5 @@ def parse_mapping(data: dict[str, Any], source: str = "<mapeo>") -> Mapping:
         read=read,
         columns=columns,
         families=families,
+        draft=bool(data.get("borrador", False)),
     )
