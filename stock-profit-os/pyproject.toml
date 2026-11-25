@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stock-profit-os"
+version = "0.1.0"
+description = "Motor determinista que convierte exportaciones de gestión de farmacia en acciones semanales valoradas en euros."
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.1",
+    "pyyaml>=6.0",
+    "jinja2>=3.1",
+    "openpyxl>=3.1",  # necesario para leer exportaciones .xlsx
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+stock-profit-os = "engine.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["engine*"]
+
+[tool.setuptools.package-data]
+engine = ["templates/*.j2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,61 @@
+# ---------------------------------------------------------------------------
+# Mapeo de columnas — Farmatic
+#
+# SUPUESTO: los nombres de columna reales de las exportaciones de Farmatic no
+# están confirmados. Edita los alias con los encabezados reales del fichero.
+# La comparación ignora mayúsculas, tildes, puntos y espacios repetidos.
+# Para cada columna canónica se prueba cada alias en orden.
+# ---------------------------------------------------------------------------
+programa: farmatic
+
+lectura:
+  separador: ";"
+  decimal: ","
+  miles: "."
+  encoding: cp1252            # Windows; se prueba también utf-8 automáticamente
+  formato_fecha: "%d/%m/%Y"
+
+ficheros:
+  ventas:
+    fecha: ["Fecha", "Fecha Venta"]
+    codigo_nacional: ["Código", "Codigo", "Cód. Nacional", "CN"]
+    descripcion: ["Descripción", "Descripcion", "Artículo"]
+    laboratorio: ["Laboratorio", "Lab."]
+    familia: ["Familia"]
+    unidades: ["Unidades", "Uds.", "Cantidad"]
+    importe_venta_sin_iva: ["Importe s/IVA", "Importe sin IVA", "Base Imponible"]
+    coste_unitario: ["P.Coste", "PVC", "Precio Coste"]
+
+  stock:
+    codigo_nacional: ["Código", "Codigo", "Cód. Nacional", "CN"]
+    descripcion: ["Descripción", "Descripcion", "Artículo"]
+    laboratorio: ["Laboratorio", "Lab."]
+    familia: ["Familia"]
+    stock_unidades: ["Stock Actual", "Stock", "Existencias"]
+    coste_unitario: ["P.Coste", "PVC", "Precio Coste"]
+    pvp: ["PVP", "P.V.P."]
+    fecha_caducidad: ["Caducidad", "F. Caducidad", "Fecha Caducidad"]
+
+  compras:
+    fecha: ["Fecha Albarán", "Fecha Albaran", "Fecha"]
+    codigo_nacional: ["Código", "Codigo", "Cód. Nacional", "CN"]
+    laboratorio: ["Laboratorio", "Lab."]
+    unidades: ["Unidades Recibidas", "Unidades", "Uds."]
+    coste_total: ["Importe Coste", "Total Coste", "Importe"]
+
+# Etiquetas de familia del programa -> familia canónica.
+# Valores canónicos: medicamento_receta, otc, dermocosmetica, nutricion,
+# higiene, ortopedia, solares, otros. Lo no listado se clasifica como "otros".
+familias:
+  "Especialidad con receta": medicamento_receta
+  "Especialidad": medicamento_receta
+  "EFP / Publicitarios": otc
+  "EFP": otc
+  "Publicitarios": otc
+  "Dermofarmacia": dermocosmetica
+  "Dermocosmética": dermocosmetica
+  "Dietética y Nutrición": nutricion
+  "Nutrición": nutricion
+  "Higiene": higiene
+  "Ortopedia": ortopedia
+  "Solares": solares

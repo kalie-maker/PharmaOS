@@ -1,0 +1,61 @@
+# ---------------------------------------------------------------------------
+# Stock Profit OS — umbrales del motor
+#
+# TODOS los valores de este fichero son HIPÓTESIS AJUSTABLES. Se validarán y
+# afinarán con las farmacias piloto. Cambiarlos no requiere tocar código.
+# ---------------------------------------------------------------------------
+
+analisis:
+  # Fecha de corte del análisis (AAAA-MM-DD). null = última fecha con ventas.
+  fecha_referencia: null
+
+consumo:
+  # Ventanas (días) para el consumo diario medio: corta y anual.
+  ventana_corta_dias: 90        # HIPÓTESIS
+  ventana_larga_dias: 365       # HIPÓTESIS
+
+sin_movimiento:
+  dias_aviso: 90                # HIPÓTESIS: sin ventas en 90 días = aviso
+  dias_critico: 180             # HIPÓTESIS: sin ventas en 180 días = inmovilizado
+
+cobertura:
+  # Días de venta que se considera razonable tener en stock.
+  objetivo_dias: 45             # HIPÓTESIS (valor general)
+  por_familia:                  # HIPÓTESIS (sobrescriben el general)
+    medicamento_receta: 30
+    otc: 45
+    dermocosmetica: 60
+    nutricion: 60
+    higiene: 45
+    ortopedia: 90
+    solares: 60
+    otros: 45
+
+reposicion:
+  dias_reposicion: 2            # HIPÓTESIS: plazo de entrega de mayorista/cooperativa
+  dias_seguridad: 5             # HIPÓTESIS: colchón de seguridad
+  # "Venta frecuente" = nº mínimo de días con venta dentro de la ventana corta.
+  min_dias_con_venta: 12        # HIPÓTESIS (~1 venta/semana en 90 días)
+
+caducidad:
+  ventanas_dias: [30, 60, 90]   # HIPÓTESIS
+
+laboratorios:
+  meses_analisis: 6             # HIPÓTESIS
+  ratio_compras_ventas_alto: 1.20   # HIPÓTESIS: compras a coste > 120% de ventas a coste
+  compras_minimas_eur: 500      # HIPÓTESIS: ignorar laboratorios con compras pequeñas
+
+abc:
+  corte_a: 0.80                 # HIPÓTESIS: referencias que suman el 80% de ventas
+  corte_b: 0.95                 # HIPÓTESIS: hasta el 95%
+
+acciones:
+  max_principales: 10           # acciones en el cuerpo del informe; el resto, al anexo
+  max_referencias_por_accion: 20  # HIPÓTESIS: "devuelve estas 20 primero"
+  impacto_minimo_eur: 50        # HIPÓTESIS: acciones por debajo no se muestran
+
+privacidad:
+  # Escaneo de contenido además de cabeceras (DNI/NIE, email, teléfono).
+  escanear_contenido: true
+  # Proporción mínima de celdas con forma de teléfono para rechazar una columna.
+  ratio_minimo_telefono: 0.20   # HIPÓTESIS

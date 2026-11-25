@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.venv/
+build/
+dist/
+
+# Informes generados
+output/*
+!output/.gitkeep
+
+# Datos mock: se regeneran con `python -m engine.cli generar-mock`
+data/sample/*
+!data/sample/.gitkeep

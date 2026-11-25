@@ -1,0 +1,51 @@
+# ---------------------------------------------------------------------------
+# Mapeo de columnas — Nixfarma
+#
+# SUPUESTO: nombres de columna no confirmados. Edita los alias con los
+# encabezados reales de la exportación.
+# ---------------------------------------------------------------------------
+programa: nixfarma
+
+lectura:
+  separador: ";"
+  decimal: ","
+  miles: ""
+  encoding: utf-8
+  formato_fecha: "%d/%m/%Y"
+
+ficheros:
+  ventas:
+    fecha: ["FECHA_VENTA", "FECHA"]
+    codigo_nacional: ["COD_NACIONAL", "CODIGO"]
+    descripcion: ["DESCRIPCION", "DENOMINACION"]
+    laboratorio: ["LABORATORIO", "NOMBRE_LAB"]
+    familia: ["FAMILIA", "SUBFAMILIA"]
+    unidades: ["CANTIDAD", "UNIDADES"]
+    importe_venta_sin_iva: ["IMP_NETO", "IMPORTE_SIN_IVA"]
+    coste_unitario: ["PRECIO_COSTE", "PMC"]
+
+  stock:
+    codigo_nacional: ["COD_NACIONAL", "CODIGO"]
+    descripcion: ["DESCRIPCION", "DENOMINACION"]
+    laboratorio: ["LABORATORIO", "NOMBRE_LAB"]
+    familia: ["FAMILIA", "SUBFAMILIA"]
+    stock_unidades: ["STOCK", "EXISTENCIAS"]
+    coste_unitario: ["PRECIO_COSTE", "PMC"]
+    pvp: ["PVP"]
+    fecha_caducidad: ["FECHA_CADUCIDAD", "CADUCIDAD"]
+
+  compras:
+    fecha: ["FECHA_ENTRADA", "FECHA"]
+    codigo_nacional: ["COD_NACIONAL", "CODIGO"]
+    laboratorio: ["LABORATORIO", "NOMBRE_LAB"]
+    unidades: ["CANTIDAD", "UNIDADES"]
+    coste_total: ["IMPORTE_COSTE", "TOTAL_COSTE"]
+
+familias:
+  "Medicamentos con receta": medicamento_receta
+  "Medicamentos sin receta": otc
+  "Dermocosmética": dermocosmetica
+  "Nutrición": nutricion
+  "Higiene": higiene
+  "Ortopedia": ortopedia
+  "Fotoprotección": solares
