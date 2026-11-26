@@ -1,6 +1,8 @@
 "use client";
 
 import { daysBetween, formatDate, formatEur, formatNumber, formatShortDate } from "@/lib/format";
+import { useEffect } from "react";
+import type { ActionStatus } from "@/lib/actionStore";
 import type { Action, Product, Report } from "@/lib/types";
 import { TYPE_LABEL } from "@/lib/types";
 import { TypeBadge, UrgencyBadge } from "./Badge";
@@ -34,16 +36,37 @@ export function ProductDrawer({
   productId,
   action,
   onClose,
+  status,
+  onStatus,
 }: {
   report: Report;
   productId: string | null;
   action?: Action;
   onClose: () => void;
+  status?: ActionStatus;
+  onStatus?: (status: ActionStatus) => void;
 }) {
   const product: Product | undefined = productId ? report.productos[productId] : undefined;
   const ref = report.farmacia.fecha_datos;
   const daysSince = product?.ultima_venta ? daysBetween(product.ultima_venta, ref) : null;
   const daysToExpiry = product?.caducidad ? daysBetween(ref, product.caducidad) : null;
+  const canAct = !!action && !!onStatus && (status === "pendiente" || status === "pospuesta");
+
+  // Atajos dentro de la ficha: H hecho, P posponer, D descartar (cierran la ficha).
+  useEffect(() => {
+    if (!canAct || !onStatus) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const map: Record<string, ActionStatus> = { h: "hecha", p: "pospuesta", d: "descartada" };
+      const next = map[e.key.toLowerCase()];
+      if (!next || (next === "pospuesta" && status === "pospuesta")) return;
+      e.preventDefault();
+      onStatus(next);
+      onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [canAct, onStatus, onClose, status]);
 
   return (
     <Drawer
@@ -155,6 +178,44 @@ export function ProductDrawer({
           ) : (
             <p className="text-sm text-ink-muted">Este producto no tiene acciones esta semana.</p>
           )}
+
+          {canAct ? (
+            <div className="sticky bottom-0 -mx-5 -mb-5 flex gap-2 border-t border-line bg-white px-5 py-3">
+              <button
+                type="button"
+                onClick={() => {
+                  onStatus!("hecha");
+                  onClose();
+                }}
+                className="inline-flex h-9 flex-1 items-center justify-center gap-1.5 rounded-ctl bg-ink text-sm font-medium text-white hover:bg-ink-soft"
+              >
+                Marcar como hecha{" "}
+                <kbd className="border-white/30 bg-transparent text-white/80 shadow-none">H</kbd>
+              </button>
+              {status === "pendiente" ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    onStatus!("pospuesta");
+                    onClose();
+                  }}
+                  className="inline-flex h-9 items-center rounded-ctl border border-line px-3 text-sm text-ink-soft hover:bg-line-soft"
+                >
+                  Posponer
+                </button>
+              ) : null}
+              <button
+                type="button"
+                onClick={() => {
+                  onStatus!("descartada");
+                  onClose();
+                }}
+                className="inline-flex h-9 items-center rounded-ctl border border-line px-3 text-sm text-ink-soft hover:bg-line-soft"
+              >
+                Descartar
+              </button>
+            </div>
+          ) : null}
         </div>
       ) : null}
     </Drawer>

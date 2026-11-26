@@ -45,7 +45,7 @@ importes en euros (2 decimales), sin formato: el formato español lo aplica la w
 | `titulo`, `motivo_1_linea` | Texto por plantilla |
 | `importe_eur` | Ver tabla de tipos |
 | `cantidad_sugerida` | Unidades a devolver / no pedir / pedir / promocionar |
-| `urgencia` | `alta` · `media` · `baja` |
+| `urgencia` | `alta` solo con plazo real (caduca en ≤ 30 días o stock 0 en venta frecuente); `media` / `baja` según importe |
 | `plazo`, `plazo_texto`, `plazo_fecha?` | `hoy` · `esta_semana` · `proximo_pedido` · `antes_de` (+ fecha) |
 | `calculo_explicado` | `pasos[{concepto, valor}]`, `formula`, `resultado`, con los números reales |
 

@@ -19,6 +19,12 @@ export function MiniChart({
   const gap = 1.6;
   const barW = (width - gap * (values.length - 1)) / Math.max(values.length, 1);
   const total = values.reduce((s, v) => s + v, 0);
+  if (total === 0)
+    return (
+      <p className="grid h-24 place-items-center rounded-ctl border border-dashed border-line text-sm text-ink-muted">
+        Sin ventas en las últimas {values.length} semanas
+      </p>
+    );
   return (
     <figure className="m-0">
       <svg

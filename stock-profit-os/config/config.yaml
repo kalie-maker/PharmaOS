@@ -89,7 +89,7 @@ web:
   importe_minimo_eur: 20        # acciones por debajo no entran en la lista del lunes
   semanas_ventas: 12            # semanas de ventas por producto para el gráfico
   semanas_historico: 6          # semanas de histórico de piloto (simulado en el mock)
-  urgencia_alta_eur: 300        # DEVOLVER/BAJAR_PEDIDO con importe >= este valor -> urgencia alta
+  urgencia_media_eur: 300       # DEVOLVER/BAJAR_PEDIDO con importe >= este valor -> urgencia media (si no, baja)
   caducidad_alta_dias: 30       # CADUCA_PRONTO a <= N días -> urgencia alta
 
 privacidad:

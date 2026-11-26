@@ -92,7 +92,7 @@ def _action_devolver(code: str, r: pd.Series, ref: pd.Timestamp, t: Thresholds) 
         "motivo_1_linea": motivo,
         "importe_eur": importe,
         "cantidad_sugerida": int(stock),
-        "urgencia": "alta" if importe >= t.web.high_urgency_eur else "media",
+        "urgencia": "media" if importe >= t.web.high_urgency_eur else "baja",
         "plazo": "esta_semana",
         "plazo_texto": "Esta semana",
         "calculo_explicado": {
@@ -125,7 +125,7 @@ def _action_bajar(code: str, r: pd.Series, ref: pd.Timestamp, t: Thresholds) -> 
         "motivo_1_linea": motivo,
         "importe_eur": importe,
         "cantidad_sugerida": int(excess),
-        "urgencia": "alta" if importe >= t.web.high_urgency_eur else "media",
+        "urgencia": "media" if importe >= t.web.high_urgency_eur else "baja",
         "plazo": "proximo_pedido",
         "plazo_texto": "Próximo pedido",
         "calculo_explicado": {
@@ -187,8 +187,8 @@ def _action_caduca(code: str, r: pd.Series, ref: pd.Timestamp, t: Thresholds) ->
     deadline = max(ref, expiry - pd.Timedelta(days=7))
     when = "ya caducado" if days_left < 0 else f"{spanish_date(expiry)} (en {days_left} días)"
     return {
-        "titulo": f"Promocionar {r['descripcion']} antes de que caduque",
-        "motivo_1_linea": f"Caduca el {spanish_date(expiry)} · {_units(at_risk)} no se venderán a tiempo",
+        "titulo": f"Promocionar {r['descripcion']}",
+        "motivo_1_linea": f"Caduca el {spanish_date(expiry)} · {_units(math.ceil(at_risk))} no se venderán a tiempo",
         "importe_eur": importe,
         "cantidad_sugerida": int(math.ceil(at_risk)),
         "urgencia": "alta" if days_left <= t.web.expiry_high_days else "media",

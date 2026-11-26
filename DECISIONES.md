@@ -45,3 +45,8 @@ Formato: decisión · motivo · cómo revertir.
     infracciones graves en todas las pantallas.
 17. **Rendimiento:** las pantallas cargan `report-core.json` (47 KB: acciones + sus productos) y solo
     /productos pide el catálogo completo (2,5 MB). `npm run gen:mock` genera ambos.
+18. **Urgencia "alta" (rojo) solo con plazo real:** caduca en ≤ 30 días o referencia de venta frecuente
+    con stock 0. Devolver/bajar pedido nunca son "urgentes": media si ≥ 300 € (`web.urgencia_media_eur`), si no baja.
+19. **Corrección:** el commit de la fase 11 se hizo con un error de lint (`console.log` en
+    `web/scripts/split-report.mjs`) que no vi por leer mal la salida. Corregido en la tanda 1 de pulido;
+    desde entonces compruebo el código de salida de `npm run check`.

@@ -34,3 +34,34 @@ describe("ProductDrawer", () => {
     expect(screen.queryByRole("dialog")).toBeNull();
   });
 });
+
+describe("ProductDrawer con acciones", () => {
+  it("permite marcar como hecha desde la ficha (botón y tecla H) y cierra", async () => {
+    const { fireEvent } = await import("@testing-library/react");
+    const calls: string[] = [];
+    let closed = 0;
+    const action = SAMPLE.acciones[0]!;
+    const { unmount } = render(
+      <ProductDrawer
+        report={SAMPLE}
+        productId={action.producto_id}
+        action={action}
+        status="pendiente"
+        onStatus={(s) => calls.push(s)}
+        onClose={() => closed++}
+      />,
+    );
+    fireEvent.click(screen.getByRole("button", { name: /Marcar como hecha/ }));
+    expect(calls).toEqual(["hecha"]);
+    fireEvent.keyDown(window, { key: "p" });
+    expect(calls).toEqual(["hecha", "pospuesta"]);
+    expect(closed).toBe(2);
+    unmount();
+  });
+  it("sin ventas muestra un texto en vez de un gráfico vacío", () => {
+    const report = structuredClone(SAMPLE);
+    report.productos["100001"]!.ventas_semanales_12 = Array(12).fill(0);
+    render(<ProductDrawer report={report} productId="100001" onClose={() => undefined} />);
+    expect(screen.getByText("Sin ventas en las últimas 12 semanas")).toBeTruthy();
+  });
+});

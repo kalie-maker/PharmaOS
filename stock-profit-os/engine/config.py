@@ -178,7 +178,7 @@ def load_thresholds(path: Path | str = DEFAULT_CONFIG_PATH) -> Thresholds:
             min_amount_eur=float(_get(data, "web.importe_minimo_eur")),
             sales_weeks=int(_get(data, "web.semanas_ventas")),
             history_weeks=int(_get(data, "web.semanas_historico")),
-            high_urgency_eur=float(_get(data, "web.urgencia_alta_eur")),
+            high_urgency_eur=float(_get(data, "web.urgencia_media_eur")),
             expiry_high_days=int(_get(data, "web.caducidad_alta_dias")),
         ),
         challenge=ChallengeLimits(

@@ -115,6 +115,8 @@ export function LunesView({ report }: { report: Report }) {
     ));
 
   const allResolved = progress.open === 0;
+  // Estable: el drawer registra listeners con esta función.
+  const closeDrawer = useCallback(() => setOpenId(null), []);
   const filtersActive = type !== "TODAS" || query.trim() !== "";
 
   return (
@@ -288,7 +290,9 @@ export function LunesView({ report }: { report: Report }) {
         report={report}
         productId={openAction?.producto_id ?? null}
         action={openAction}
-        onClose={() => setOpenId(null)}
+        status={openAction ? statusOf(records, openAction.id) : undefined}
+        onStatus={openAction ? (s) => change(openAction, s) : undefined}
+        onClose={closeDrawer}
       />
       <ShortcutsHelp open={helpOpen} onClose={() => setHelpOpen(false)} />
     </div>

@@ -11,6 +11,6 @@ const core = {
   productos: Object.fromEntries(Object.entries(full.productos).filter(([id]) => ids.has(id))),
 };
 writeFileSync(new URL("report-core.json", dir), JSON.stringify(core));
-console.log(
-  `report-core.json: ${Object.keys(core.productos).length} productos (de ${Object.keys(full.productos).length})`,
+process.stdout.write(
+  `report-core.json: ${Object.keys(core.productos).length} productos (de ${Object.keys(full.productos).length})\n`,
 );
