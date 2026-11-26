@@ -15,7 +15,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "gen:config": "python3 ../stock-profit-os/scripts/export_web_config.py",
-    "gen:mock": "cd ../stock-profit-os && python3 -m engine.cli exportar-json --mock --salida ../web/public/mock/report.json",
+    "gen:mock": "cd ../stock-profit-os && python3 -m engine.cli exportar-json --mock --salida ../web/public/mock/report.json && cd ../web && node scripts/split-report.mjs",
     "check": "npm run typecheck && npm run lint && npm run format:check && npm run test"
   },
   "dependencies": {
@@ -27,6 +27,7 @@
     "xlsx": "0.18.5"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.1",
     "@eslint/eslintrc": "3.3.7",
     "@playwright/test": "1.63.0",
     "@testing-library/dom": "10.4.2",

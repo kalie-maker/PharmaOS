@@ -53,7 +53,7 @@ export function Onboarding() {
 
         <div className="grid flex-1 items-center gap-10 py-10 lg:grid-cols-[1.05fr_1fr]">
           <section>
-            <p className="text-sm font-medium text-brand">Copiloto de rentabilidad para farmacias</p>
+            <p className="text-sm font-medium text-brand-text">Copiloto de rentabilidad para farmacias</p>
             <h1 className="mt-3 text-4xl font-semibold leading-[1.1] tracking-tight text-ink sm:text-5xl">
               Tu lista de acciones del lunes, con euros.
             </h1>
@@ -108,7 +108,7 @@ export function Onboarding() {
               <ul className="mt-5 space-y-2">
                 {current.detail.map((d) => (
                   <li key={d} className="flex items-center gap-2 text-sm text-ink">
-                    <Icon name="check" className="text-brand" /> {d}
+                    <Icon name="check" className="text-brand-text" /> {d}
                   </li>
                 ))}
               </ul>
@@ -133,7 +133,7 @@ export function Onboarding() {
             </div>
           </section>
         </div>
-        <footer className="text-xs text-ink-faint">
+        <footer className="text-xs text-ink-muted">
           Versión de demostración con una farmacia ficticia. Ningún dato sale de este navegador.
         </footer>
       </div>

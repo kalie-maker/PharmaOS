@@ -206,7 +206,7 @@ export function AjustesView({ report }: { report: Report }) {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-ctl border border-line p-4">
             <h3 className="flex items-center gap-1.5 text-sm font-semibold text-ink">
-              <Icon name="check" className="text-brand" /> Qué procesamos
+              <Icon name="check" className="text-brand-text" /> Qué procesamos
             </h3>
             <ul className="mt-2 space-y-1.5 text-sm text-ink-soft">
               {PROCESSED.map((p) => (
@@ -216,7 +216,7 @@ export function AjustesView({ report }: { report: Report }) {
           </div>
           <div className="rounded-ctl border border-line p-4">
             <h3 className="flex items-center gap-1.5 text-sm font-semibold text-ink">
-              <Icon name="x" className="text-urgent" /> Qué nunca procesamos
+              <Icon name="x" className="text-urgent-text" /> Qué nunca procesamos
             </h3>
             <ul className="mt-2 space-y-1.5 text-sm text-ink-soft">
               {NEVER.map((p) => (

@@ -21,7 +21,7 @@ function Fact({ label, value, tone }: { label: string; value: string; tone?: "ur
     <div className="rounded-ctl bg-line-soft/60 px-3 py-2.5">
       <dt className="text-2xs font-medium text-ink-muted">{label}</dt>
       <dd
-        className={`mt-0.5 text-sm font-semibold tabular-nums ${tone === "urgent" ? "text-urgent" : tone === "warn" ? "text-warn" : "text-ink"}`}
+        className={`mt-0.5 text-sm font-semibold tabular-nums ${tone === "urgent" ? "text-urgent-text" : tone === "warn" ? "text-warn" : "text-ink"}`}
       >
         {value}
       </dd>

@@ -7,10 +7,11 @@ const config: Config = {
     extend: {
       colors: {
         canvas: "#FAFAF9",
-        ink: { DEFAULT: "#18181B", soft: "#3F3F46", muted: "#71717A", faint: "#A1A1AA" },
+        ink: { DEFAULT: "#18181B", soft: "#3F3F46", muted: "#66666F", faint: "#A1A1AA" },
         line: { DEFAULT: "#E7E5E4", soft: "#F0EFED" },
-        brand: { DEFAULT: "#168C6C", dark: "#0F6E54", soft: "#E8F5F0" },
-        urgent: { DEFAULT: "#DC4A3C", soft: "#FDEDEB" },
+        // `text` = mismo verde oscurecido para texto pequeño (contraste AA); DEFAULT para rellenos y acentos.
+        brand: { DEFAULT: "#168C6C", text: "#0F7458", dark: "#0F6E54", soft: "#E8F5F0" },
+        urgent: { DEFAULT: "#DC4A3C", text: "#B42F22", soft: "#FDEDEB" },
         warn: { DEFAULT: "#B45309", soft: "#FEF5E1" },
       },
       fontFamily: {

@@ -11,7 +11,10 @@ export default defineConfig({
   reporter: [["list"]],
   use: { baseURL: `http://localhost:${PORT}`, trace: "off" },
   projects: [
-    { name: "escritorio", use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 } } },
+    {
+      name: "escritorio",
+      use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2 },
+    },
     { name: "movil", use: { ...devices["Pixel 7"] } },
   ],
   webServer: {

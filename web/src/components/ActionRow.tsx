@@ -63,7 +63,7 @@ export const ActionRow = forwardRef<HTMLLIElement, Props>(function ActionRow(
       </div>
       <div
         className={`col-start-2 row-start-1 text-right text-sm font-semibold tabular-nums sm:col-start-auto sm:row-start-auto ${
-          status === "hecha" ? "text-brand" : resolved ? "text-ink-faint" : "text-ink"
+          status === "hecha" ? "text-brand-text" : resolved ? "text-ink-muted" : "text-ink"
         }`}
       >
         {formatEur(action.importe_eur)}

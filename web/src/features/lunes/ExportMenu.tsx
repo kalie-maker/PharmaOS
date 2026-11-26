@@ -58,6 +58,7 @@ export function ExportMenu({
       <button
         type="button"
         aria-haspopup="menu"
+        aria-label="Exportar e imprimir"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
         className="inline-flex h-9 items-center gap-1.5 rounded-ctl border border-line bg-white px-3 text-sm font-medium text-ink shadow-soft hover:bg-line-soft"

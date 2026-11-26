@@ -20,7 +20,7 @@ export function TypeBadge({ type }: { type: ActionType }) {
 export function UrgencyBadge({ urgency }: { urgency: Urgency }) {
   if (urgency !== "alta") return null;
   return (
-    <span className="whitespace-nowrap rounded-full bg-urgent-soft px-2 py-0.5 text-2xs font-semibold text-urgent">
+    <span className="whitespace-nowrap rounded-full bg-urgent-soft px-2 py-0.5 text-2xs font-semibold text-urgent-text">
       Urgente
     </span>
   );
@@ -37,7 +37,7 @@ export function Badge({
     neutral: "bg-line-soft text-ink-soft",
     brand: "bg-brand-soft text-brand-dark",
     warn: "bg-warn-soft text-warn",
-    urgent: "bg-urgent-soft text-urgent",
+    urgent: "bg-urgent-soft text-urgent-text",
   };
   return (
     <span className={`whitespace-nowrap rounded-full px-2 py-0.5 text-2xs font-semibold ${tones[tone]}`}>

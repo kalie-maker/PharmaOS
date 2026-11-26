@@ -4,7 +4,6 @@ import { useDeferredValue, useMemo, useState } from "react";
 import { TypeBadge } from "@/components/Badge";
 import { DataTable, type Column } from "@/components/DataTable";
 import { Icon } from "@/components/Icon";
-import { PageHeader } from "@/components/PageHeader";
 import { ProductDrawer } from "@/components/ProductDrawer";
 import { formatDate, formatEur, formatNumber } from "@/lib/format";
 import { actionsByProduct, families, filterProducts, type ProductSort } from "@/lib/products";
@@ -82,7 +81,7 @@ export function ProductosView({ report }: { report: Report }) {
       hideOnMobile: true,
       render: (p) =>
         p.dias_cobertura === null ? (
-          <span className="text-ink-faint">sin ventas</span>
+          <span className="text-ink-muted">sin ventas</span>
         ) : (
           `${formatNumber(p.dias_cobertura)} d`
         ),
@@ -99,10 +98,6 @@ export function ProductosView({ report }: { report: Report }) {
 
   return (
     <div>
-      <PageHeader
-        title="Productos"
-        description={`${formatNumber(total)} referencias del programa de gestión. Ordena por capital inmovilizado para ver dónde está el dinero parado.`}
-      />
       <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
         <label className="relative block sm:w-72">
           <span className="sr-only">Buscar productos</span>
@@ -153,7 +148,8 @@ export function ProductosView({ report }: { report: Report }) {
           Solo con acción esta semana
         </label>
         <span className="text-xs text-ink-muted sm:ml-auto" data-testid="productos-resumen">
-          {formatNumber(rows.length)} productos · {formatEur(value)} a coste
+          {formatNumber(rows.length)} productos{rows.length !== total ? ` de ${formatNumber(total)}` : ""} ·{" "}
+          {formatEur(value)} a coste
         </span>
       </div>
       <DataTable

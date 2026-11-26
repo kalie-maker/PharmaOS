@@ -39,3 +39,9 @@ Formato: decisión · motivo · cómo revertir.
     es caja liberada. Conviene decidir si la garantía ×3 se mide sobre caja liberada o sobre margen.
     La semana en curso cuenta lo marcado como hecho como recuperado (se confirmará con la semana siguiente).
     El medidor tiene escala fija ×0–×10 para que la marca ×3 se lea siempre igual.
+16. **Accesibilidad:** el verde y el rojo de marca no llegan a AA en texto pequeño (4,0:1 y 3,6:1). Se
+    mantienen para rellenos y acentos, y el texto usa variantes oscurecidas (`brand-text` #0F7458,
+    `urgent-text` #B42F22). Gris medio ajustado a #66666F. Los e2e pasan axe-core (WCAG 2.1 AA) sin
+    infracciones graves en todas las pantallas.
+17. **Rendimiento:** las pantallas cargan `report-core.json` (47 KB: acciones + sus productos) y solo
+    /productos pide el catálogo completo (2,5 MB). `npm run gen:mock` genera ambos.

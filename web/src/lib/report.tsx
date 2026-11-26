@@ -8,15 +8,46 @@ export interface ReportSource {
   load(): Promise<Report>;
 }
 
-export const mockReportSource: ReportSource = {
-  async load() {
-    const res = await fetch("/mock/report.json", { cache: "force-cache" });
-    if (!res.ok) throw new Error(`No se pudo cargar el informe (${res.status})`);
-    const data = (await res.json()) as Report;
-    if (data.version !== 1) throw new Error("Versión de informe no compatible");
-    return data;
-  },
+async function fetchReport(url: string): Promise<Report> {
+  const res = await fetch(url, { cache: "force-cache" });
+  if (!res.ok) throw new Error(`No se pudo cargar el informe (${res.status})`);
+  const data = (await res.json()) as Report;
+  if (data.version !== 1) throw new Error("Versión de informe no compatible");
+  return data;
+}
+
+/** Núcleo ligero (acciones + sus productos) para todas las pantallas; catálogo completo bajo demanda. */
+export const mockReportSource: ReportSource & { loadFull(): Promise<Report> } = {
+  load: () => fetchReport("/mock/report-core.json"),
+  loadFull: () => fetchReport("/mock/report.json"),
 };
+
+let fullCache: Promise<Report> | null = null;
+
+/** Catálogo completo de productos (8.000 referencias). Solo lo pide /productos. */
+export function useFullReport():
+  { status: "loading" } | { status: "ready"; report: Report } | { status: "error"; message: string } {
+  const [state, setState] = useState<
+    { status: "loading" } | { status: "ready"; report: Report } | { status: "error"; message: string }
+  >({
+    status: "loading",
+  });
+  useEffect(() => {
+    let alive = true;
+    fullCache ??= mockReportSource.loadFull();
+    fullCache
+      .then((report) => alive && setState({ status: "ready", report }))
+      .catch((e: unknown) => {
+        fullCache = null;
+        if (alive)
+          setState({ status: "error", message: e instanceof Error ? e.message : "Error desconocido" });
+      });
+    return () => {
+      alive = false;
+    };
+  }, []);
+  return state;
+}
 
 type State =
   { status: "loading" } | { status: "ready"; report: Report } | { status: "error"; message: string };

@@ -145,7 +145,7 @@ export function LunesView({ report }: { report: Report }) {
           </div>
           <div className="sm:text-right">
             <div className="text-xs text-ink-muted">Ya recuperado</div>
-            <div className="text-xl font-semibold tabular-nums text-brand" data-testid="recuperado">
+            <div className="text-xl font-semibold tabular-nums text-brand-text" data-testid="recuperado">
               {formatEur(progress.recovered)}
             </div>
           </div>
@@ -203,7 +203,7 @@ export function LunesView({ report }: { report: Report }) {
               }`}
             >
               {t === "TODAS" ? "Todas" : TYPE_LABEL[t]}
-              <span className={`tabular-nums ${type === t ? "text-white/70" : "text-ink-faint"}`}>
+              <span className={`tabular-nums ${type === t ? "text-white/80" : "text-ink-muted"}`}>
                 {counts[t]}
               </span>
             </button>

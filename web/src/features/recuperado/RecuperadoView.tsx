@@ -16,7 +16,7 @@ function Big({ label, value, hint, tone }: { label: string; value: string; hint:
     <div className="min-w-0 py-1 sm:px-6 sm:first:pl-0">
       <div className="text-xs font-medium text-ink-muted">{label}</div>
       <div
-        className={`mt-1 text-3xl font-semibold tabular-nums tracking-tight sm:text-4xl ${tone === "brand" ? "text-brand" : "text-ink"}`}
+        className={`mt-1 text-3xl font-semibold tabular-nums tracking-tight sm:text-4xl ${tone === "brand" ? "text-brand-text" : "text-ink"}`}
       >
         {value}
       </div>
@@ -130,7 +130,12 @@ export function RecuperadoView({ report }: { report: Report }) {
           <h2 className="text-sm font-semibold text-ink">Acciones ejecutadas esta semana</h2>
         </div>
         {executed.length ? (
-          <div className="overflow-x-auto">
+          <div
+            className="overflow-x-auto"
+            tabIndex={0}
+            role="region"
+            aria-label="Acciones ejecutadas esta semana"
+          >
             <table className="w-full text-sm" data-testid="tabla-ejecutadas">
               <thead className="text-left text-2xs uppercase tracking-wide text-ink-muted">
                 <tr className="border-b border-line">
@@ -158,7 +163,7 @@ export function RecuperadoView({ report }: { report: Report }) {
                     <td className="hidden px-2 py-2.5 sm:table-cell">
                       <TypeBadge type={action.tipo} />
                     </td>
-                    <td className="whitespace-nowrap px-5 py-2.5 text-right font-semibold tabular-nums text-brand">
+                    <td className="whitespace-nowrap px-5 py-2.5 text-right font-semibold tabular-nums text-brand-text">
                       {formatEur(action.importe_eur, 2)}
                     </td>
                   </tr>
@@ -182,7 +187,7 @@ export function RecuperadoView({ report }: { report: Report }) {
         <div className="border-b border-line px-5 py-4">
           <h2 className="text-sm font-semibold text-ink">Semanas anteriores</h2>
         </div>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Semanas anteriores">
           <table className="w-full text-sm">
             <thead className="text-left text-2xs uppercase tracking-wide text-ink-muted">
               <tr className="border-b border-line">
@@ -214,7 +219,7 @@ export function RecuperadoView({ report }: { report: Report }) {
                       ({w.acciones_ejecutadas}/{w.acciones_encontradas})
                     </span>
                   </td>
-                  <td className="px-5 py-2.5 text-right font-semibold tabular-nums text-brand">
+                  <td className="px-5 py-2.5 text-right font-semibold tabular-nums text-brand-text">
                     {formatEur(w.recuperado_eur)}
                   </td>
                 </tr>

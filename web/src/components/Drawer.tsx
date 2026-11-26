@@ -68,7 +68,9 @@ export function Drawer({
             <Icon name="x" />
           </button>
         </div>
-        <div className="flex-1 overflow-y-auto px-5 py-5">{children}</div>
+        <div className="flex-1 overflow-y-auto px-5 py-5" tabIndex={0}>
+          {children}
+        </div>
       </div>
     </div>
   );

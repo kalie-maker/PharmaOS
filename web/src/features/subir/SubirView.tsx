@@ -49,7 +49,7 @@ function FileCard({ a, onRemove }: { a: FileAnalysis; onRemove: () => void }) {
           className="m-5 rounded-ctl border border-urgent/30 bg-urgent-soft px-4 py-3.5 text-sm"
           data-testid="bloqueo-privacidad"
         >
-          <div className="flex items-center gap-2 font-semibold text-urgent">
+          <div className="flex items-center gap-2 font-semibold text-urgent-text">
             <Icon name="shield" /> Fichero bloqueado: contiene datos personales
           </div>
           <ul className="mt-2 space-y-1 text-ink">
@@ -106,7 +106,7 @@ function FileCard({ a, onRemove }: { a: FileAnalysis; onRemove: () => void }) {
               {detection.matches.map((m) => (
                 <div key={m.canonical} className="flex justify-between gap-3 border-b border-line-soft py-1">
                   <dt className="text-ink-muted">{m.canonical}</dt>
-                  <dd className={m.column ? "text-ink" : m.required ? "text-warn" : "text-ink-faint"}>
+                  <dd className={m.column ? "text-ink" : m.required ? "text-warn" : "text-ink-muted"}>
                     {m.column ?? (m.required ? "falta" : "—")}
                   </dd>
                 </div>
@@ -117,7 +117,12 @@ function FileCard({ a, onRemove }: { a: FileAnalysis; onRemove: () => void }) {
             <div className="mb-1.5 text-xs text-ink-muted">
               Primeras {Math.min(PREVIEW_ROWS, file.rows.length)} filas
             </div>
-            <div className="max-h-80 overflow-auto rounded-ctl border border-line">
+            <div
+              className="max-h-80 overflow-auto rounded-ctl border border-line"
+              tabIndex={0}
+              role="region"
+              aria-label={`Vista previa de ${file.name}`}
+            >
               <table className="w-full border-collapse text-xs" data-testid="vista-previa">
                 <thead className="sticky top-0 bg-line-soft">
                   <tr>
@@ -254,7 +259,7 @@ export function SubirView() {
       </div>
 
       <div className="mt-4 flex items-start gap-2 rounded-ctl bg-line-soft/70 px-4 py-3 text-xs text-ink-soft">
-        <Icon name="shield" className="mt-0.5 shrink-0 text-brand" />
+        <Icon name="shield" className="mt-0.5 shrink-0 text-brand-text" />
         <span>
           Antes de nada revisamos la privacidad: si un fichero trae nombres de pacientes, DNI, CIP o tarjeta
           sanitaria, nº de receta, teléfono, email o dirección, se bloquea y no se muestra.

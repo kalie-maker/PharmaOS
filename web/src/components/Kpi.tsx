@@ -18,7 +18,7 @@ export function Kpi({
       <div className="text-xs font-medium text-ink-muted">{label}</div>
       <div
         className={`mt-1 font-semibold tabular-nums tracking-tight ${size === "lg" ? "text-3xl sm:text-4xl" : "text-2xl"} ${
-          tone === "brand" ? "text-brand" : "text-ink"
+          tone === "brand" ? "text-brand-text" : "text-ink"
         }`}
       >
         {value}
