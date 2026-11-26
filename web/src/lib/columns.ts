@@ -2,7 +2,7 @@
 import { ENGINE_CONFIG } from "@/generated/engineConfig";
 
 export type Dataset = keyof typeof ENGINE_CONFIG.schemas; // "ventas" | "stock" | "compras"
-export const DATASETS = Object.keys(ENGINE_CONFIG.schemas) as Dataset[];
+export const DATASETS: Dataset[] = ["ventas", "stock", "compras"];
 export const DATASET_LABEL: Record<Dataset, string> = {
   ventas: "Ventas",
   stock: "Stock",
