@@ -121,7 +121,7 @@ export function LunesView({ report }: { report: Report }) {
 
   return (
     <div>
-      <header className="mb-6">
+      <header className="mb-5 sm:mb-6">
         <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-ink-muted">
           <span>
             Semana {weekNumber(report.farmacia.semana)} · datos hasta{" "}
@@ -135,24 +135,27 @@ export function LunesView({ report }: { report: Report }) {
             <Icon name="keyboard" size={14} /> Atajos <kbd>?</kbd>
           </button>
         </div>
-        <div className="mt-3 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mt-2 flex flex-row items-end justify-between gap-4 sm:mt-3">
           <div>
             <h1 className="text-sm font-medium text-ink-soft">Recuperable esta semana</h1>
             <p
-              className="mt-1 text-4xl font-semibold tabular-nums tracking-tight text-ink sm:text-5xl"
+              className="mt-1 text-[34px] font-semibold tabular-nums leading-none tracking-tight text-ink sm:text-5xl"
               data-testid="recuperable"
             >
               {formatEur(progress.recoverable)}
             </p>
           </div>
-          <div className="sm:text-right">
+          <div className="text-right">
             <div className="text-xs text-ink-muted">Ya recuperado</div>
-            <div className="text-xl font-semibold tabular-nums text-brand-text" data-testid="recuperado">
+            <div
+              className="text-lg font-semibold tabular-nums text-brand-text sm:text-xl"
+              data-testid="recuperado"
+            >
               {formatEur(progress.recovered)}
             </div>
           </div>
         </div>
-        <div className="mt-4">
+        <div className="mt-3 sm:mt-4">
           <ProgressBar value={progress.done} max={progress.total} label="Acciones hechas esta semana" />
           <div className="mt-1.5 flex justify-between text-xs text-ink-muted">
             <span data-testid="progreso">

@@ -157,7 +157,8 @@ export function RecuperadoView({ report }: { report: Report }) {
                 {executed.map(({ action, at }) => (
                   <tr key={action.id} className="border-b border-line-soft last:border-0">
                     <td className="whitespace-nowrap px-5 py-2.5 tabular-nums text-ink-muted">
-                      {formatDate(at)}
+                      <span className="sm:hidden">{formatDate(at).slice(0, 5)}</span>
+                      <span className="hidden sm:inline">{formatDate(at)}</span>
                     </td>
                     <td className="px-2 py-2.5 text-ink">{action.titulo}</td>
                     <td className="hidden px-2 py-2.5 sm:table-cell">
@@ -194,7 +195,7 @@ export function RecuperadoView({ report }: { report: Report }) {
                 <th scope="col" className="px-5 py-2 font-semibold">
                   Semana
                 </th>
-                <th scope="col" className="px-2 py-2 text-right font-semibold">
+                <th scope="col" className="hidden px-2 py-2 text-right font-semibold sm:table-cell">
                   Encontrado
                 </th>
                 <th scope="col" className="px-2 py-2 text-right font-semibold">
@@ -209,14 +210,18 @@ export function RecuperadoView({ report }: { report: Report }) {
               {report.historico_semanas.map((w) => (
                 <tr key={w.semana} className="border-b border-line-soft last:border-0">
                   <td className="px-5 py-2.5 text-ink">
-                    Semana {weekNumber(w.semana)}{" "}
-                    <span className="text-ink-muted">· {formatDate(w.fecha_inicio)}</span>
+                    <span className="whitespace-nowrap">Semana {weekNumber(w.semana)}</span>
+                    <span className="block text-xs text-ink-muted sm:ml-1 sm:inline">
+                      {formatDate(w.fecha_inicio)}
+                    </span>
                   </td>
-                  <td className="px-2 py-2.5 text-right tabular-nums">{formatEur(w.encontrado_eur)}</td>
+                  <td className="hidden px-2 py-2.5 text-right tabular-nums sm:table-cell">
+                    {formatEur(w.encontrado_eur)}
+                  </td>
                   <td className="px-2 py-2.5 text-right tabular-nums">
-                    {formatEur(w.ejecutado_eur)}{" "}
-                    <span className="text-2xs text-ink-muted">
-                      ({w.acciones_ejecutadas}/{w.acciones_encontradas})
+                    <span className="whitespace-nowrap">{formatEur(w.ejecutado_eur)}</span>
+                    <span className="block text-2xs text-ink-muted sm:ml-1 sm:inline">
+                      {w.acciones_ejecutadas} de {w.acciones_encontradas} acciones
                     </span>
                   </td>
                   <td className="px-5 py-2.5 text-right font-semibold tabular-nums text-brand-text">
