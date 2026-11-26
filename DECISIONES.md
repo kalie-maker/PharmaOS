@@ -34,3 +34,8 @@ Formato: decisión · motivo · cómo revertir.
     elige en su navegador. Se carga bajo demanda (import dinámico). Ver PENDIENTE.md.
 14. **/subir simula el análisis:** valida y previsualiza en el navegador y, al pulsar Analizar, carga la
     farmacia de demostración (lo dice en pantalla y en un aviso).
+15. **"Recuperado" = capital liberado + ventas salvadas** (suma de importes de acciones hechas). Con los
+    rangos del mock (≈2.500 €/semana frente a 149 €/mes) el múltiplo sale muy alto (×70+). No es beneficio:
+    es caja liberada. Conviene decidir si la garantía ×3 se mide sobre caja liberada o sobre margen.
+    La semana en curso cuenta lo marcado como hecho como recuperado (se confirmará con la semana siguiente).
+    El medidor tiene escala fija ×0–×10 para que la marca ×3 se lea siempre igual.
