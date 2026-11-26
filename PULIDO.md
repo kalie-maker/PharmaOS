@@ -24,6 +24,6 @@ Ordenado de más a menos grave. ✅ = arreglado.
 9. ✅ **Fechas largas en la tabla de ejecutadas** en móvil: "26/11" en vez de "26/11/2026".
 
 ## Pendiente de pulido (no bloqueante)
-- En móvil, los filtros por tipo se desplazan en horizontal: no hay indicador visual de que hay más.
+- ✅ (tanda 3) En móvil, los filtros por tipo se desplazan en horizontal: ahora se difuminan a la derecha para indicar que hay más.
 - La ficha en móvil es una hoja inferior: con el teclado del móvil abierto en la búsqueda, tapa media pantalla.
 - La impresión A4 no se ha probado en una impresora física (solo vista previa del navegador).

@@ -193,7 +193,7 @@ export function LunesView({ report }: { report: Report }) {
         <div
           role="group"
           aria-label="Filtrar por tipo"
-          className="-mx-1 flex gap-1 overflow-x-auto px-1 pb-1 lg:pb-0"
+          className="-mx-1 flex gap-1 overflow-x-auto px-1 pb-1 [mask-image:linear-gradient(to_right,black_85%,transparent)] lg:pb-0 lg:[mask-image:none]"
         >
           {(["TODAS", ...ACTION_TYPES] as TypeFilter[]).map((t) => (
             <button

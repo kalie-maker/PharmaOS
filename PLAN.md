@@ -14,5 +14,5 @@ Motor Python en `stock-profit-os/` · Web en `web/` · Contrato de datos: `out/r
 - [x] Fase 9 — /ajustes (farmacia, coste, mapeo solo lectura, privacidad, reiniciar demo)
 - [x] Fase 10 — Modo demo (onboarding 3 pasos, /demo, DEMO.md)
 - [x] Fase 11 — Calidad (Vitest, Playwright desktop+móvil, virtualización, Lighthouse, a11y, capturas)
-- [ ] Fase 12 — Pulido (PULIDO.md, tandas)
-- [ ] Entrega — REPORTE_NOCHE.md
+- [x] Fase 12 — Pulido (PULIDO.md, tandas)
+- [x] Entrega — REPORTE_NOCHE.md
