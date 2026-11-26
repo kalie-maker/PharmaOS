@@ -26,3 +26,11 @@ Formato: decisión · motivo · cómo revertir.
 10. **Sin librerías de UI ni de gráficos:** componentes propios; tabla virtualizada y MiniChart SVG propios.
 11. **Datos en cliente:** `ReportProvider` carga `/mock/report.json` detrás de la interfaz `ReportSource`
     (mañana: API local del motor o Supabase).
+12. **Mapeos y privacidad en TS generados** por `stock-profit-os/scripts/export_web_config.py` →
+    `web/src/generated/engineConfig.ts` (`npm run gen:config`). Un test de pytest falla si el fichero no
+    está al día y otro de Vitest repite los casos de privacidad del motor.
+13. **SheetJS `xlsx@0.18.5` de npm** (la última publicada allí; las nuevas solo están en su CDN). Tiene
+    avisos de seguridad conocidos para ficheros maliciosos; aquí solo lee ficheros que el propio usuario
+    elige en su navegador. Se carga bajo demanda (import dinámico). Ver PENDIENTE.md.
+14. **/subir simula el análisis:** valida y previsualiza en el navegador y, al pulsar Analizar, carga la
+    farmacia de demostración (lo dice en pantalla y en un aviso).
