@@ -43,7 +43,7 @@ export function Drawer({
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-40">
-      <div className="absolute inset-0 bg-ink/20 backdrop-blur-[1px]" onClick={onClose} aria-hidden="true" />
+      <div className="absolute inset-0 bg-ink/25" onClick={onClose} aria-hidden="true" />
       <div
         ref={panel}
         role="dialog"

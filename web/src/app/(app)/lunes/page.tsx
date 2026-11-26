@@ -1,5 +1,8 @@
-import { PageHeader } from "@/components/PageHeader";
+import type { Metadata } from "next";
+import { LunesScreen } from "@/features/lunes/LunesScreen";
+
+export const metadata: Metadata = { title: "Lista del lunes" };
 
 export default function LunesPage() {
-  return <PageHeader title="Lista del lunes" description="En construcción" />;
+  return <LunesScreen />;
 }
