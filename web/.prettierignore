@@ -1,0 +1,6 @@
+.next
+node_modules
+public/mock
+src/generated
+playwright-report
+test-results
