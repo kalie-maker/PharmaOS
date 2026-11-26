@@ -1,9 +1,18 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import type { ActionRecords, ActionStatus, ActionStore } from "./actionStore";
 import { createLocalStorageActionStore, statusOf, withStatus } from "./actionStore";
-import { useReportState } from "./report";
+import { useReportControls, useReportState } from "./report";
 import { DEFAULT_SETTINGS, loadSettings, saveSettings, type Settings } from "./settings";
 import { STORAGE_PREFIX, removeKeys } from "./storage";
 
@@ -21,9 +30,16 @@ const Ctx = createContext<AppState | null>(null);
 
 export function AppStateProvider({ children, store }: { children: ReactNode; store?: ActionStore }) {
   const reportState = useReportState();
-  const week = reportState.status === "ready" ? reportState.report.farmacia.semana : null;
-  const actionStore = useMemo(() => store ?? createLocalStorageActionStore(), [store]);
+  const { reload } = useReportControls();
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
+  // Las acciones se guardan por origen y semana: marcar algo en la demo no afecta al análisis real.
+  const week =
+    reportState.status === "ready"
+      ? `${settings.source === "motor" ? "motor" : "demo"}:${reportState.report.farmacia.semana}`
+      : null;
+  const actionStore = useMemo(() => store ?? createLocalStorageActionStore(), [store]);
+  const settingsRef = useRef(settings);
+  settingsRef.current = settings;
   const [records, setRecords] = useState<ActionRecords>({});
   const [hydrated, setHydrated] = useState(false);
 
@@ -36,13 +52,16 @@ export function AppStateProvider({ children, store }: { children: ReactNode; sto
     if (week) setRecords(actionStore.load(week));
   }, [week, actionStore]);
 
-  const updateSettings = useCallback((patch: Partial<Settings>) => {
-    setSettings((prev) => {
+  const updateSettings = useCallback(
+    (patch: Partial<Settings>) => {
+      const prev = settingsRef.current;
       const next = { ...prev, ...patch };
       saveSettings(next);
-      return next;
-    });
-  }, []);
+      setSettings(next);
+      if (patch.source !== undefined && (patch.source === "motor") !== (prev.source === "motor")) reload();
+    },
+    [reload],
+  );
 
   const setStatus = useCallback(
     (id: string, status: ActionStatus): ActionStatus => {
@@ -57,10 +76,13 @@ export function AppStateProvider({ children, store }: { children: ReactNode; sto
 
   const resetDemo = useCallback(() => {
     actionStore.clear();
+    const wasEngine = settingsRef.current.source === "motor";
     removeKeys(STORAGE_PREFIX);
     setRecords({});
+    settingsRef.current = DEFAULT_SETTINGS; // un updateSettings justo después parte de cero
     setSettings(DEFAULT_SETTINGS);
-  }, [actionStore]);
+    if (wasEngine) reload();
+  }, [actionStore, reload]);
 
   const value = useMemo(
     () => ({ hydrated, settings, updateSettings, records, setStatus, resetDemo }),

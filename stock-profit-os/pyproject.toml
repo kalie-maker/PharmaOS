@@ -15,7 +15,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "jsonschema>=4"]  # jsonschema: valida el contrato report.json en tests
+# api: servidor local para la web (FastAPI + uvicorn; python-multipart para subir ficheros).
+api = ["fastapi>=0.115", "uvicorn>=0.30", "python-multipart>=0.0.9"]
+# jsonschema: valida el contrato report.json; httpx: cliente de tests de la API.
+dev = ["pytest>=8", "jsonschema>=4", "httpx>=0.27"]
 
 [project.scripts]
 stock-profit-os = "engine.cli:main"

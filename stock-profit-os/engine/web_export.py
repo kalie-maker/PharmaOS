@@ -351,3 +351,9 @@ def build_report(
         "historico_simulado": True,
         "historico_semanas": simulated_history(recoverable, len(actions), ref, t.web.history_weeks),
     }
+
+
+def core_report(report: dict[str, Any]) -> dict[str, Any]:
+    """Núcleo ligero del informe: igual, pero solo con los productos que tienen acción."""
+    ids = {a["producto_id"] for a in report["acciones"]}
+    return {**report, "productos": {k: v for k, v in report["productos"].items() if k in ids}}

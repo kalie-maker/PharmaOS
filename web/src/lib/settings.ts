@@ -4,7 +4,7 @@ export interface Settings {
   pharmacyName: string | null; // null = la del informe
   monthlyCost: number;
   onboarded: boolean;
-  source: "demo" | "subido" | null;
+  source: "demo" | "subido" | "motor" | null; // subido = análisis simulado; motor = análisis real (API local)
 }
 
 export const DEFAULT_SETTINGS: Settings = {

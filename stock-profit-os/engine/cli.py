@@ -302,6 +302,17 @@ def _cmd_export_json(args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
+def _cmd_serve(args: argparse.Namespace) -> int:
+    try:
+        import uvicorn
+    except ImportError:
+        _err('Falta la API: instala con `pip install -e ".[api]"`')
+        return EXIT_INPUT_ERROR
+    print(f"Motor local en http://{args.host}:{args.puerto} (documentación en /docs). Ctrl+C para parar.")
+    uvicorn.run("engine.api:app", host=args.host, port=args.puerto, log_level="warning")
+    return EXIT_OK
+
+
 # ---------------------------------------------------------------------------
 # Parser
 # ---------------------------------------------------------------------------
@@ -388,6 +399,11 @@ def build_parser() -> argparse.ArgumentParser:
     export.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH)
     export.add_argument("--mapeos", type=Path, default=DEFAULT_MAPPINGS_DIR)
     export.set_defaults(func=_cmd_export_json)
+
+    serve = sub.add_parser("servir", help="Arranca la API local del motor para la web")
+    serve.add_argument("--puerto", type=int, default=8000)
+    serve.add_argument("--host", default="127.0.0.1", help="Por defecto solo accesible desde este ordenador")
+    serve.set_defaults(func=_cmd_serve)
 
     challenge = sub.add_parser("reto-chat", help="Genera un reto para comparar un chat genérico con PharmaOS")
     challenge.add_argument("--salida", required=True, type=Path)

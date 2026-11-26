@@ -1,14 +1,18 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
+import { fetchEngineReport } from "./engineApi";
+import { loadSettings } from "./settings";
 import type { Report } from "./types";
 
-/** Origen de los datos. Hoy: mock estático. Mañana: API local del motor o Supabase. */
+/** Origen de los datos: mock estático (demo) o API local del motor. Mañana: Supabase. */
 export interface ReportSource {
-  load(): Promise<Report>;
+  id: "demo" | "motor";
+  load(): Promise<Report>; // núcleo ligero: acciones + sus productos
+  loadFull(): Promise<Report>; // catálogo completo (solo /productos)
 }
 
-async function fetchReport(url: string): Promise<Report> {
+async function fetchMock(url: string): Promise<Report> {
   const res = await fetch(url, { cache: "force-cache" });
   if (!res.ok) throw new Error(`No se pudo cargar el informe (${res.status})`);
   const data = (await res.json()) as Report;
@@ -16,71 +20,101 @@ async function fetchReport(url: string): Promise<Report> {
   return data;
 }
 
-/** Núcleo ligero (acciones + sus productos) para todas las pantallas; catálogo completo bajo demanda. */
-export const mockReportSource: ReportSource & { loadFull(): Promise<Report> } = {
-  load: () => fetchReport("/mock/report-core.json"),
-  loadFull: () => fetchReport("/mock/report.json"),
+export const mockReportSource: ReportSource = {
+  id: "demo",
+  load: () => fetchMock("/mock/report-core.json"),
+  loadFull: () => fetchMock("/mock/report.json"),
 };
 
-let fullCache: Promise<Report> | null = null;
+export const engineReportSource: ReportSource = {
+  id: "motor",
+  load: () => fetchEngineReport(true),
+  loadFull: () => fetchEngineReport(false),
+};
 
-/** Catálogo completo de productos (8.000 referencias). Solo lo pide /productos. */
-export function useFullReport():
-  { status: "loading" } | { status: "ready"; report: Report } | { status: "error"; message: string } {
-  const [state, setState] = useState<
-    { status: "loading" } | { status: "ready"; report: Report } | { status: "error"; message: string }
-  >({
-    status: "loading",
-  });
-  useEffect(() => {
-    let alive = true;
-    fullCache ??= mockReportSource.loadFull();
-    fullCache
-      .then((report) => alive && setState({ status: "ready", report }))
-      .catch((e: unknown) => {
-        fullCache = null;
-        if (alive)
-          setState({ status: "error", message: e instanceof Error ? e.message : "Error desconocido" });
-      });
-    return () => {
-      alive = false;
-    };
-  }, []);
-  return state;
+/** El origen activo sale de los ajustes guardados (`source: "motor"` tras un análisis real). */
+export function activeSource(): ReportSource {
+  return loadSettings().source === "motor" ? engineReportSource : mockReportSource;
 }
 
 type State =
   { status: "loading" } | { status: "ready"; report: Report } | { status: "error"; message: string };
 
-const ReportContext = createContext<State>({ status: "loading" });
+interface Ctx {
+  state: State;
+  sourceId: ReportSource["id"];
+  reload: () => void;
+}
 
-let cache: Promise<Report> | null = null;
+const ReportContext = createContext<Ctx>({
+  state: { status: "loading" },
+  sourceId: "demo",
+  reload: () => undefined,
+});
 
-export function ReportProvider({
-  children,
-  source = mockReportSource,
-}: {
-  children: ReactNode;
-  source?: ReportSource;
-}) {
+const cache = new Map<string, Promise<Report>>();
+function cached(key: string, load: () => Promise<Report>): Promise<Report> {
+  let p = cache.get(key);
+  if (!p) {
+    p = load().catch((e: unknown) => {
+      cache.delete(key);
+      throw e;
+    });
+    cache.set(key, p);
+  }
+  return p;
+}
+
+const message = (e: unknown) => (e instanceof Error ? e.message : "Error desconocido");
+
+export function ReportProvider({ children, source }: { children: ReactNode; source?: ReportSource }) {
   const [state, setState] = useState<State>({ status: "loading" });
+  const [version, setVersion] = useState(0);
+  const [sourceId, setSourceId] = useState<ReportSource["id"]>("demo");
+
   useEffect(() => {
     let alive = true;
-    cache ??= source.load();
-    cache
+    const src = source ?? activeSource();
+    setSourceId(src.id);
+    setState({ status: "loading" });
+    cached(`${src.id}:core:${version}`, src.load)
       .then((report) => alive && setState({ status: "ready", report }))
-      .catch((e: unknown) => {
-        cache = null;
-        if (alive)
-          setState({ status: "error", message: e instanceof Error ? e.message : "Error desconocido" });
-      });
+      .catch((e: unknown) => alive && setState({ status: "error", message: message(e) }));
     return () => {
       alive = false;
     };
-  }, [source]);
-  return <ReportContext.Provider value={state}>{children}</ReportContext.Provider>;
+  }, [source, version]);
+
+  const reload = useCallback(() => {
+    cache.clear();
+    setVersion((v) => v + 1);
+  }, []);
+
+  return <ReportContext.Provider value={{ state, sourceId, reload }}>{children}</ReportContext.Provider>;
 }
 
 export function useReportState(): State {
-  return useContext(ReportContext);
+  return useContext(ReportContext).state;
+}
+
+export function useReportControls(): { sourceId: ReportSource["id"]; reload: () => void } {
+  const { sourceId, reload } = useContext(ReportContext);
+  return { sourceId, reload };
+}
+
+/** Catálogo completo de productos del origen activo. Solo lo pide /productos. */
+export function useFullReport(): State {
+  const { sourceId } = useContext(ReportContext);
+  const [state, setState] = useState<State>({ status: "loading" });
+  useEffect(() => {
+    let alive = true;
+    const src = sourceId === "motor" ? engineReportSource : mockReportSource;
+    cached(`${src.id}:full`, src.loadFull)
+      .then((report) => alive && setState({ status: "ready", report }))
+      .catch((e: unknown) => alive && setState({ status: "error", message: message(e) }));
+    return () => {
+      alive = false;
+    };
+  }, [sourceId]);
+  return state;
 }

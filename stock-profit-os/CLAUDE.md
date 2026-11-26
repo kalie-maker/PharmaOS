@@ -21,11 +21,11 @@ y genera un informe semanal con 5–10 acciones priorizadas por impacto en €.
 - `entradas/`, `data/demo/`, `retos/` y `config/mappings/farmacia_*.yaml` están en .gitignore. Nunca subir datos de farmacias.
 
 ## No hacer
-- API, base de datos o autenticación. La web (`../web`, Next.js) solo consume `report.json`
-  generado por `exportar-json` (contrato en `docs/report-schema.md`); no recalcula cifras.
+- Base de datos o autenticación. La web (`../web`, Next.js) solo consume `report.json` (contrato en
+  `docs/report-schema.md`), del mock o de la API local (`engine/api.py`); no recalcula cifras.
 - Llamadas a modelos de IA o APIs externas.
 - Cifras de mercado inventadas en el informe: solo resultados calculados.
-- Dependencias nuevas sin justificar (actuales: pandas, pyyaml, jinja2, openpyxl; dev: pytest, jsonschema).
+- Dependencias nuevas sin justificar (actuales: pandas, pyyaml, jinja2, openpyxl; api: fastapi, uvicorn, python-multipart; dev: pytest, jsonschema, httpx).
 
 ## Comandos
 - Tests: `pytest`
@@ -34,6 +34,7 @@ y genera un informe semanal con 5–10 acciones priorizadas por impacto en €.
 - Piloto (todo en uno): `python -m engine.cli piloto --carpeta entradas/farmacia_1 --programa farmatic --nombre "Farmacia X"`
 - Demo: `python -m engine.cli generar-mock --escenario semana3 --salida data/demo`
 - Reto: `python -m engine.cli reto-chat --salida retos/reto_01` y `puntuar-reto --reto retos/reto_01 --respuesta <yaml>`
+- API local para la web: `python -m engine.cli servir` (http://localhost:8000/docs)
 - Contrato web: `python -m engine.cli exportar-json --mock --salida ../web/public/mock/report.json`
 - Comparación: `python -m engine.cli comparar --antes output/semana0.json --despues output/semana3.json`
 - Análisis: `python -m engine.cli analizar --programa farmatic --ventas data/sample/ventas.csv --stock data/sample/stock.csv --compras data/sample/compras.csv --farmacia "Farmacia Demo" --salida output/`
@@ -57,5 +58,6 @@ y genera un informe semanal con 5–10 acciones priorizadas por impacto en €.
 - `engine/templates/_styles.css.j2` — estilos compartidos por todos los HTML.
 - `docs/piloto/` — guía de exportación, plantilla de acuerdo y checklist.
 - `engine/web_export.py` + `docs/report-schema.{md,json}` — contrato `report.json` para la web.
+- `engine/api.py` — API local (FastAPI): `/analizar`, `/informe`, `/salud`, `/programas`.
 - `engine/pipeline.py` — orquestación ingesta -> calidad -> métricas -> acciones -> resultados.
 - `engine/mock/generate.py` — farmacia ficticia reproducible (semilla fija).

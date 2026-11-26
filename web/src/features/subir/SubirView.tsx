@@ -1,14 +1,15 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Button } from "@/components/Button";
 import { Icon } from "@/components/Icon";
 import { Card, PageHeader } from "@/components/PageHeader";
 import { useToast } from "@/components/Toast";
 import { useAppState } from "@/lib/appState";
-import { DATASET_LABEL } from "@/lib/columns";
-import { formatDate, formatNumber } from "@/lib/format";
+import { DATASETS, DATASET_LABEL, type Dataset } from "@/lib/columns";
+import { analyzeFiles, EngineError, isEngineUp } from "@/lib/engineApi";
+import { formatDate, formatEur, formatNumber } from "@/lib/format";
 import { analyzeParsed, FileError, parseFile, type FileAnalysis } from "@/lib/parseFile";
 
 const PREVIEW_ROWS = 20;
@@ -165,15 +166,30 @@ export function SubirView() {
   const input = useRef<HTMLInputElement>(null);
   const router = useRouter();
   const toast = useToast();
-  const { updateSettings } = useAppState();
+  const { updateSettings, settings } = useAppState();
+  const originals = useRef(new Map<string, File>());
+  const [engine, setEngine] = useState<"comprobando" | "activo" | "apagado">("comprobando");
+  const [pharmacy, setPharmacy] = useState("");
+  const [sending, setSending] = useState(false);
+  const [engineError, setEngineError] = useState<EngineError | null>(null);
+
+  const checkEngine = useCallback(async () => {
+    setEngine("comprobando");
+    setEngine((await isEngineUp()) ? "activo" : "apagado");
+  }, []);
+  useEffect(() => {
+    void checkEngine();
+  }, [checkEngine]);
 
   const handleFiles = useCallback(async (files: FileList | File[]) => {
     setBusy(true);
+    setEngineError(null);
     const nextErrors: string[] = [];
     const results: FileAnalysis[] = [];
     for (const file of Array.from(files)) {
       try {
         results.push(analyzeParsed(await parseFile(file)));
+        originals.current.set(file.name, file);
       } catch (e) {
         nextErrors.push(
           `${file.name}: ${e instanceof FileError ? e.message : "no se ha podido leer el fichero."}`,
@@ -189,12 +205,42 @@ export function SubirView() {
   }, []);
 
   const blocked = analyses.some((a) => a.privacy.length > 0);
-  const ready = analyses.length > 0 && !blocked;
+  const byDataset = Object.fromEntries(
+    DATASETS.map((ds) => [ds, analyses.find((a) => a.privacy.length === 0 && a.detection.dataset === ds)]),
+  ) as Record<Dataset, FileAnalysis | undefined>;
+  const missing = DATASETS.filter((ds) => !byDataset[ds]);
+  const program = byDataset.ventas?.detection.program ?? byDataset.stock?.detection.program ?? "farmatic";
 
-  const analyze = () => {
+  const analyzeSimulated = () => {
     updateSettings({ source: "subido", onboarded: true });
     toast.show("Análisis simulado: se muestra la farmacia de demostración con tus columnas validadas.");
     router.push("/lunes");
+  };
+
+  const analyzeReal = async () => {
+    const file = (ds: Dataset) => originals.current.get(byDataset[ds]!.file.name)!;
+    setSending(true);
+    setEngineError(null);
+    try {
+      const result = await analyzeFiles(
+        { ventas: file("ventas"), stock: file("stock"), compras: file("compras") },
+        program,
+        pharmacy.trim() || settings.pharmacyName || "Mi farmacia",
+      );
+      updateSettings({ source: "motor", onboarded: true, pharmacyName: null });
+      const quality = result.calidad.nivel === "baja" ? " · revisa la calidad de los datos" : "";
+      toast.show(
+        `Análisis completado: ${result.resumen.acciones_total} acciones · ${formatEur(result.resumen.recuperable_semana_eur)} recuperables${quality}`,
+      );
+      router.push("/lunes");
+    } catch (e) {
+      const error =
+        e instanceof EngineError ? e : new EngineError("desconocido", "Error inesperado del motor.");
+      setEngineError(error);
+      if (error.kind === "conexion") setEngine("apagado");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -287,16 +333,105 @@ export function SubirView() {
         ))}
       </div>
 
+      {engineError ? (
+        <div
+          role="alert"
+          className="mt-6 rounded-card border border-urgent/30 bg-urgent-soft px-5 py-4 text-sm"
+          data-testid="error-motor"
+        >
+          <div className="font-semibold text-urgent-text">
+            {engineError.kind === "privacidad"
+              ? "El motor ha rechazado los ficheros por privacidad"
+              : "El análisis no se ha podido hacer"}
+          </div>
+          <p className="mt-1 text-ink">{engineError.message}</p>
+          {engineError.hits.length ? (
+            <ul className="mt-2 space-y-1 text-ink">
+              {engineError.hits.map((h) => (
+                <li key={`${h.fichero}-${h.columna}`}>
+                  {h.fichero}: columna <strong>«{h.columna}»</strong>, {h.motivo}.
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      ) : null}
+
       {analyses.length ? (
-        <div className="sticky bottom-20 mt-6 flex flex-col gap-3 rounded-card border border-line bg-white/95 p-4 shadow-lift backdrop-blur sm:flex-row sm:items-center sm:justify-between lg:bottom-4">
-          <p className="text-sm text-ink-soft">
-            {blocked
-              ? "Hay ficheros bloqueados por privacidad. Quítalos o vuelve a exportarlos."
-              : `${analyses.length} fichero${analyses.length > 1 ? "s" : ""} validado${analyses.length > 1 ? "s" : ""}. En esta versión el análisis se simula con la farmacia de demostración.`}
-          </p>
-          <Button variant="primary" onClick={analyze} disabled={!ready} data-testid="analizar">
-            Analizar <Icon name="arrowRight" />
-          </Button>
+        <div
+          className="sticky bottom-20 mt-6 rounded-card border border-line bg-white/95 p-4 shadow-lift backdrop-blur lg:bottom-4"
+          data-testid="barra-analisis"
+        >
+          {blocked ? (
+            <p className="text-sm text-ink-soft">
+              Hay ficheros bloqueados por privacidad. Quítalos o vuelve a exportarlos.
+            </p>
+          ) : engine === "activo" ? (
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div className="min-w-0 text-sm text-ink-soft">
+                {missing.length ? (
+                  <p>
+                    Para el análisis real faltan:{" "}
+                    <strong className="text-ink">
+                      {missing.map((d) => DATASET_LABEL[d].toLowerCase()).join(", ")}
+                    </strong>
+                    .
+                  </p>
+                ) : (
+                  <label className="block">
+                    <span className="mb-1 block text-xs font-medium text-ink-muted">
+                      Motor local conectado · mapeo {program}. Nombre de la farmacia
+                    </span>
+                    <input
+                      value={pharmacy}
+                      onChange={(e) => setPharmacy(e.target.value)}
+                      placeholder={settings.pharmacyName ?? "Mi farmacia"}
+                      className="h-9 w-full rounded-ctl border border-line bg-white px-3 text-sm focus:border-ink-faint focus:outline-none sm:w-72"
+                      data-testid="nombre-farmacia"
+                    />
+                  </label>
+                )}
+              </div>
+              <div className="flex gap-2">
+                {missing.length ? (
+                  <Button onClick={analyzeSimulated} data-testid="analizar-simulado">
+                    Ver la demo (simulado)
+                  </Button>
+                ) : null}
+                <Button
+                  variant="primary"
+                  onClick={() => void analyzeReal()}
+                  disabled={missing.length > 0 || sending}
+                  data-testid="analizar"
+                >
+                  {sending ? "Analizando…" : "Analizar"} <Icon name="arrowRight" />
+                </Button>
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm text-ink-soft">
+                {engine === "comprobando" ? (
+                  "Buscando el motor local…"
+                ) : (
+                  <>
+                    El motor local no está arrancado: el análisis será{" "}
+                    <strong className="text-ink">simulado</strong> con la farmacia de demostración. Para el
+                    real, ejecuta <code className="rounded bg-line-soft px-1">npm run motor</code> y
+                    reintenta.
+                  </>
+                )}
+              </p>
+              <div className="flex gap-2">
+                <Button onClick={() => void checkEngine()} disabled={engine === "comprobando"}>
+                  Reintentar
+                </Button>
+                <Button variant="primary" onClick={analyzeSimulated} data-testid="analizar-simulado">
+                  Analizar (simulado) <Icon name="arrowRight" />
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       ) : null}
     </div>

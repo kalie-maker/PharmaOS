@@ -14,6 +14,7 @@
     "e2e": "playwright test --trace off",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "motor": "cd ../stock-profit-os && python3 -m engine.cli servir",
     "gen:config": "python3 ../stock-profit-os/scripts/export_web_config.py",
     "gen:mock": "cd ../stock-profit-os && python3 -m engine.cli exportar-json --mock --salida ../web/public/mock/report.json && cd ../web && node scripts/split-report.mjs",
     "check": "npm run typecheck && npm run lint && npm run format:check && npm run test"

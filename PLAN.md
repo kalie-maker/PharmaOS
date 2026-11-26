@@ -16,3 +16,4 @@ Motor Python en `stock-profit-os/` · Web en `web/` · Contrato de datos: `out/r
 - [x] Fase 11 — Calidad (Vitest, Playwright desktop+móvil, virtualización, Lighthouse, a11y, capturas)
 - [x] Fase 12 — Pulido (PULIDO.md, tandas)
 - [x] Entrega — REPORTE_NOCHE.md
+- [x] Fase 13 — API local del motor (FastAPI) + /subir con análisis real + origen de datos conmutable; Supabase: esquema propuesto en docs/supabase/schema.sql (sin conectar)

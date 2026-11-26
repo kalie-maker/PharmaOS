@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Button } from "@/components/Button";
+import { Button, ButtonLink } from "@/components/Button";
 import { Dialog } from "@/components/Dialog";
 import { Icon } from "@/components/Icon";
 import { Card, PageHeader } from "@/components/PageHeader";
@@ -10,6 +10,8 @@ import { useToast } from "@/components/Toast";
 import { ENGINE_CONFIG } from "@/generated/engineConfig";
 import { useAppState } from "@/lib/appState";
 import { DATASETS, DATASET_LABEL } from "@/lib/columns";
+import { deleteEngineReport } from "@/lib/engineApi";
+import { useReportControls } from "@/lib/report";
 import { formatDate } from "@/lib/format";
 import type { Report } from "@/lib/types";
 
@@ -75,6 +77,7 @@ const INPUT =
 
 export function AjustesView({ report }: { report: Report }) {
   const { settings, updateSettings, resetDemo } = useAppState();
+  const { sourceId } = useReportControls();
   const toast = useToast();
   const router = useRouter();
   const [program, setProgram] = useState<Program>((report.farmacia.programa as Program) ?? PROGRAMS[0]!);
@@ -109,6 +112,53 @@ export function AjustesView({ report }: { report: Report }) {
               {report.farmacia.ficticia ? <span className="ml-1 text-ink-muted">(demostración)</span> : null}
             </p>
           </div>
+        </div>
+      </Section>
+
+      <Section
+        title="Origen de los datos"
+        description="De dónde salen las cifras que ves en todas las pantallas."
+      >
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-ink" data-testid="origen-datos">
+            {sourceId === "motor" ? (
+              <>
+                <strong>Motor local</strong> · análisis real de {report.farmacia.nombre}, datos hasta{" "}
+                {formatDate(report.farmacia.fecha_datos)}
+              </>
+            ) : (
+              <>
+                <strong>Demostración</strong> · farmacia ficticia
+              </>
+            )}
+          </p>
+          {sourceId === "motor" ? (
+            <div className="flex gap-2">
+              <Button
+                onClick={() => {
+                  updateSettings({ source: "demo" });
+                  toast.show("Mostrando la farmacia de demostración");
+                }}
+              >
+                Ver la demo
+              </Button>
+              <Button
+                onClick={async () => {
+                  try {
+                    await deleteEngineReport();
+                    updateSettings({ source: "demo" });
+                    toast.show("Análisis borrado del motor local");
+                  } catch (e) {
+                    toast.show(e instanceof Error ? e.message : "No se ha podido borrar");
+                  }
+                }}
+              >
+                Borrar el análisis
+              </Button>
+            </div>
+          ) : (
+            <ButtonLink href="/subir">Subir mis datos</ButtonLink>
+          )}
         </div>
       </Section>
 

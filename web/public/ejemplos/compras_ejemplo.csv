@@ -1,0 +1,1321 @@
+Fecha Albarán;Código;Laboratorio;Unidades Recibidas;Importe Coste
+26/06/2026;975583;Faroven;4;15,55
+17/07/2026;975583;Faroven;3;11,07
+07/08/2026;975583;Faroven;3;11,16
+28/08/2026;975583;Faroven;2;7,50
+18/09/2026;975583;Faroven;1;3,86
+09/10/2026;975583;Faroven;5;18,86
+30/10/2026;975583;Faroven;1;3,71
+29/05/2026;809749;Laboratorios Norte Pharma;2;11,16
+09/06/2026;809749;Laboratorios Norte Pharma;3;16,49
+20/06/2026;809749;Laboratorios Norte Pharma;2;11,01
+23/07/2026;809749;Laboratorios Norte Pharma;2;10,91
+03/08/2026;809749;Laboratorios Norte Pharma;3;16,25
+25/08/2026;809749;Laboratorios Norte Pharma;2;11,40
+16/09/2026;809749;Laboratorios Norte Pharma;3;16,71
+27/09/2026;809749;Laboratorios Norte Pharma;3;17,28
+08/10/2026;809749;Laboratorios Norte Pharma;6;32,83
+19/10/2026;809749;Laboratorios Norte Pharma;3;16,15
+30/10/2026;809749;Laboratorios Norte Pharma;6;32,25
+10/11/2026;809749;Laboratorios Norte Pharma;5;28,60
+25/05/2026;958128;Quimimed;1;9,43
+04/06/2026;958128;Quimimed;1;9,73
+09/07/2026;958128;Quimimed;1;9,43
+18/08/2026;958128;Quimimed;1;9,07
+07/09/2026;958128;Quimimed;1;9,26
+17/09/2026;958128;Quimimed;1;9,36
+12/10/2026;958128;Quimimed;1;9,36
+11/11/2026;958128;Quimimed;3;27,76
+03/06/2026;778262;Laboratorios Vitagen;2;5,07
+16/06/2026;778262;Laboratorios Vitagen;1;2,54
+12/07/2026;778262;Laboratorios Vitagen;1;2,52
+25/07/2026;778262;Laboratorios Vitagen;2;5,09
+20/08/2026;778262;Laboratorios Vitagen;1;2,56
+02/09/2026;778262;Laboratorios Vitagen;1;2,49
+28/09/2026;778262;Laboratorios Vitagen;3;7,83
+24/10/2026;778262;Laboratorios Vitagen;2;5,19
+06/11/2026;778262;Laboratorios Vitagen;2;5,05
+04/07/2026;968548;Rialmed;1;13,82
+25/07/2026;968548;Rialmed;1;14,18
+08/08/2026;968548;Rialmed;2;27,87
+29/08/2026;968548;Rialmed;1;14,24
+31/10/2026;968548;Rialmed;1;14,64
+27/05/2026;941518;Faroven;2;11,86
+07/06/2026;941518;Faroven;3;18,04
+18/06/2026;941518;Faroven;2;12,71
+29/06/2026;941518;Faroven;1;6,09
+10/07/2026;941518;Faroven;2;12,21
+21/07/2026;941518;Faroven;3;18,96
+01/08/2026;941518;Faroven;2;11,92
+23/08/2026;941518;Faroven;1;5,89
+03/09/2026;941518;Faroven;3;18,35
+25/09/2026;941518;Faroven;4;24,76
+06/10/2026;941518;Faroven;3;17,64
+17/10/2026;941518;Faroven;2;12,49
+28/10/2026;941518;Faroven;1;6,35
+08/11/2026;941518;Faroven;1;6,29
+31/05/2026;995758;Faroven;3;16,62
+21/06/2026;995758;Faroven;4;22,13
+12/07/2026;995758;Faroven;3;17,09
+02/08/2026;995758;Faroven;3;16,59
+23/08/2026;995758;Faroven;3;15,97
+13/09/2026;995758;Faroven;4;22,87
+04/10/2026;995758;Faroven;8;44,78
+25/10/2026;995758;Faroven;1;5,35
+01/06/2026;607480;Nortemed;1;53,20
+10/06/2026;607480;Nortemed;1;49,80
+19/06/2026;607480;Nortemed;1;54,06
+07/07/2026;607480;Nortemed;3;160,15
+16/07/2026;607480;Nortemed;3;152,13
+25/07/2026;607480;Nortemed;4;205,21
+03/08/2026;607480;Nortemed;3;160,42
+12/08/2026;607480;Nortemed;2;103,00
+21/08/2026;607480;Nortemed;2;103,79
+05/10/2026;607480;Nortemed;1;50,52
+04/06/2026;635100;Quimimed;1;8,73
+24/07/2026;635100;Quimimed;1;8,82
+03/08/2026;635100;Quimimed;1;8,48
+13/08/2026;635100;Quimimed;1;9,03
+05/06/2026;739565;Iber Salud;1;6,28
+24/06/2026;739565;Iber Salud;3;18,73
+13/07/2026;739565;Iber Salud;2;12,33
+01/08/2026;739565;Iber Salud;1;6,38
+20/08/2026;739565;Iber Salud;2;13,02
+08/09/2026;739565;Iber Salud;1;6,08
+27/09/2026;739565;Iber Salud;1;6,35
+16/10/2026;739565;Iber Salud;2;12,56
+04/11/2026;739565;Iber Salud;1;6,25
+03/09/2026;988179;Laboratorios Norte Pharma;2;4,40
+09/07/2026;643079;Albaven;1;8,58
+17/09/2026;643079;Albaven;1;8,36
+07/10/2026;643079;Albaven;1;8,26
+27/10/2026;643079;Albaven;1;8,11
+06/11/2026;643079;Albaven;1;8,47
+23/05/2026;652208;Laboratorios Vitagen;5;42,45
+02/06/2026;652208;Laboratorios Vitagen;2;16,45
+12/06/2026;652208;Laboratorios Vitagen;1;8,38
+22/06/2026;652208;Laboratorios Vitagen;2;17,21
+02/07/2026;652208;Laboratorios Vitagen;5;41,10
+12/07/2026;652208;Laboratorios Vitagen;4;32,73
+22/07/2026;652208;Laboratorios Vitagen;1;8,28
+01/08/2026;652208;Laboratorios Vitagen;5;42,76
+11/08/2026;652208;Laboratorios Vitagen;1;8,12
+21/08/2026;652208;Laboratorios Vitagen;2;16,23
+31/08/2026;652208;Laboratorios Vitagen;2;16,58
+10/09/2026;652208;Laboratorios Vitagen;2;16,74
+20/09/2026;652208;Laboratorios Vitagen;2;16,45
+30/09/2026;652208;Laboratorios Vitagen;3;25,50
+10/10/2026;652208;Laboratorios Vitagen;3;24,96
+20/10/2026;652208;Laboratorios Vitagen;2;16,53
+30/10/2026;652208;Laboratorios Vitagen;4;34,96
+29/05/2026;984184;Laboratorios Hespermed;3;25,48
+08/06/2026;984184;Laboratorios Hespermed;2;17,34
+18/06/2026;984184;Laboratorios Hespermed;3;26,71
+08/07/2026;984184;Laboratorios Hespermed;2;16,58
+18/07/2026;984184;Laboratorios Hespermed;3;26,50
+07/08/2026;984184;Laboratorios Hespermed;2;17,27
+27/08/2026;984184;Laboratorios Hespermed;2;16,89
+16/09/2026;984184;Laboratorios Hespermed;3;26,31
+06/10/2026;984184;Laboratorios Hespermed;2;16,96
+16/10/2026;984184;Laboratorios Hespermed;2;17,28
+26/10/2026;984184;Laboratorios Hespermed;2;16,81
+15/11/2026;984184;Laboratorios Hespermed;3;26,82
+28/07/2026;644250;Laboratorios Eurolab;5;42,21
+18/08/2026;644250;Laboratorios Eurolab;1;8,24
+29/09/2026;644250;Laboratorios Eurolab;1;8,41
+26/05/2026;790076;Euro Pharma;1;4,32
+16/06/2026;790076;Euro Pharma;4;17,31
+07/07/2026;790076;Euro Pharma;4;18,41
+28/07/2026;790076;Euro Pharma;4;18,12
+18/08/2026;790076;Euro Pharma;2;8,96
+08/09/2026;790076;Euro Pharma;7;31,28
+29/09/2026;790076;Euro Pharma;1;4,47
+20/10/2026;790076;Euro Pharma;4;18,20
+10/11/2026;790076;Euro Pharma;9;39,82
+06/06/2026;847041;Euroderm;2;0,94
+16/06/2026;847041;Euroderm;3;1,42
+26/06/2026;847041;Euroderm;1;0,48
+26/07/2026;847041;Euroderm;1;0,47
+05/08/2026;847041;Euroderm;2;0,99
+15/08/2026;847041;Euroderm;1;0,49
+04/09/2026;847041;Euroderm;1;0,48
+24/09/2026;847041;Euroderm;1;0,47
+24/10/2026;847041;Euroderm;1;0,49
+03/11/2026;847041;Euroderm;1;0,48
+13/11/2026;847041;Euroderm;1;0,49
+12/06/2026;792085;Laboratorios Lumengen;2;110,81
+24/07/2026;792085;Laboratorios Lumengen;2;110,83
+25/09/2026;792085;Laboratorios Lumengen;1;52,12
+16/06/2026;983689;Faroven;1;10,00
+30/06/2026;983689;Faroven;1;9,97
+07/07/2026;983689;Faroven;1;10,05
+21/07/2026;983689;Faroven;1;10,58
+25/08/2026;983689;Faroven;1;10,66
+15/09/2026;983689;Faroven;2;20,47
+22/09/2026;983689;Faroven;1;10,19
+13/10/2026;983689;Faroven;3;31,26
+17/11/2026;983689;Faroven;1;10,00
+24/05/2026;884481;Laboratorios Norte Pharma;3;12,54
+25/06/2026;884481;Laboratorios Norte Pharma;3;12,17
+11/07/2026;884481;Laboratorios Norte Pharma;3;12,15
+27/07/2026;884481;Laboratorios Norte Pharma;2;8,21
+28/08/2026;884481;Laboratorios Norte Pharma;2;8,50
+29/09/2026;884481;Laboratorios Norte Pharma;2;8,60
+15/10/2026;884481;Laboratorios Norte Pharma;11;45,05
+31/10/2026;884481;Laboratorios Norte Pharma;6;25,29
+16/11/2026;884481;Laboratorios Norte Pharma;2;8,62
+08/06/2026;616573;Euroderm;3;3,72
+04/07/2026;616573;Euroderm;1;1,29
+30/07/2026;616573;Euroderm;1;1,32
+16/10/2026;616573;Euroderm;1;1,32
+11/11/2026;616573;Euroderm;1;1,28
+07/06/2026;723836;Faroven;1;2,41
+15/06/2026;723836;Faroven;3;7,17
+23/06/2026;723836;Faroven;2;4,73
+01/07/2026;723836;Faroven;1;2,45
+17/07/2026;723836;Faroven;1;2,29
+25/07/2026;723836;Faroven;2;4,96
+02/08/2026;723836;Faroven;2;4,65
+10/08/2026;723836;Faroven;2;4,70
+03/09/2026;723836;Faroven;5;12,15
+11/09/2026;723836;Faroven;2;4,85
+19/09/2026;723836;Faroven;2;4,80
+05/10/2026;723836;Faroven;1;2,40
+13/10/2026;723836;Faroven;5;11,50
+21/10/2026;723836;Faroven;3;6,92
+29/10/2026;723836;Faroven;1;2,31
+06/11/2026;723836;Faroven;1;2,30
+14/11/2026;723836;Faroven;2;4,66
+27/05/2026;613947;Laboratorios Lumen Salud;1;26,45
+01/06/2026;613947;Laboratorios Lumen Salud;1;27,67
+06/06/2026;613947;Laboratorios Lumen Salud;1;27,21
+21/06/2026;613947;Laboratorios Lumen Salud;1;27,44
+01/07/2026;613947;Laboratorios Lumen Salud;2;52,60
+06/07/2026;613947;Laboratorios Lumen Salud;1;27,76
+21/07/2026;613947;Laboratorios Lumen Salud;2;56,18
+26/07/2026;613947;Laboratorios Lumen Salud;2;53,64
+10/08/2026;613947;Laboratorios Lumen Salud;1;27,58
+15/08/2026;613947;Laboratorios Lumen Salud;1;26,23
+20/08/2026;613947;Laboratorios Lumen Salud;1;26,45
+30/08/2026;613947;Laboratorios Lumen Salud;1;27,13
+04/09/2026;613947;Laboratorios Lumen Salud;2;56,67
+09/09/2026;613947;Laboratorios Lumen Salud;3;83,10
+14/09/2026;613947;Laboratorios Lumen Salud;3;80,87
+29/09/2026;613947;Laboratorios Lumen Salud;1;27,73
+04/10/2026;613947;Laboratorios Lumen Salud;2;53,32
+09/10/2026;613947;Laboratorios Lumen Salud;3;80,60
+19/10/2026;613947;Laboratorios Lumen Salud;1;26,79
+03/11/2026;613947;Laboratorios Lumen Salud;1;27,36
+18/11/2026;613947;Laboratorios Lumen Salud;1;27,75
+28/08/2026;953809;Faroven;1;0,85
+13/09/2026;953809;Faroven;1;0,80
+29/09/2026;953809;Faroven;1;0,81
+31/10/2026;953809;Faroven;2;1,66
+27/06/2026;979052;Pharma Salud;2;12,65
+09/07/2026;979052;Pharma Salud;2;12,75
+21/07/2026;979052;Pharma Salud;1;6,43
+26/08/2026;979052;Pharma Salud;1;6,60
+19/09/2026;979052;Pharma Salud;2;13,31
+13/10/2026;979052;Pharma Salud;1;6,60
+25/10/2026;979052;Pharma Salud;1;6,72
+06/11/2026;979052;Pharma Salud;2;12,57
+30/06/2026;914491;Laboratorios Vitagen;1;6,48
+17/08/2026;914491;Laboratorios Vitagen;1;6,63
+16/09/2026;914491;Laboratorios Vitagen;1;6,48
+27/05/2026;771235;Faroven;1;5,51
+17/06/2026;771235;Faroven;2;10,29
+02/06/2026;883597;Iber Salud;12;382,45
+20/06/2026;883597;Iber Salud;15;451,61
+08/07/2026;883597;Iber Salud;12;375,03
+26/07/2026;883597;Iber Salud;10;313,68
+13/08/2026;883597;Iber Salud;13;410,89
+31/08/2026;883597;Iber Salud;18;574,28
+18/09/2026;883597;Iber Salud;15;477,39
+06/10/2026;883597;Iber Salud;16;510,29
+24/10/2026;883597;Iber Salud;15;466,29
+11/11/2026;883597;Iber Salud;8;241,03
+31/05/2026;758348;Laboratorios Vitagen;12;27,33
+10/06/2026;758348;Laboratorios Vitagen;10;22,64
+20/06/2026;758348;Laboratorios Vitagen;11;24,84
+30/06/2026;758348;Laboratorios Vitagen;10;23,09
+10/07/2026;758348;Laboratorios Vitagen;15;32,95
+20/07/2026;758348;Laboratorios Vitagen;6;13,83
+30/07/2026;758348;Laboratorios Vitagen;9;20,00
+09/08/2026;758348;Laboratorios Vitagen;15;33,21
+19/08/2026;758348;Laboratorios Vitagen;8;18,50
+29/08/2026;758348;Laboratorios Vitagen;4;8,98
+08/09/2026;758348;Laboratorios Vitagen;17;36,92
+18/09/2026;758348;Laboratorios Vitagen;10;22,84
+28/09/2026;758348;Laboratorios Vitagen;11;25,58
+08/10/2026;758348;Laboratorios Vitagen;13;28,24
+18/10/2026;758348;Laboratorios Vitagen;9;20,91
+28/10/2026;758348;Laboratorios Vitagen;6;13,34
+07/11/2026;758348;Laboratorios Vitagen;11;25,08
+17/11/2026;758348;Laboratorios Vitagen;8;17,70
+02/06/2026;942931;Laboratorios Vitagen;3;21,12
+09/06/2026;942931;Laboratorios Vitagen;2;13,83
+14/07/2026;942931;Laboratorios Vitagen;1;6,78
+21/07/2026;942931;Laboratorios Vitagen;1;6,82
+04/08/2026;942931;Laboratorios Vitagen;1;7,26
+18/08/2026;942931;Laboratorios Vitagen;2;13,71
+08/09/2026;942931;Laboratorios Vitagen;1;6,79
+15/09/2026;942931;Laboratorios Vitagen;1;7,18
+29/09/2026;942931;Laboratorios Vitagen;1;6,94
+13/10/2026;942931;Laboratorios Vitagen;1;7,31
+03/11/2026;942931;Laboratorios Vitagen;1;7,11
+10/11/2026;942931;Laboratorios Vitagen;1;7,10
+17/11/2026;942931;Laboratorios Vitagen;1;6,92
+26/05/2026;629972;Laboratorios Lumen Salud;2;58,87
+31/05/2026;629972;Laboratorios Lumen Salud;1;28,05
+05/06/2026;629972;Laboratorios Lumen Salud;2;57,87
+10/06/2026;629972;Laboratorios Lumen Salud;4;119,49
+15/06/2026;629972;Laboratorios Lumen Salud;3;87,30
+25/06/2026;629972;Laboratorios Lumen Salud;2;59,46
+30/06/2026;629972;Laboratorios Lumen Salud;5;144,87
+05/07/2026;629972;Laboratorios Lumen Salud;4;113,25
+10/07/2026;629972;Laboratorios Lumen Salud;4;116,85
+15/07/2026;629972;Laboratorios Lumen Salud;2;56,14
+20/07/2026;629972;Laboratorios Lumen Salud;2;58,43
+25/07/2026;629972;Laboratorios Lumen Salud;1;29,09
+30/07/2026;629972;Laboratorios Lumen Salud;2;57,28
+04/08/2026;629972;Laboratorios Lumen Salud;3;84,13
+09/08/2026;629972;Laboratorios Lumen Salud;4;114,67
+19/08/2026;629972;Laboratorios Lumen Salud;5;139,45
+24/08/2026;629972;Laboratorios Lumen Salud;2;58,53
+29/08/2026;629972;Laboratorios Lumen Salud;3;84,44
+08/09/2026;629972;Laboratorios Lumen Salud;6;179,75
+13/09/2026;629972;Laboratorios Lumen Salud;1;28,34
+18/09/2026;629972;Laboratorios Lumen Salud;1;29,96
+23/09/2026;629972;Laboratorios Lumen Salud;1;27,91
+03/10/2026;629972;Laboratorios Lumen Salud;1;28,25
+08/10/2026;629972;Laboratorios Lumen Salud;1;27,90
+13/10/2026;629972;Laboratorios Lumen Salud;4;115,65
+18/10/2026;629972;Laboratorios Lumen Salud;1;29,85
+23/10/2026;629972;Laboratorios Lumen Salud;2;59,98
+28/10/2026;629972;Laboratorios Lumen Salud;1;29,71
+02/11/2026;629972;Laboratorios Lumen Salud;4;117,46
+07/11/2026;629972;Laboratorios Lumen Salud;1;28,74
+12/11/2026;629972;Laboratorios Lumen Salud;4;116,74
+17/11/2026;629972;Laboratorios Lumen Salud;2;56,62
+27/05/2026;867970;Laboratorios Vitagen;4;22,95
+09/06/2026;867970;Laboratorios Vitagen;3;17,22
+22/06/2026;867970;Laboratorios Vitagen;6;33,75
+05/07/2026;867970;Laboratorios Vitagen;2;10,95
+18/07/2026;867970;Laboratorios Vitagen;3;17,22
+31/07/2026;867970;Laboratorios Vitagen;4;22,28
+26/08/2026;867970;Laboratorios Vitagen;2;11,30
+08/09/2026;867970;Laboratorios Vitagen;2;11,24
+21/09/2026;867970;Laboratorios Vitagen;8;43,02
+17/10/2026;867970;Laboratorios Vitagen;3;16,95
+30/10/2026;867970;Laboratorios Vitagen;3;17,08
+12/11/2026;867970;Laboratorios Vitagen;1;5,54
+03/06/2026;938562;Mediderm;1;27,77
+17/06/2026;938562;Mediderm;3;78,90
+01/07/2026;938562;Mediderm;1;27,18
+12/08/2026;938562;Mediderm;3;81,40
+26/08/2026;938562;Mediderm;1;26,53
+09/09/2026;938562;Mediderm;1;26,38
+23/09/2026;938562;Mediderm;1;26,26
+04/11/2026;938562;Mediderm;1;26,44
+06/06/2026;732698;Faroven;9;36,32
+26/06/2026;732698;Faroven;4;16,38
+16/07/2026;732698;Faroven;7;28,49
+05/08/2026;732698;Faroven;11;44,84
+25/08/2026;732698;Faroven;11;44,84
+14/09/2026;732698;Faroven;4;16,44
+04/10/2026;732698;Faroven;5;20,63
+24/10/2026;732698;Faroven;12;48,99
+13/11/2026;732698;Faroven;3;11,75
+30/05/2026;853888;Laboratorios Orion Salud;1;2,45
+11/06/2026;853888;Laboratorios Orion Salud;7;17,69
+30/05/2026;719103;Laboratorios Vitagen;4;62,64
+08/06/2026;719103;Laboratorios Vitagen;8;124,29
+17/06/2026;719103;Laboratorios Vitagen;11;174,72
+26/06/2026;719103;Laboratorios Vitagen;10;160,01
+05/07/2026;719103;Laboratorios Vitagen;6;90,61
+14/07/2026;719103;Laboratorios Vitagen;6;90,14
+23/07/2026;719103;Laboratorios Vitagen;6;89,01
+01/08/2026;719103;Laboratorios Vitagen;6;91,14
+10/08/2026;719103;Laboratorios Vitagen;9;141,54
+19/08/2026;719103;Laboratorios Vitagen;5;76,47
+28/08/2026;719103;Laboratorios Vitagen;13;197,47
+06/09/2026;719103;Laboratorios Vitagen;9;134,37
+15/09/2026;719103;Laboratorios Vitagen;6;96,02
+24/09/2026;719103;Laboratorios Vitagen;11;176,36
+03/10/2026;719103;Laboratorios Vitagen;5;77,00
+12/10/2026;719103;Laboratorios Vitagen;11;167,46
+21/10/2026;719103;Laboratorios Vitagen;5;76,51
+30/10/2026;719103;Laboratorios Vitagen;11;172,62
+08/11/2026;719103;Laboratorios Vitagen;5;76,22
+17/11/2026;719103;Laboratorios Vitagen;5;75,99
+28/05/2026;671999;Laboratorios Orion Salud;6;107,20
+10/06/2026;671999;Laboratorios Orion Salud;20;349,10
+23/06/2026;671999;Laboratorios Orion Salud;12;211,78
+06/07/2026;671999;Laboratorios Orion Salud;13;233,82
+19/07/2026;671999;Laboratorios Orion Salud;12;205,94
+01/08/2026;671999;Laboratorios Orion Salud;10;178,96
+14/08/2026;671999;Laboratorios Orion Salud;7;118,95
+27/08/2026;671999;Laboratorios Orion Salud;16;272,62
+09/09/2026;671999;Laboratorios Orion Salud;17;296,12
+22/09/2026;671999;Laboratorios Orion Salud;13;226,03
+05/10/2026;671999;Laboratorios Orion Salud;14;250,32
+18/10/2026;671999;Laboratorios Orion Salud;12;212,33
+31/10/2026;671999;Laboratorios Orion Salud;10;180,49
+13/11/2026;671999;Laboratorios Orion Salud;11;194,71
+10/06/2026;837385;Laboratorios Norte Pharma;3;37,80
+22/06/2026;837385;Laboratorios Norte Pharma;2;25,85
+04/07/2026;837385;Laboratorios Norte Pharma;3;38,28
+28/07/2026;837385;Laboratorios Norte Pharma;2;24,96
+09/08/2026;837385;Laboratorios Norte Pharma;3;39,17
+14/09/2026;837385;Laboratorios Norte Pharma;3;39,09
+01/11/2026;837385;Laboratorios Norte Pharma;2;25,40
+23/05/2026;821101;Teraven;2;18,64
+02/07/2026;821101;Teraven;2;19,68
+23/05/2026;900908;Laboratorios Lumen Salud;1;4,59
+28/06/2026;900908;Laboratorios Lumen Salud;3;13,63
+16/07/2026;900908;Laboratorios Lumen Salud;1;4,82
+03/08/2026;900908;Laboratorios Lumen Salud;1;4,57
+21/08/2026;900908;Laboratorios Lumen Salud;2;9,13
+08/09/2026;900908;Laboratorios Lumen Salud;2;9,54
+01/06/2026;936147;Faroven;1;2,62
+06/06/2026;936147;Faroven;1;2,48
+16/06/2026;936147;Faroven;1;2,52
+10/08/2026;936147;Faroven;1;2,57
+25/08/2026;936147;Faroven;1;2,65
+30/08/2026;936147;Faroven;1;2,66
+04/09/2026;936147;Faroven;2;5,21
+14/09/2026;936147;Faroven;1;2,57
+04/10/2026;936147;Faroven;2;4,98
+09/10/2026;936147;Faroven;2;4,92
+14/10/2026;936147;Faroven;1;2,60
+03/11/2026;936147;Faroven;1;2,60
+13/11/2026;936147;Faroven;1;2,47
+27/05/2026;790739;Laboratorios Vitagen;5;25,06
+09/06/2026;790739;Laboratorios Vitagen;3;14,81
+22/06/2026;790739;Laboratorios Vitagen;9;45,59
+05/07/2026;790739;Laboratorios Vitagen;4;20,32
+18/07/2026;790739;Laboratorios Vitagen;4;19,29
+31/07/2026;790739;Laboratorios Vitagen;1;4,83
+13/08/2026;790739;Laboratorios Vitagen;7;34,25
+26/08/2026;790739;Laboratorios Vitagen;9;44,73
+08/09/2026;790739;Laboratorios Vitagen;4;20,55
+21/09/2026;790739;Laboratorios Vitagen;5;24,12
+04/10/2026;790739;Laboratorios Vitagen;9;44,38
+17/10/2026;790739;Laboratorios Vitagen;3;14,39
+30/10/2026;790739;Laboratorios Vitagen;1;5,11
+12/11/2026;790739;Laboratorios Vitagen;5;23,81
+23/05/2026;981500;Faroven;1;8,61
+30/05/2026;981500;Faroven;2;17,00
+20/06/2026;981500;Faroven;3;26,61
+27/06/2026;981500;Faroven;4;33,79
+04/07/2026;981500;Faroven;1;8,58
+11/07/2026;981500;Faroven;4;34,87
+18/07/2026;981500;Faroven;3;26,81
+25/07/2026;981500;Faroven;2;17,82
+01/08/2026;981500;Faroven;1;8,71
+08/08/2026;981500;Faroven;1;8,62
+15/08/2026;981500;Faroven;2;17,37
+22/08/2026;981500;Faroven;1;8,89
+29/08/2026;981500;Faroven;1;8,39
+19/09/2026;981500;Faroven;3;27,07
+03/10/2026;981500;Faroven;1;8,51
+10/10/2026;981500;Faroven;1;8,72
+17/10/2026;981500;Faroven;1;8,74
+24/10/2026;981500;Faroven;2;17,22
+31/10/2026;981500;Faroven;2;17,53
+07/11/2026;981500;Faroven;1;8,66
+14/11/2026;981500;Faroven;1;8,65
+29/05/2026;868303;Norte Salud;1;14,85
+14/06/2026;868303;Norte Salud;1;15,44
+30/06/2026;868303;Norte Salud;3;44,53
+16/07/2026;868303;Norte Salud;7;107,57
+01/08/2026;868303;Norte Salud;3;46,47
+17/08/2026;868303;Norte Salud;1;15,26
+02/09/2026;868303;Norte Salud;2;30,99
+18/09/2026;868303;Norte Salud;1;15,07
+20/10/2026;868303;Norte Salud;1;14,71
+07/06/2026;758111;Euroderm;1;1,55
+17/06/2026;758111;Euroderm;1;1,62
+27/07/2026;758111;Euroderm;1;1,57
+01/08/2026;758111;Euroderm;1;1,57
+06/08/2026;758111;Euroderm;1;1,60
+16/08/2026;758111;Euroderm;1;1,55
+31/08/2026;758111;Euroderm;1;1,61
+20/09/2026;758111;Euroderm;1;1,55
+25/09/2026;758111;Euroderm;1;1,53
+20/10/2026;758111;Euroderm;1;1,54
+25/10/2026;758111;Euroderm;1;1,57
+30/10/2026;758111;Euroderm;2;3,20
+09/11/2026;758111;Euroderm;1;1,59
+06/10/2026;727247;Laboratorios Albafarma;1;12,19
+31/05/2026;839317;Laboratorios Vitagen;2;11,46
+14/06/2026;839317;Laboratorios Vitagen;1;5,67
+12/07/2026;839317;Laboratorios Vitagen;2;12,16
+09/08/2026;839317;Laboratorios Vitagen;1;5,70
+15/06/2026;965694;Tera Salud;3;18,96
+23/06/2026;965694;Tera Salud;2;11,90
+01/07/2026;965694;Tera Salud;2;12,87
+09/07/2026;965694;Tera Salud;2;11,87
+25/07/2026;965694;Tera Salud;2;12,29
+02/08/2026;965694;Tera Salud;4;24,58
+10/08/2026;965694;Tera Salud;1;6,23
+18/08/2026;965694;Tera Salud;1;6,39
+26/08/2026;965694;Tera Salud;1;6,11
+03/09/2026;965694;Tera Salud;2;12,67
+11/09/2026;965694;Tera Salud;1;6,41
+19/09/2026;965694;Tera Salud;3;17,95
+27/09/2026;965694;Tera Salud;1;6,28
+05/10/2026;965694;Tera Salud;4;25,70
+21/10/2026;965694;Tera Salud;4;24,10
+29/10/2026;965694;Tera Salud;2;11,97
+06/11/2026;965694;Tera Salud;4;25,60
+14/11/2026;965694;Tera Salud;1;6,23
+15/07/2026;871847;Medi Salud;2;6,89
+27/07/2026;871847;Medi Salud;2;7,09
+08/08/2026;871847;Medi Salud;2;7,06
+01/09/2026;871847;Medi Salud;2;6,87
+25/09/2026;871847;Medi Salud;2;6,78
+27/05/2026;661483;Euroderm;5;19,35
+05/06/2026;661483;Euroderm;2;7,47
+23/06/2026;661483;Euroderm;2;7,59
+02/07/2026;661483;Euroderm;3;11,57
+11/07/2026;661483;Euroderm;4;14,37
+20/07/2026;661483;Euroderm;1;3,77
+29/07/2026;661483;Euroderm;2;7,48
+07/08/2026;661483;Euroderm;1;3,84
+16/08/2026;661483;Euroderm;1;3,85
+25/08/2026;661483;Euroderm;2;7,36
+12/09/2026;661483;Euroderm;3;10,78
+21/09/2026;661483;Euroderm;1;3,72
+30/09/2026;661483;Euroderm;1;3,85
+09/10/2026;661483;Euroderm;1;3,86
+18/10/2026;661483;Euroderm;2;7,25
+27/10/2026;661483;Euroderm;3;10,81
+05/11/2026;661483;Euroderm;3;11,62
+14/11/2026;661483;Euroderm;7;26,00
+05/09/2026;774533;Faroven;1;8,48
+22/09/2026;774533;Faroven;1;8,51
+26/10/2026;774533;Faroven;1;8,57
+01/06/2026;699207;Laboratorios Vitagen;2;12,27
+13/06/2026;699207;Laboratorios Vitagen;1;6,37
+25/06/2026;699207;Laboratorios Vitagen;1;6,39
+01/07/2026;699207;Laboratorios Vitagen;2;13,20
+07/07/2026;699207;Laboratorios Vitagen;1;6,54
+13/07/2026;699207;Laboratorios Vitagen;1;6,36
+06/08/2026;699207;Laboratorios Vitagen;1;6,25
+12/08/2026;699207;Laboratorios Vitagen;1;6,55
+30/08/2026;699207;Laboratorios Vitagen;1;6,35
+05/09/2026;699207;Laboratorios Vitagen;2;13,08
+11/09/2026;699207;Laboratorios Vitagen;2;12,68
+23/09/2026;699207;Laboratorios Vitagen;2;12,52
+11/10/2026;699207;Laboratorios Vitagen;1;6,48
+17/10/2026;699207;Laboratorios Vitagen;1;6,31
+23/10/2026;699207;Laboratorios Vitagen;2;12,49
+04/11/2026;699207;Laboratorios Vitagen;1;6,27
+02/06/2026;971992;Laboratorios Vitagen;2;13,78
+19/06/2026;971992;Laboratorios Vitagen;2;13,82
+06/07/2026;971992;Laboratorios Vitagen;1;6,60
+23/07/2026;971992;Laboratorios Vitagen;2;13,75
+09/08/2026;971992;Laboratorios Vitagen;3;20,41
+12/09/2026;971992;Laboratorios Vitagen;2;13,65
+29/09/2026;971992;Laboratorios Vitagen;3;19,91
+16/10/2026;971992;Laboratorios Vitagen;1;6,78
+26/05/2026;847064;Iber Salud;1;3,56
+13/06/2026;847064;Iber Salud;1;3,47
+01/07/2026;847064;Iber Salud;2;6,91
+06/08/2026;847064;Iber Salud;3;10,71
+24/08/2026;847064;Iber Salud;3;10,93
+29/09/2026;847064;Iber Salud;3;10,59
+20/06/2026;683835;Tera Salud;4;30,44
+10/07/2026;683835;Tera Salud;1;7,43
+19/08/2026;683835;Tera Salud;1;7,75
+08/09/2026;683835;Tera Salud;1;7,43
+28/09/2026;683835;Tera Salud;1;7,86
+18/10/2026;683835;Tera Salud;2;15,37
+22/06/2026;663538;Eurogen;2;1,92
+08/07/2026;663538;Eurogen;1;0,98
+24/07/2026;663538;Eurogen;1;1,01
+10/09/2026;663538;Eurogen;2;1,90
+26/09/2026;663538;Eurogen;2;2,01
+28/10/2026;663538;Eurogen;3;2,83
+25/05/2026;668286;Faroven;1;7,99
+04/06/2026;668286;Faroven;1;8,18
+24/06/2026;668286;Faroven;1;8,19
+03/08/2026;668286;Faroven;1;7,90
+02/09/2026;668286;Faroven;1;8,16
+12/09/2026;668286;Faroven;1;8,37
+22/09/2026;668286;Faroven;1;7,99
+02/10/2026;668286;Faroven;1;8,08
+22/10/2026;668286;Faroven;2;16,37
+01/11/2026;668286;Faroven;1;8,24
+11/11/2026;668286;Faroven;1;8,34
+25/05/2026;640790;Albaven;11;93,98
+07/06/2026;640790;Albaven;4;35,94
+20/06/2026;640790;Albaven;11;96,75
+03/07/2026;640790;Albaven;10;86,29
+16/07/2026;640790;Albaven;9;79,19
+29/07/2026;640790;Albaven;15;131,56
+11/08/2026;640790;Albaven;8;67,95
+24/08/2026;640790;Albaven;11;98,91
+06/09/2026;640790;Albaven;21;188,23
+19/09/2026;640790;Albaven;10;85,23
+02/10/2026;640790;Albaven;22;199,75
+15/10/2026;640790;Albaven;10;90,30
+28/10/2026;640790;Albaven;9;76,92
+10/11/2026;640790;Albaven;9;76,03
+28/05/2026;739218;Faroven;2;22,54
+29/06/2026;739218;Faroven;1;11,43
+07/07/2026;739218;Faroven;3;33,85
+23/07/2026;739218;Faroven;3;32,99
+31/07/2026;739218;Faroven;1;11,19
+16/08/2026;739218;Faroven;1;10,73
+17/09/2026;739218;Faroven;1;10,67
+25/09/2026;739218;Faroven;1;10,85
+19/10/2026;739218;Faroven;1;11,06
+12/11/2026;739218;Faroven;2;21,51
+16/06/2026;755682;Tera Salud;2;10,41
+04/07/2026;755682;Tera Salud;3;15,80
+22/07/2026;755682;Tera Salud;2;10,39
+09/08/2026;755682;Tera Salud;3;15,86
+27/08/2026;755682;Tera Salud;3;15,39
+02/10/2026;755682;Tera Salud;3;15,11
+20/10/2026;755682;Tera Salud;4;21,24
+20/08/2026;926912;Laboratorios Albafarma;2;19,08
+09/09/2026;926912;Laboratorios Albafarma;1;10,20
+21/08/2026;816300;Laboratorios Orion Salud;1;5,75
+30/09/2026;816300;Laboratorios Orion Salud;1;5,79
+25/10/2026;816300;Laboratorios Orion Salud;1;5,54
+23/05/2026;663762;Laboratorios Vitagen;3;4,99
+02/06/2026;663762;Laboratorios Vitagen;7;11,23
+22/06/2026;663762;Laboratorios Vitagen;6;9,56
+12/07/2026;663762;Laboratorios Vitagen;2;3,37
+22/07/2026;663762;Laboratorios Vitagen;3;4,89
+01/08/2026;663762;Laboratorios Vitagen;2;3,29
+11/08/2026;663762;Laboratorios Vitagen;1;1,61
+21/08/2026;663762;Laboratorios Vitagen;1;1,72
+31/08/2026;663762;Laboratorios Vitagen;1;1,63
+10/09/2026;663762;Laboratorios Vitagen;1;1,59
+20/09/2026;663762;Laboratorios Vitagen;1;1,65
+30/09/2026;663762;Laboratorios Vitagen;3;4,85
+10/10/2026;663762;Laboratorios Vitagen;1;1,68
+20/10/2026;663762;Laboratorios Vitagen;3;4,90
+30/10/2026;663762;Laboratorios Vitagen;1;1,69
+09/11/2026;663762;Laboratorios Vitagen;2;3,33
+25/05/2026;673927;Laboratorios Vitagen;1;20,49
+16/06/2026;673927;Laboratorios Vitagen;1;21,59
+08/07/2026;673927;Laboratorios Vitagen;1;20,93
+01/09/2026;673927;Laboratorios Vitagen;1;20,52
+12/09/2026;673927;Laboratorios Vitagen;1;20,67
+23/09/2026;673927;Laboratorios Vitagen;1;21,18
+04/10/2026;673927;Laboratorios Vitagen;1;20,85
+26/10/2026;673927;Laboratorios Vitagen;1;20,95
+23/05/2026;961916;Laboratorios Vitagen;2;3,75
+01/06/2026;961916;Laboratorios Vitagen;3;5,97
+19/06/2026;961916;Laboratorios Vitagen;3;5,65
+28/06/2026;961916;Laboratorios Vitagen;1;1,99
+07/07/2026;961916;Laboratorios Vitagen;3;5,85
+16/07/2026;961916;Laboratorios Vitagen;2;3,75
+25/07/2026;961916;Laboratorios Vitagen;1;1,96
+12/08/2026;961916;Laboratorios Vitagen;2;3,93
+21/08/2026;961916;Laboratorios Vitagen;1;1,88
+30/08/2026;961916;Laboratorios Vitagen;2;3,76
+08/09/2026;961916;Laboratorios Vitagen;2;3,91
+17/09/2026;961916;Laboratorios Vitagen;1;1,87
+26/09/2026;961916;Laboratorios Vitagen;1;1,92
+05/10/2026;961916;Laboratorios Vitagen;5;9,92
+14/10/2026;961916;Laboratorios Vitagen;2;3,75
+10/11/2026;961916;Laboratorios Vitagen;2;3,81
+19/11/2026;961916;Laboratorios Vitagen;1;1,99
+29/06/2026;644387;Faroven;1;4,72
+13/07/2026;644387;Faroven;1;4,71
+10/08/2026;644387;Faroven;2;8,87
+07/09/2026;644387;Faroven;3;14,07
+21/09/2026;644387;Faroven;1;4,39
+05/10/2026;644387;Faroven;1;4,40
+16/11/2026;644387;Faroven;1;4,62
+18/06/2026;797782;Laboratorios Albafarma;1;16,48
+26/06/2026;797782;Laboratorios Albafarma;1;17,36
+04/07/2026;797782;Laboratorios Albafarma;1;16,32
+20/07/2026;797782;Laboratorios Albafarma;1;17,14
+13/08/2026;797782;Laboratorios Albafarma;1;17,25
+21/08/2026;797782;Laboratorios Albafarma;1;17,18
+22/09/2026;797782;Laboratorios Albafarma;1;16,10
+16/10/2026;797782;Laboratorios Albafarma;1;16,64
+24/10/2026;797782;Laboratorios Albafarma;1;16,78
+01/11/2026;797782;Laboratorios Albafarma;1;16,26
+09/11/2026;797782;Laboratorios Albafarma;1;17,10
+08/06/2026;826289;Laboratorios Norte Pharma;2;11,21
+20/07/2026;826289;Laboratorios Norte Pharma;2;10,90
+31/08/2026;826289;Laboratorios Norte Pharma;2;11,61
+12/10/2026;826289;Laboratorios Norte Pharma;2;11,26
+30/05/2026;656094;Medi Salud;3;16,36
+19/06/2026;656094;Medi Salud;9;47,45
+09/07/2026;656094;Medi Salud;1;5,37
+29/07/2026;656094;Medi Salud;7;35,97
+18/08/2026;656094;Medi Salud;10;51,24
+07/09/2026;656094;Medi Salud;6;30,87
+27/09/2026;656094;Medi Salud;1;5,20
+17/10/2026;656094;Medi Salud;3;15,93
+24/05/2026;804549;Laboratorios Vitagen;3;29,32
+29/05/2026;804549;Laboratorios Vitagen;1;9,78
+08/06/2026;804549;Laboratorios Vitagen;2;20,09
+18/06/2026;804549;Laboratorios Vitagen;2;19,79
+23/06/2026;804549;Laboratorios Vitagen;2;19,95
+28/06/2026;804549;Laboratorios Vitagen;1;9,64
+03/07/2026;804549;Laboratorios Vitagen;2;20,62
+08/07/2026;804549;Laboratorios Vitagen;1;9,94
+13/07/2026;804549;Laboratorios Vitagen;4;39,44
+28/07/2026;804549;Laboratorios Vitagen;2;20,24
+07/08/2026;804549;Laboratorios Vitagen;2;19,82
+12/08/2026;804549;Laboratorios Vitagen;2;20,14
+17/08/2026;804549;Laboratorios Vitagen;2;19,30
+22/08/2026;804549;Laboratorios Vitagen;2;20,17
+27/08/2026;804549;Laboratorios Vitagen;1;9,60
+01/09/2026;804549;Laboratorios Vitagen;1;10,00
+06/09/2026;804549;Laboratorios Vitagen;2;19,27
+16/09/2026;804549;Laboratorios Vitagen;3;29,19
+26/09/2026;804549;Laboratorios Vitagen;1;10,32
+01/10/2026;804549;Laboratorios Vitagen;2;19,32
+06/10/2026;804549;Laboratorios Vitagen;1;9,56
+16/10/2026;804549;Laboratorios Vitagen;2;20,08
+21/10/2026;804549;Laboratorios Vitagen;2;19,33
+26/10/2026;804549;Laboratorios Vitagen;1;9,82
+10/11/2026;804549;Laboratorios Vitagen;1;10,28
+15/11/2026;804549;Laboratorios Vitagen;2;20,05
+20/11/2026;804549;Laboratorios Vitagen;1;9,78
+07/06/2026;855546;Laboratorios Vitagen;3;43,22
+04/07/2026;855546;Laboratorios Vitagen;1;13,97
+18/08/2026;855546;Laboratorios Vitagen;1;14,47
+27/08/2026;855546;Laboratorios Vitagen;2;29,17
+14/09/2026;855546;Laboratorios Vitagen;1;13,69
+11/10/2026;855546;Laboratorios Vitagen;1;14,22
+20/10/2026;855546;Laboratorios Vitagen;1;13,66
+05/06/2026;811965;Laboratorios Vitagen;6;42,03
+22/06/2026;811965;Laboratorios Vitagen;3;22,24
+09/07/2026;811965;Laboratorios Vitagen;3;21,78
+26/07/2026;811965;Laboratorios Vitagen;5;36,01
+12/08/2026;811965;Laboratorios Vitagen;7;50,65
+29/08/2026;811965;Laboratorios Vitagen;8;58,57
+15/09/2026;811965;Laboratorios Vitagen;4;28,46
+02/10/2026;811965;Laboratorios Vitagen;8;56,04
+19/10/2026;811965;Laboratorios Vitagen;5;35,20
+05/11/2026;811965;Laboratorios Vitagen;6;44,65
+25/06/2026;896876;Laboratorios Lumengen;2;158,25
+13/07/2026;896876;Laboratorios Lumengen;2;161,90
+31/07/2026;896876;Laboratorios Lumengen;4;331,85
+18/08/2026;896876;Laboratorios Lumengen;1;80,74
+05/09/2026;896876;Laboratorios Lumengen;1;82,58
+23/09/2026;896876;Laboratorios Lumengen;1;78,49
+11/10/2026;896876;Laboratorios Lumengen;1;79,13
+23/05/2026;661238;Faroven;3;20,55
+03/06/2026;661238;Faroven;3;19,84
+14/06/2026;661238;Faroven;3;20,61
+25/06/2026;661238;Faroven;4;26,18
+06/07/2026;661238;Faroven;4;28,06
+17/07/2026;661238;Faroven;3;19,94
+28/07/2026;661238;Faroven;4;26,96
+08/08/2026;661238;Faroven;2;14,01
+19/08/2026;661238;Faroven;3;20,87
+30/08/2026;661238;Faroven;3;19,74
+10/09/2026;661238;Faroven;2;13,84
+21/09/2026;661238;Faroven;3;20,34
+02/10/2026;661238;Faroven;7;46,67
+13/10/2026;661238;Faroven;5;34,06
+24/10/2026;661238;Faroven;1;6,77
+04/11/2026;661238;Faroven;3;19,66
+01/06/2026;869124;Tera Salud;2;9,01
+21/06/2026;869124;Tera Salud;2;9,23
+11/07/2026;869124;Tera Salud;3;13,02
+31/07/2026;869124;Tera Salud;2;9,07
+20/08/2026;869124;Tera Salud;3;13,52
+09/09/2026;869124;Tera Salud;2;8,80
+29/09/2026;869124;Tera Salud;2;9,08
+19/10/2026;869124;Tera Salud;4;18,56
+08/11/2026;869124;Tera Salud;2;9,14
+24/05/2026;618229;Laboratorios Hespermed;3;11,97
+06/06/2026;618229;Laboratorios Hespermed;1;3,88
+10/08/2026;618229;Laboratorios Hespermed;1;3,95
+23/08/2026;618229;Laboratorios Hespermed;3;11,60
+05/09/2026;618229;Laboratorios Hespermed;1;3,98
+01/10/2026;618229;Laboratorios Hespermed;1;3,90
+05/06/2026;741899;Laboratorios Galenfarma;3;35,11
+25/06/2026;741899;Laboratorios Galenfarma;3;34,63
+15/07/2026;741899;Laboratorios Galenfarma;2;23,63
+04/08/2026;741899;Laboratorios Galenfarma;2;22,99
+24/08/2026;741899;Laboratorios Galenfarma;3;35,20
+13/09/2026;741899;Laboratorios Galenfarma;2;23,99
+03/10/2026;741899;Laboratorios Galenfarma;3;35,54
+23/10/2026;741899;Laboratorios Galenfarma;1;11,80
+31/05/2026;832757;Laboratorios Vitagen;1;16,68
+14/07/2026;832757;Laboratorios Vitagen;1;15,81
+25/07/2026;832757;Laboratorios Vitagen;1;15,53
+05/08/2026;832757;Laboratorios Vitagen;1;16,29
+07/09/2026;832757;Laboratorios Vitagen;1;15,59
+18/09/2026;832757;Laboratorios Vitagen;1;16,52
+29/09/2026;832757;Laboratorios Vitagen;3;49,73
+10/10/2026;832757;Laboratorios Vitagen;2;31,85
+21/10/2026;832757;Laboratorios Vitagen;1;16,61
+01/11/2026;832757;Laboratorios Vitagen;1;16,52
+08/07/2026;960765;Laboratorios Vitagen;2;6,98
+04/08/2026;960765;Laboratorios Vitagen;1;3,60
+13/08/2026;960765;Laboratorios Vitagen;1;3,48
+09/09/2026;960765;Laboratorios Vitagen;1;3,49
+24/10/2026;960765;Laboratorios Vitagen;1;3,61
+02/11/2026;960765;Laboratorios Vitagen;1;3,47
+11/11/2026;960765;Laboratorios Vitagen;1;3,53
+26/05/2026;952107;Faroven;2;7,09
+16/06/2026;952107;Faroven;3;10,83
+07/07/2026;952107;Faroven;1;3,41
+28/07/2026;952107;Faroven;1;3,60
+18/08/2026;952107;Faroven;1;3,60
+29/09/2026;952107;Faroven;2;6,97
+30/05/2026;728301;Iber Salud;10;93,01
+18/06/2026;728301;Iber Salud;8;75,61
+07/07/2026;728301;Iber Salud;7;68,15
+26/07/2026;728301;Iber Salud;7;69,89
+14/08/2026;728301;Iber Salud;4;39,36
+02/09/2026;728301;Iber Salud;2;19,38
+21/09/2026;728301;Iber Salud;8;75,61
+10/10/2026;728301;Iber Salud;13;128,34
+29/10/2026;728301;Iber Salud;5;47,20
+17/11/2026;728301;Iber Salud;2;19,79
+23/05/2026;974241;Medi Salud;2;10,10
+12/06/2026;974241;Medi Salud;5;26,25
+02/07/2026;974241;Medi Salud;2;10,00
+22/07/2026;974241;Medi Salud;2;10,72
+31/08/2026;974241;Medi Salud;3;15,65
+20/09/2026;974241;Medi Salud;2;10,16
+10/10/2026;974241;Medi Salud;2;10,10
+25/05/2026;715315;Laboratorios Faroderm;1;38,02
+30/05/2026;715315;Laboratorios Faroderm;1;37,90
+09/07/2026;715315;Laboratorios Faroderm;2;75,95
+14/07/2026;715315;Laboratorios Faroderm;1;37,97
+31/05/2026;718697;Euroderm;2;17,20
+20/06/2026;718697;Euroderm;7;62,52
+10/07/2026;718697;Euroderm;4;33,91
+30/07/2026;718697;Euroderm;7;64,11
+19/08/2026;718697;Euroderm;1;9,05
+08/09/2026;718697;Euroderm;5;45,94
+28/09/2026;718697;Euroderm;4;34,50
+18/10/2026;718697;Euroderm;4;35,14
+07/11/2026;718697;Euroderm;3;26,74
+29/05/2026;937205;Laboratorios Lumen Salud;4;50,85
+08/06/2026;937205;Laboratorios Lumen Salud;7;84,65
+18/06/2026;937205;Laboratorios Lumen Salud;7;89,86
+28/06/2026;937205;Laboratorios Lumen Salud;6;76,52
+08/07/2026;937205;Laboratorios Lumen Salud;6;72,86
+18/07/2026;937205;Laboratorios Lumen Salud;5;64,04
+28/07/2026;937205;Laboratorios Lumen Salud;2;23,99
+07/08/2026;937205;Laboratorios Lumen Salud;5;61,94
+17/08/2026;937205;Laboratorios Lumen Salud;7;87,37
+27/08/2026;937205;Laboratorios Lumen Salud;3;38,23
+06/09/2026;937205;Laboratorios Lumen Salud;8;101,46
+16/09/2026;937205;Laboratorios Lumen Salud;9;111,35
+26/09/2026;937205;Laboratorios Lumen Salud;5;60,10
+06/10/2026;937205;Laboratorios Lumen Salud;6;73,02
+16/10/2026;937205;Laboratorios Lumen Salud;2;24,45
+26/10/2026;937205;Laboratorios Lumen Salud;2;23,90
+05/11/2026;937205;Laboratorios Lumen Salud;6;72,00
+15/11/2026;937205;Laboratorios Lumen Salud;2;24,50
+30/05/2026;723416;Albaven;6;50,63
+14/06/2026;723416;Albaven;7;60,86
+29/06/2026;723416;Albaven;8;65,20
+14/07/2026;723416;Albaven;13;113,47
+29/07/2026;723416;Albaven;5;40,71
+13/08/2026;723416;Albaven;5;42,27
+28/08/2026;723416;Albaven;9;76,20
+12/09/2026;723416;Albaven;6;51,05
+27/09/2026;723416;Albaven;5;40,40
+12/10/2026;723416;Albaven;7;60,70
+27/10/2026;723416;Albaven;4;33,20
+11/11/2026;723416;Albaven;4;34,13
+11/06/2026;709105;Laboratorios Deltafarma;1;11,81
+02/07/2026;709105;Laboratorios Deltafarma;1;11,82
+13/08/2026;709105;Laboratorios Deltafarma;1;11,16
+15/10/2026;709105;Laboratorios Deltafarma;1;11,55
+05/11/2026;709105;Laboratorios Deltafarma;1;11,03
+27/05/2026;644528;Rial Pharma;2;4,60
+03/06/2026;644528;Rial Pharma;3;6,70
+10/06/2026;644528;Rial Pharma;2;4,55
+17/06/2026;644528;Rial Pharma;2;4,50
+24/06/2026;644528;Rial Pharma;3;6,50
+01/07/2026;644528;Rial Pharma;1;2,31
+08/07/2026;644528;Rial Pharma;2;4,63
+15/07/2026;644528;Rial Pharma;3;6,91
+22/07/2026;644528;Rial Pharma;1;2,31
+29/07/2026;644528;Rial Pharma;1;2,25
+05/08/2026;644528;Rial Pharma;1;2,25
+12/08/2026;644528;Rial Pharma;1;2,19
+19/08/2026;644528;Rial Pharma;2;4,64
+26/08/2026;644528;Rial Pharma;3;6,59
+09/09/2026;644528;Rial Pharma;3;6,98
+23/09/2026;644528;Rial Pharma;2;4,48
+30/09/2026;644528;Rial Pharma;4;9,28
+14/10/2026;644528;Rial Pharma;6;13,26
+21/10/2026;644528;Rial Pharma;1;2,16
+28/10/2026;644528;Rial Pharma;1;2,19
+04/11/2026;644528;Rial Pharma;1;2,33
+11/11/2026;644528;Rial Pharma;2;4,57
+04/06/2026;672221;Laboratorios Lumen Salud;1;10,85
+19/06/2026;672221;Laboratorios Lumen Salud;1;10,61
+04/07/2026;672221;Laboratorios Lumen Salud;2;21,76
+19/07/2026;672221;Laboratorios Lumen Salud;1;10,78
+03/08/2026;672221;Laboratorios Lumen Salud;5;54,75
+18/08/2026;672221;Laboratorios Lumen Salud;1;10,60
+17/09/2026;672221;Laboratorios Lumen Salud;1;10,34
+17/10/2026;672221;Laboratorios Lumen Salud;3;32,42
+01/11/2026;672221;Laboratorios Lumen Salud;3;32,65
+09/06/2026;924000;Laboratorios Vitagen;2;10,57
+18/06/2026;924000;Laboratorios Vitagen;3;15,57
+27/06/2026;924000;Laboratorios Vitagen;2;10,01
+15/07/2026;924000;Laboratorios Vitagen;1;5,08
+24/07/2026;924000;Laboratorios Vitagen;1;5,04
+02/08/2026;924000;Laboratorios Vitagen;2;10,13
+11/08/2026;924000;Laboratorios Vitagen;1;5,08
+16/09/2026;924000;Laboratorios Vitagen;1;5,35
+04/10/2026;924000;Laboratorios Vitagen;5;26,59
+18/11/2026;924000;Laboratorios Vitagen;3;15,20
+05/06/2026;669421;Euroderm;2;7,58
+17/07/2026;669421;Euroderm;2;7,42
+07/08/2026;669421;Euroderm;1;3,77
+28/08/2026;669421;Euroderm;1;3,72
+18/09/2026;669421;Euroderm;1;3,65
+28/05/2026;794498;Hesper Pharma;2;14,34
+10/06/2026;794498;Hesper Pharma;3;22,07
+23/06/2026;794498;Hesper Pharma;1;7,19
+06/07/2026;794498;Hesper Pharma;3;20,69
+19/07/2026;794498;Hesper Pharma;2;13,97
+01/08/2026;794498;Hesper Pharma;2;14,10
+14/08/2026;794498;Hesper Pharma;1;6,90
+09/09/2026;794498;Hesper Pharma;1;7,33
+22/09/2026;794498;Hesper Pharma;1;7,32
+05/10/2026;794498;Hesper Pharma;2;14,12
+18/10/2026;794498;Hesper Pharma;1;7,02
+13/11/2026;794498;Hesper Pharma;1;6,93
+28/05/2026;640496;Pharma Salud;5;58,65
+14/06/2026;640496;Pharma Salud;4;47,13
+18/07/2026;640496;Pharma Salud;7;80,89
+04/08/2026;640496;Pharma Salud;6;68,91
+21/08/2026;640496;Pharma Salud;3;34,28
+07/09/2026;640496;Pharma Salud;4;44,36
+24/09/2026;640496;Pharma Salud;3;35,13
+11/10/2026;640496;Pharma Salud;2;22,88
+28/10/2026;640496;Pharma Salud;1;11,45
+14/11/2026;640496;Pharma Salud;1;11,43
+03/07/2026;892327;Laboratorios Faroderm;1;15,20
+11/09/2026;892327;Laboratorios Faroderm;1;15,72
+28/05/2026;820590;Iber Salud;1;11,28
+11/06/2026;820590;Iber Salud;2;21,81
+25/06/2026;820590;Iber Salud;2;22,71
+09/07/2026;820590;Iber Salud;1;10,83
+23/07/2026;820590;Iber Salud;3;33,37
+20/08/2026;820590;Iber Salud;2;22,04
+03/09/2026;820590;Iber Salud;2;21,48
+17/09/2026;820590;Iber Salud;1;11,15
+01/10/2026;820590;Iber Salud;3;33,44
+29/10/2026;820590;Iber Salud;3;33,64
+23/05/2026;777482;Rial Pharma;1;3,79
+08/06/2026;777482;Rial Pharma;2;7,60
+24/06/2026;777482;Rial Pharma;4;15,62
+26/07/2026;777482;Rial Pharma;4;15,28
+11/08/2026;777482;Rial Pharma;3;11,39
+27/08/2026;777482;Rial Pharma;1;3,85
+12/09/2026;777482;Rial Pharma;4;14,77
+28/09/2026;777482;Rial Pharma;5;18,55
+14/10/2026;777482;Rial Pharma;4;15,41
+30/10/2026;777482;Rial Pharma;4;15,28
+07/06/2026;994806;Faroven;4;11,27
+25/06/2026;994806;Faroven;3;8,39
+13/07/2026;994806;Faroven;2;5,60
+31/07/2026;994806;Faroven;5;14,68
+18/08/2026;994806;Faroven;5;14,01
+05/09/2026;994806;Faroven;2;5,90
+23/09/2026;994806;Faroven;1;2,83
+11/10/2026;994806;Faroven;4;11,66
+29/10/2026;994806;Faroven;2;5,70
+27/05/2026;635191;Rialderm;1;8,53
+04/06/2026;635191;Rialderm;2;17,47
+12/06/2026;635191;Rialderm;1;8,53
+20/06/2026;635191;Rialderm;2;17,12
+28/06/2026;635191;Rialderm;5;44,54
+06/07/2026;635191;Rialderm;2;17,58
+14/07/2026;635191;Rialderm;2;17,94
+22/07/2026;635191;Rialderm;1;8,94
+30/07/2026;635191;Rialderm;5;44,01
+07/08/2026;635191;Rialderm;1;8,82
+15/08/2026;635191;Rialderm;3;26,79
+31/08/2026;635191;Rialderm;1;8,58
+08/09/2026;635191;Rialderm;1;9,01
+16/09/2026;635191;Rialderm;1;8,99
+02/10/2026;635191;Rialderm;1;9,00
+31/05/2026;934317;Tera Salud;2;13,51
+06/06/2026;934317;Tera Salud;4;27,89
+12/06/2026;934317;Tera Salud;4;28,72
+18/06/2026;934317;Tera Salud;1;6,65
+24/06/2026;934317;Tera Salud;2;13,27
+30/06/2026;934317;Tera Salud;3;20,95
+06/07/2026;934317;Tera Salud;1;6,68
+12/07/2026;934317;Tera Salud;2;14,31
+18/07/2026;934317;Tera Salud;4;28,63
+24/07/2026;934317;Tera Salud;2;13,27
+30/07/2026;934317;Tera Salud;1;6,82
+05/08/2026;934317;Tera Salud;1;7,14
+11/08/2026;934317;Tera Salud;7;46,69
+17/08/2026;934317;Tera Salud;2;14,33
+23/08/2026;934317;Tera Salud;1;7,06
+29/08/2026;934317;Tera Salud;1;6,61
+04/09/2026;934317;Tera Salud;3;19,84
+10/09/2026;934317;Tera Salud;2;14,36
+16/09/2026;934317;Tera Salud;2;13,93
+22/09/2026;934317;Tera Salud;3;20,92
+28/09/2026;934317;Tera Salud;4;27,70
+04/10/2026;934317;Tera Salud;3;21,07
+10/10/2026;934317;Tera Salud;1;6,61
+16/10/2026;934317;Tera Salud;6;40,23
+22/10/2026;934317;Tera Salud;6;40,78
+28/10/2026;934317;Tera Salud;1;6,83
+03/11/2026;934317;Tera Salud;2;13,73
+09/11/2026;934317;Tera Salud;1;6,87
+15/11/2026;934317;Tera Salud;1;6,87
+27/05/2026;711063;Laboratorios Vitagen;3;13,39
+01/06/2026;711063;Laboratorios Vitagen;1;4,71
+06/06/2026;711063;Laboratorios Vitagen;1;4,68
+11/06/2026;711063;Laboratorios Vitagen;1;4,45
+21/06/2026;711063;Laboratorios Vitagen;4;18,34
+26/06/2026;711063;Laboratorios Vitagen;1;4,41
+06/07/2026;711063;Laboratorios Vitagen;2;8,93
+11/07/2026;711063;Laboratorios Vitagen;1;4,60
+21/07/2026;711063;Laboratorios Vitagen;3;13,16
+26/07/2026;711063;Laboratorios Vitagen;2;9,03
+10/08/2026;711063;Laboratorios Vitagen;1;4,39
+25/08/2026;711063;Laboratorios Vitagen;1;4,37
+04/09/2026;711063;Laboratorios Vitagen;1;4,70
+09/09/2026;711063;Laboratorios Vitagen;4;18,39
+14/09/2026;711063;Laboratorios Vitagen;2;8,94
+29/09/2026;711063;Laboratorios Vitagen;1;4,62
+04/10/2026;711063;Laboratorios Vitagen;2;9,20
+09/10/2026;711063;Laboratorios Vitagen;1;4,38
+14/10/2026;711063;Laboratorios Vitagen;1;4,71
+19/10/2026;711063;Laboratorios Vitagen;3;14,13
+24/10/2026;711063;Laboratorios Vitagen;1;4,56
+29/10/2026;711063;Laboratorios Vitagen;3;13,98
+08/11/2026;711063;Laboratorios Vitagen;1;4,41
+13/11/2026;711063;Laboratorios Vitagen;2;9,47
+07/06/2026;694903;Laboratorios Vitagen;2;10,58
+27/06/2026;694903;Laboratorios Vitagen;4;19,66
+17/07/2026;694903;Laboratorios Vitagen;2;10,10
+06/08/2026;694903;Laboratorios Vitagen;1;4,96
+26/08/2026;694903;Laboratorios Vitagen;3;15,76
+15/09/2026;694903;Laboratorios Vitagen;4;19,54
+05/10/2026;694903;Laboratorios Vitagen;4;19,60
+25/10/2026;694903;Laboratorios Vitagen;3;15,05
+14/11/2026;694903;Laboratorios Vitagen;3;15,20
+27/09/2026;676187;Laboratorios Hespermed;2;23,29
+31/05/2026;849671;Laboratorios Albafarma;3;16,35
+17/06/2026;849671;Laboratorios Albafarma;2;10,88
+04/07/2026;849671;Laboratorios Albafarma;4;20,91
+21/07/2026;849671;Laboratorios Albafarma;6;30,95
+07/08/2026;849671;Laboratorios Albafarma;1;5,42
+24/08/2026;849671;Laboratorios Albafarma;8;40,80
+10/09/2026;849671;Laboratorios Albafarma;9;47,72
+27/09/2026;849671;Laboratorios Albafarma;3;15,96
+14/10/2026;849671;Laboratorios Albafarma;6;30,62
+31/10/2026;849671;Laboratorios Albafarma;7;38,04
+17/11/2026;849671;Laboratorios Albafarma;3;16,05
+30/05/2026;731582;Laboratorios Vitagen;21;89,86
+16/06/2026;731582;Laboratorios Vitagen;26;115,65
+03/07/2026;731582;Laboratorios Vitagen;21;88,05
+20/07/2026;731582;Laboratorios Vitagen;18;74,75
+06/08/2026;731582;Laboratorios Vitagen;22;91,75
+23/08/2026;731582;Laboratorios Vitagen;23;102,23
+09/09/2026;731582;Laboratorios Vitagen;19;80,70
+26/09/2026;731582;Laboratorios Vitagen;17;74,42
+13/10/2026;731582;Laboratorios Vitagen;22;92,32
+30/10/2026;731582;Laboratorios Vitagen;18;78,25
+16/11/2026;731582;Laboratorios Vitagen;14;61,19
+09/06/2026;847919;Laboratorios Hespermed;3;20,50
+16/06/2026;847919;Laboratorios Hespermed;3;19,31
+23/06/2026;847919;Laboratorios Hespermed;3;19,63
+30/06/2026;847919;Laboratorios Hespermed;3;19,49
+07/07/2026;847919;Laboratorios Hespermed;3;19,75
+21/07/2026;847919;Laboratorios Hespermed;3;19,99
+04/08/2026;847919;Laboratorios Hespermed;2;13,18
+11/08/2026;847919;Laboratorios Hespermed;2;13,56
+18/08/2026;847919;Laboratorios Hespermed;2;12,94
+25/08/2026;847919;Laboratorios Hespermed;3;19,80
+01/09/2026;847919;Laboratorios Hespermed;2;12,86
+22/09/2026;847919;Laboratorios Hespermed;2;13,19
+29/09/2026;847919;Laboratorios Hespermed;2;13,31
+06/10/2026;847919;Laboratorios Hespermed;3;19,43
+13/10/2026;847919;Laboratorios Hespermed;3;19,83
+10/11/2026;847919;Laboratorios Hespermed;2;13,31
+29/05/2026;607159;Laboratorios Biomed;8;36,44
+15/06/2026;607159;Laboratorios Biomed;5;23,43
+02/07/2026;607159;Laboratorios Biomed;4;18,64
+19/07/2026;607159;Laboratorios Biomed;3;13,56
+05/08/2026;607159;Laboratorios Biomed;4;17,99
+22/08/2026;607159;Laboratorios Biomed;4;19,46
+08/09/2026;607159;Laboratorios Biomed;3;14,35
+25/09/2026;607159;Laboratorios Biomed;4;18,92
+12/10/2026;607159;Laboratorios Biomed;10;47,03
+29/10/2026;607159;Laboratorios Biomed;1;4,50
+15/11/2026;607159;Laboratorios Biomed;3;14,41
+24/05/2026;950148;Galenlab;13;66,29
+06/06/2026;950148;Galenlab;13;67,63
+19/06/2026;950148;Galenlab;6;30,48
+02/07/2026;950148;Galenlab;16;82,28
+15/07/2026;950148;Galenlab;5;26,51
+28/07/2026;950148;Galenlab;7;36,08
+10/08/2026;950148;Galenlab;11;55,14
+23/08/2026;950148;Galenlab;5;24,65
+05/09/2026;950148;Galenlab;7;36,51
+18/09/2026;950148;Galenlab;7;37,04
+01/10/2026;950148;Galenlab;1;5,29
+14/10/2026;950148;Galenlab;7;34,90
+27/10/2026;950148;Galenlab;11;55,17
+09/11/2026;950148;Galenlab;5;25,55
+10/06/2026;618171;Rial Pharma;5;47,42
+01/07/2026;618171;Rial Pharma;4;37,35
+22/07/2026;618171;Rial Pharma;6;55,08
+12/08/2026;618171;Rial Pharma;2;19,30
+02/09/2026;618171;Rial Pharma;6;58,42
+23/09/2026;618171;Rial Pharma;4;38,51
+14/10/2026;618171;Rial Pharma;10;93,89
+04/11/2026;618171;Rial Pharma;3;27,85
+25/05/2026;950585;Faroven;3;18,13
+07/06/2026;950585;Faroven;4;24,20
+20/06/2026;950585;Faroven;8;46,78
+03/07/2026;950585;Faroven;5;30,50
+16/07/2026;950585;Faroven;2;11,47
+29/07/2026;950585;Faroven;2;11,79
+11/08/2026;950585;Faroven;4;24,45
+06/09/2026;950585;Faroven;8;49,12
+19/09/2026;950585;Faroven;3;18,26
+02/10/2026;950585;Faroven;4;22,88
+15/10/2026;950585;Faroven;8;47,78
+28/10/2026;950585;Faroven;2;11,63
+10/11/2026;950585;Faroven;5;28,54
+03/06/2026;705568;Eurogen;1;2,21
+01/07/2026;705568;Eurogen;1;2,35
+15/07/2026;705568;Eurogen;2;4,60
+12/08/2026;705568;Eurogen;1;2,32
+23/09/2026;705568;Eurogen;1;2,27
+07/10/2026;705568;Eurogen;1;2,27
+04/11/2026;705568;Eurogen;1;2,35
+28/05/2026;800361;Laboratorios Albafarma;2;13,50
+09/06/2026;800361;Laboratorios Albafarma;1;6,96
+21/06/2026;800361;Laboratorios Albafarma;4;26,48
+03/07/2026;800361;Laboratorios Albafarma;1;6,66
+15/07/2026;800361;Laboratorios Albafarma;2;13,38
+27/07/2026;800361;Laboratorios Albafarma;2;13,85
+20/08/2026;800361;Laboratorios Albafarma;1;6,64
+01/09/2026;800361;Laboratorios Albafarma;1;7,13
+13/09/2026;800361;Laboratorios Albafarma;1;7,11
+07/10/2026;800361;Laboratorios Albafarma;1;6,60
+31/10/2026;800361;Laboratorios Albafarma;1;6,65
+12/11/2026;800361;Laboratorios Albafarma;3;20,63
+30/05/2026;743765;Laboratorios Vitagen;2;13,20
+23/06/2026;743765;Laboratorios Vitagen;1;6,40
+17/07/2026;743765;Laboratorios Vitagen;1;6,30
+29/07/2026;743765;Laboratorios Vitagen;1;6,34
+10/08/2026;743765;Laboratorios Vitagen;2;12,75
+03/09/2026;743765;Laboratorios Vitagen;1;6,27
+15/09/2026;743765;Laboratorios Vitagen;1;6,46
+27/09/2026;743765;Laboratorios Vitagen;2;12,74
+09/10/2026;743765;Laboratorios Vitagen;2;13,10
+21/10/2026;743765;Laboratorios Vitagen;1;6,17
+02/11/2026;743765;Laboratorios Vitagen;1;6,55
+10/06/2026;963739;Laboratorios Albafarma;1;14,28
+02/07/2026;963739;Laboratorios Albafarma;3;45,11
+25/05/2026;992074;Rial Pharma;3;30,60
+06/06/2026;992074;Rial Pharma;1;10,34
+30/06/2026;992074;Rial Pharma;4;42,06
+12/07/2026;992074;Rial Pharma;2;20,90
+24/07/2026;992074;Rial Pharma;3;31,57
+05/08/2026;992074;Rial Pharma;2;20,15
+17/08/2026;992074;Rial Pharma;1;10,05
+29/08/2026;992074;Rial Pharma;4;40,34
+10/09/2026;992074;Rial Pharma;1;10,45
+22/09/2026;992074;Rial Pharma;1;10,34
+04/10/2026;992074;Rial Pharma;1;10,77
+16/10/2026;992074;Rial Pharma;1;10,60
+09/11/2026;992074;Rial Pharma;3;32,43
+18/06/2026;871083;Iber Salud;1;5,35
+01/07/2026;871083;Iber Salud;2;10,75
+14/07/2026;871083;Iber Salud;2;10,41
+22/08/2026;871083;Iber Salud;1;5,10
+04/09/2026;871083;Iber Salud;1;5,18
+17/09/2026;871083;Iber Salud;1;5,24
+13/10/2026;871083;Iber Salud;2;10,58
+26/10/2026;871083;Iber Salud;1;5,42
+10/06/2026;949307;Laboratorios Orion Salud;3;7,17
+03/08/2026;949307;Laboratorios Orion Salud;1;2,32
+08/09/2026;949307;Laboratorios Orion Salud;1;2,25
+01/11/2026;949307;Laboratorios Orion Salud;1;2,35
+06/08/2026;715110;Laboratorios Hespermed;2;31,36
+30/08/2026;715110;Laboratorios Hespermed;2;31,75
+11/09/2026;715110;Laboratorios Hespermed;3;48,30
+05/10/2026;715110;Laboratorios Hespermed;2;31,36
+07/08/2026;779284;Mediderm;1;15,49
+16/08/2026;779284;Mediderm;2;32,31
+12/09/2026;779284;Mediderm;1;15,28
+21/09/2026;779284;Mediderm;1;16,36
+30/09/2026;779284;Mediderm;2;30,73
+25/05/2026;939744;Laboratorios Hespermed;3;22,40
+03/06/2026;939744;Laboratorios Hespermed;2;15,64
+09/07/2026;939744;Laboratorios Hespermed;2;14,90
+18/07/2026;939744;Laboratorios Hespermed;3;24,06
+27/07/2026;939744;Laboratorios Hespermed;2;15,03
+05/08/2026;939744;Laboratorios Hespermed;5;38,53
+14/08/2026;939744;Laboratorios Hespermed;5;38,67
+23/08/2026;939744;Laboratorios Hespermed;3;22,46
+01/09/2026;939744;Laboratorios Hespermed;2;14,87
+10/09/2026;939744;Laboratorios Hespermed;2;15,50
+19/09/2026;939744;Laboratorios Hespermed;2;15,88
+28/09/2026;939744;Laboratorios Hespermed;7;52,70
+07/10/2026;939744;Laboratorios Hespermed;5;38,62
+16/10/2026;939744;Laboratorios Hespermed;2;15,19
+03/11/2026;939744;Laboratorios Hespermed;5;38,30
+12/11/2026;939744;Laboratorios Hespermed;2;14,99
+03/06/2026;934136;Faroven;1;7,08
+27/06/2026;934136;Faroven;2;14,23
+09/07/2026;934136;Faroven;1;7,10
+14/08/2026;934136;Faroven;3;21,17
+26/08/2026;934136;Faroven;2;14,47
+19/09/2026;934136;Faroven;2;13,95
+01/10/2026;934136;Faroven;1;7,45
+13/10/2026;934136;Faroven;2;13,98
+06/11/2026;934136;Faroven;1;7,35
+18/11/2026;934136;Faroven;1;7,39
+25/05/2026;874541;Laboratorios Norte Pharma;6;13,02
+11/06/2026;874541;Laboratorios Norte Pharma;6;12,82
+28/06/2026;874541;Laboratorios Norte Pharma;1;2,14
+15/07/2026;874541;Laboratorios Norte Pharma;6;12,89
+01/08/2026;874541;Laboratorios Norte Pharma;3;6,02
+18/08/2026;874541;Laboratorios Norte Pharma;1;2,13
+04/09/2026;874541;Laboratorios Norte Pharma;7;14,03
+21/09/2026;874541;Laboratorios Norte Pharma;4;8,56
+08/10/2026;874541;Laboratorios Norte Pharma;6;12,66
+25/10/2026;874541;Laboratorios Norte Pharma;1;2,10
+11/11/2026;874541;Laboratorios Norte Pharma;1;2,12
+05/06/2026;642823;Rialderm;6;52,90
+20/06/2026;642823;Rialderm;9;73,66
+05/07/2026;642823;Rialderm;3;25,95
+20/07/2026;642823;Rialderm;4;32,93
+04/08/2026;642823;Rialderm;4;34,14
+19/08/2026;642823;Rialderm;5;41,12
+03/09/2026;642823;Rialderm;2;17,25
+02/06/2026;905831;Nortegen;3;47,02
+26/07/2026;905831;Nortegen;1;15,97
+13/08/2026;905831;Nortegen;1;15,29
+22/08/2026;905831;Nortegen;1;15,44
+06/10/2026;905831;Nortegen;1;15,69
+15/10/2026;905831;Nortegen;1;15,92
+24/10/2026;905831;Nortegen;1;15,23
+20/11/2026;905831;Nortegen;1;15,73
+08/06/2026;992249;Pharma Salud;1;0,48
+18/06/2026;992249;Pharma Salud;1;0,49
+28/06/2026;992249;Pharma Salud;1;0,47
+08/07/2026;992249;Pharma Salud;1;0,50
+28/07/2026;992249;Pharma Salud;1;0,49
+17/08/2026;992249;Pharma Salud;1;0,46
+27/08/2026;992249;Pharma Salud;1;0,48
+06/10/2026;992249;Pharma Salud;2;0,93
+05/11/2026;992249;Pharma Salud;1;0,48
+27/06/2026;968465;Laboratorios Lumen Salud;1;8,57
+07/09/2026;968465;Laboratorios Lumen Salud;1;8,69
+04/10/2026;968465;Laboratorios Lumen Salud;1;9,27
+31/10/2026;968465;Laboratorios Lumen Salud;1;9,22
+31/05/2026;928228;Laboratorios Vitagen;1;7,20
+30/06/2026;928228;Laboratorios Vitagen;1;7,52
+20/07/2026;928228;Laboratorios Vitagen;1;7,41
+29/08/2026;928228;Laboratorios Vitagen;2;14,43
+28/09/2026;928228;Laboratorios Vitagen;1;7,25
+08/10/2026;928228;Laboratorios Vitagen;1;7,56
+18/10/2026;928228;Laboratorios Vitagen;1;7,21
+25/05/2026;725058;Lumenven;1;10,70
+06/06/2026;725058;Lumenven;1;10,29
+12/06/2026;725058;Lumenven;1;10,92
+12/07/2026;725058;Lumenven;1;11,08
+17/08/2026;725058;Lumenven;1;10,98
+23/08/2026;725058;Lumenven;2;20,85
+29/08/2026;725058;Lumenven;1;10,88
+10/09/2026;725058;Lumenven;1;10,41
+22/09/2026;725058;Lumenven;1;10,95
+04/10/2026;725058;Lumenven;1;10,34
+10/10/2026;725058;Lumenven;1;10,63
+28/10/2026;725058;Lumenven;1;10,95
+09/11/2026;725058;Lumenven;3;30,71
+24/06/2026;955363;Tera Salud;4;38,79
+08/07/2026;955363;Tera Salud;1;9,34
+15/07/2026;955363;Tera Salud;1;9,30
+22/07/2026;955363;Tera Salud;1;9,86
+05/08/2026;955363;Tera Salud;1;9,24
+19/08/2026;955363;Tera Salud;3;29,72
+26/08/2026;955363;Tera Salud;1;9,90
+02/09/2026;955363;Tera Salud;1;9,90
+09/09/2026;955363;Tera Salud;1;9,72
+16/09/2026;955363;Tera Salud;1;9,31
+23/09/2026;955363;Tera Salud;1;9,90
+30/09/2026;955363;Tera Salud;4;39,64
+21/10/2026;955363;Tera Salud;1;9,49
+28/10/2026;955363;Tera Salud;1;9,42
+11/11/2026;955363;Tera Salud;1;9,75
+26/05/2026;849700;Laboratorios Medilab;9;185,61
+04/06/2026;849700;Laboratorios Medilab;5;102,70
+13/06/2026;849700;Laboratorios Medilab;4;78,97
+22/06/2026;849700;Laboratorios Medilab;7;140,67
+01/07/2026;849700;Laboratorios Medilab;5;103,41
+10/07/2026;849700;Laboratorios Medilab;8;164,44
+19/07/2026;849700;Laboratorios Medilab;9;178,60
+28/07/2026;849700;Laboratorios Medilab;6;116,77
+06/08/2026;849700;Laboratorios Medilab;8;158,95
+15/08/2026;849700;Laboratorios Medilab;8;165,58
+24/08/2026;849700;Laboratorios Medilab;6;119,32
+02/09/2026;849700;Laboratorios Medilab;7;140,31
+11/09/2026;849700;Laboratorios Medilab;5;98,38
+20/09/2026;849700;Laboratorios Medilab;5;102,14
+29/09/2026;849700;Laboratorios Medilab;6;119,09
+08/10/2026;849700;Laboratorios Medilab;6;123,91
+17/10/2026;849700;Laboratorios Medilab;3;59,29
+26/10/2026;849700;Laboratorios Medilab;4;77,46
+04/11/2026;849700;Laboratorios Medilab;6;118,45
+13/11/2026;849700;Laboratorios Medilab;6;119,26
+27/06/2026;880864;Laboratorios Delta Salud;1;28,90
+19/07/2026;880864;Laboratorios Delta Salud;1;29,81
+21/08/2026;880864;Laboratorios Delta Salud;1;29,71
+12/09/2026;880864;Laboratorios Delta Salud;1;29,50
+15/10/2026;880864;Laboratorios Delta Salud;1;27,86
+23/05/2026;741274;Biogen;3;27,90
+02/07/2026;741274;Biogen;3;26,02
+22/07/2026;741274;Biogen;4;36,42
+20/09/2026;741274;Biogen;3;27,73
+10/10/2026;741274;Biogen;1;9,33
+30/10/2026;741274;Biogen;3;26,16
+02/06/2026;787280;Laboratorios Vitagen;36;82,32
+23/06/2026;787280;Laboratorios Vitagen;25;54,14
+14/07/2026;787280;Laboratorios Vitagen;23;50,37
+04/08/2026;787280;Laboratorios Vitagen;26;55,17
+25/08/2026;787280;Laboratorios Vitagen;27;59,50
+15/09/2026;787280;Laboratorios Vitagen;26;59,09
+06/10/2026;787280;Laboratorios Vitagen;33;73,45
+27/10/2026;787280;Laboratorios Vitagen;23;52,26
+17/11/2026;787280;Laboratorios Vitagen;7;15,82
+25/05/2026;779355;Laboratorios Faroderm;1;17,01
+18/06/2026;779355;Laboratorios Faroderm;1;17,42
+30/06/2026;779355;Laboratorios Faroderm;1;17,91
+12/07/2026;779355;Laboratorios Faroderm;1;16,88
+17/08/2026;779355;Laboratorios Faroderm;1;17,91
+10/09/2026;779355;Laboratorios Faroderm;1;17,96
+22/09/2026;779355;Laboratorios Faroderm;1;17,72
+09/11/2026;779355;Laboratorios Faroderm;1;17,79
+29/05/2026;981061;Tera Salud;1;9,14
+26/06/2026;981061;Tera Salud;2;17,39
+10/07/2026;981061;Tera Salud;3;26,93
+24/07/2026;981061;Tera Salud;2;17,71
+07/08/2026;981061;Tera Salud;4;34,47
+21/08/2026;981061;Tera Salud;3;25,96
+04/09/2026;981061;Tera Salud;1;9,15
+02/10/2026;981061;Tera Salud;2;17,63
+16/10/2026;981061;Tera Salud;1;9,16
+30/10/2026;981061;Tera Salud;4;36,27

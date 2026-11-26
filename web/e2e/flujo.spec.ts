@@ -106,10 +106,48 @@ test("subir: vista previa y bloqueo por privacidad", async ({ page }) => {
   await expectAccessible(page);
   await page.getByTestId("input-ficheros").setInputFiles(["public/ejemplos/ejemplo_bloqueado.csv"]);
   await expect(page.getByTestId("bloqueo-privacidad")).toContainText("DNI");
-  await expect(page.getByTestId("analizar")).toBeDisabled();
+  await expect(page.getByTestId("barra-analisis")).toContainText("bloqueados por privacidad");
+  await expect(page.getByTestId("analizar")).toHaveCount(0);
   await page.getByRole("button", { name: /Quitar ejemplo_bloqueado/ }).click();
+  // Con solo ventas, el análisis real no se puede hacer: se ofrece la demo simulada.
+  await expect(page.getByTestId("barra-analisis")).toContainText("faltan");
+  await expect(page.getByTestId("analizar")).toBeDisabled();
+  await page.getByTestId("analizar-simulado").click();
+  await page.waitForURL("**/lunes");
+});
+
+test("subir: análisis real con el motor local y vuelta a la demo", async ({ page }) => {
+  await startDemo(page);
+  await page.goto("/subir");
+  await page
+    .getByTestId("input-ficheros")
+    .setInputFiles([
+      "public/ejemplos/ventas_ejemplo.csv",
+      "public/ejemplos/stock_ejemplo.csv",
+      "public/ejemplos/compras_ejemplo.csv",
+    ]);
+  await expect(page.getByTestId("nombre-farmacia")).toBeVisible();
+  await page.getByTestId("nombre-farmacia").fill("Farmacia Ejemplo Real");
   await page.getByTestId("analizar").click();
   await page.waitForURL("**/lunes");
+  await expect(page.getByRole("status")).toContainText("Análisis completado");
+  await expect(page.getByTestId("progreso")).toContainText("0 de");
+  await expect(page.getByTestId("progreso")).not.toContainText("de 40");
+  // Marcar una acción del análisis real no afecta a la demo.
+  await page
+    .getByTestId("lista-acciones")
+    .locator("li[data-action-id]")
+    .first()
+    .getByRole("button", { name: /Marcar como hecha/ })
+    .click();
+  await page.goto("/ajustes");
+  await expect(page.getByTestId("origen-datos")).toContainText("Motor local");
+  await expect(page.getByTestId("origen-datos")).toContainText("Farmacia Ejemplo Real");
+  await expectAccessible(page);
+  await page.getByRole("button", { name: "Ver la demo" }).click();
+  await expect(page.getByTestId("origen-datos")).toContainText("Demostración");
+  await page.goto("/lunes");
+  await expect(page.getByTestId("progreso")).toContainText("0 de 40 hechas");
 });
 
 test("productos: tabla virtualizada con 8.000 referencias", async ({ page }) => {

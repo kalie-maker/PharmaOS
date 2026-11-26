@@ -50,3 +50,12 @@ Formato: decisión · motivo · cómo revertir.
 19. **Corrección:** el commit de la fase 11 se hizo con un error de lint (`console.log` en
     `web/scripts/split-report.mjs`) que no vi por leer mal la salida. Corregido en la tanda 1 de pulido;
     desde entonces compruebo el código de salida de `npm run check`.
+20. **Fase 13 — API local (FastAPI):** `python -m engine.cli servir` (127.0.0.1:8000, solo este ordenador).
+    Los ficheros subidos van a un directorio temporal que se borra siempre; solo se guarda el informe en
+    `stock-profit-os/out/api/` (gitignored). Errores de privacidad: 422 con columnas y motivos, nunca valores.
+    Dependencias opcionales `[api]`: fastapi, uvicorn, python-multipart; `httpx` para tests.
+21. **Origen de datos conmutable:** `settings.source = "motor"` tras un análisis real; las pantallas leen
+    la API (`/informe?nucleo=true`) y /productos el completo. Las acciones marcadas se guardan por origen y
+    semana (lo de la demo no se mezcla con el análisis real).
+22. **Supabase no conectado:** necesita tu proyecto y claves. Esquema propuesto con RLS en
+    `docs/supabase/schema.sql`; `ActionStore` y `ReportSource` son los puntos de enganche.

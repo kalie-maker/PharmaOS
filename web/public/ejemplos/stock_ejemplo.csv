@@ -1,301 +1,151 @@
 Código;Descripción;Laboratorio;Familia;Stock Actual;P.Coste;PVP;Caducidad
-792124;Clopidogrel 25 mg 56 sobres;Laboratorios Cantabriaderm;Especialidad con receta;6;13,93;20,39;24/05/2027
-960766;Caramelos balsámicos 50 g;Euro Salud;EFP / Publicitarios;3;27,90;45,60;28/08/2028
-971982;Dermaven bálsamo atópico 400 ml;Bio Pharma;Dermofarmacia;8;30,59;61,38;14/06/2027
-738344;Pregabalina 50 mg 28 sobres;Orionlab;Especialidad con receta;1;2,14;3,04;
-846095;Enalapril 25 mg 30 cápsulas;Laboratorios Cantabriaderm;Especialidad con receta;7;1,22;1,76;27/06/2027
-683970;Velvia collarín blando;Galenderm;Ortopedia;5;15,30;28,69;01/03/2028
-680196;Omeprazol 10 mg 56 comprimidos;Laboratorios Cantabriaderm;Especialidad con receta;1;13,01;17,89;
-674999;Gabapentina 500 mg 14 comprimidos recubiertos;Orionlab;Especialidad con receta;15;2,00;2,75;30/04/2029
-898370;Bioderm solar facial color 50 ml;Laboratorios Teraderm;Solares;1;7,85;15,26;
-609399;Calmea bálsamo atópico 400 ml;Laboratorios Albafarma;Dermofarmacia;4;8,28;17,63;27/10/2027
-791706;Sertralina 50 mg 60 cápsulas;Bio Salud;Especialidad con receta;3;6,38;8,86;
-681328;Paracetamol 1 g 40 comp;Quimigen;EFP / Publicitarios;1;4,08;6,29;30/04/2027
-923766;Mirela sérum vitamina C 30 ml;Norteven;Dermofarmacia;10;16,35;34,85;
-928292;Bisoprolol 500 mg 30 comprimidos recubiertos;Orionlab;Especialidad con receta;3;13,13;18,12;27/06/2029
-945269;Ramipril 5 mg 28 comprimidos;Bio Salud;Especialidad con receta;2;6,59;9,18;23/02/2029
-860319;Dermaven batido proteico 400 g;Laboratorios Pharmamed;Dietética y Nutrición;4;17,51;28,57;02/02/2027
-963394;Floris sérum vitamina C 30 ml;Norte Salud;Dermofarmacia;6;46,24;86,71;
-920326;Spray nasal agua de mar 100 ml;Albamed;EFP / Publicitarios;5;2,28;3,70;
-740140;Lenis pasta dentífrica 125 ml;Vitalab;Higiene;5;1,84;3,33;
-796496;Paracetamol 650 mg 20 comp;Laboratorios Galen Salud;EFP / Publicitarios;9;6,68;10,41;18/10/2028
-980503;Velvia after sun 200 ml;Albalab;Solares;1;42,10;82,61;04/11/2028
-787571;Acenocumarol 20 mg 30 cápsulas;Bio Salud;Especialidad con receta;2;7,11;9,78;13/01/2028
-933406;Lactulosa jarabe 800 ml;Laboratorios Galengen;EFP / Publicitarios;1;10,08;16,58;05/08/2028
-804026;Lactulosa jarabe 800 ml;Euro Salud;EFP / Publicitarios;6;3,79;5,72;05/02/2028
-696265;Clopidogrel 10 mg 30 comprimidos;Orionlab;Especialidad con receta;2;12,05;16,81;18/01/2029
-944682;Floris bálsamo atópico 400 ml;Bio Pharma;Dermofarmacia;1;7,47;15,65;02/11/2027
-845777;Gabapentina 50 mg 30 comprimidos;Orionlab;Especialidad con receta;1;10,20;14,29;26/06/2029
-975325;Cutis desodorante 50 ml;Laboratorios Lumenfarma;Higiene;3;5,10;9,50;07/01/2029
-900385;Floris colutorio 500 ml;Vitalab;Higiene;10;5,10;9,26;09/07/2027
-842903;Ramipril 10 mg 56 cápsulas;Laboratorios Cantabriaderm;Especialidad con receta;36;16,75;23,80;05/05/2027
-995620;Paracetamol 1 g 40 comp;Laboratorios Medimed;EFP / Publicitarios;7;10,01;15,43;
-654953;Lorazepam 20 mg 30 sobres;Bio Salud;Especialidad con receta;1;4,21;5,94;17/12/2027
-985633;Lorazepam 25 mg 60 sobres;Laboratorios Hesperven;Especialidad con receta;4;11,93;16,34;09/01/2027
-810916;Nativa gel íntimo 250 ml;Laboratorios Zenitmed;Higiene;1;1,19;2,06;11/08/2028
-744244;Sertralina 25 mg 56 cápsulas;Bio Salud;Especialidad con receta;11;12,87;18,22;03/05/2028
-982272;Simvastatina 50 mg 28 comprimidos recubiertos;Bio Salud;Especialidad con receta;7;44,21;63,94;05/07/2029
-808029;Aqualis contorno de ojos 15 ml;Bio Pharma;Dermofarmacia;3;17,07;37,55;03/10/2028
-908720;Enalapril 100 mg 60 sobres;Bio Salud;Especialidad con receta;10;9,24;13,35;26/09/2028
-732001;Bioderm medias compresión normal;Orion Pharma;Ortopedia;1;15,09;27,78;12/08/2029
-889145;Hidroclorotiazida 40 mg 14 comprimidos recubiertos;Bio Salud;Especialidad con receta;1;11,63;16,62;28/07/2029
-895918;Tamsulosina 10 mg 60 comprimidos recubiertos;Laboratorios Hesperven;Especialidad con receta;12;4,75;6,80;12/03/2028
-697743;Simvastatina 10 mg 14 sobres;Bio Salud;Especialidad con receta;66;10,43;15,00;23/07/2029
-853150;Amlodipino 50 mg 28 cápsulas;Quimimed;Especialidad con receta;6;5,40;7,90;08/04/2029
-874231;Pastillas garganta miel limón 24 uds;Euro Salud;EFP / Publicitarios;37;3,60;5,56;10/03/2029
-694945;Hydrel faja lumbar talla L;Alba Pharma;Ortopedia;7;15,92;28,93;17/02/2028
-739539;Velvia crema hidratante 50 ml;Laboratorios Albafarma;Dermofarmacia;2;11,47;24,26;12/09/2028
-613824;Budesonida 100 mg 56 cápsulas;Bio Salud;Especialidad con receta;49;1,95;2,70;13/11/2028
-946235;Hidroclorotiazida 5 mg 60 comprimidos;Bio Salud;Especialidad con receta;2;28,15;38,76;18/02/2028
-974618;Ramipril 10 mg 14 comprimidos recubiertos;Faromed;Especialidad con receta;3;7,27;10,58;
-849641;Floris spray solar SPF30 200 ml;Laboratorios Teraderm;Solares;1;3,66;6,82;24/12/2027
-668985;Paracetamol 650 mg 20 comp;Laboratorios Alba Salud;EFP / Publicitarios;3;10,39;17,19;
-888837;Cutis crema antiedad 50 ml;Laboratorios Albafarma;Dermofarmacia;3;11,78;25,52;24/06/2028
-679375;Amoxicilina 500 mg 56 comprimidos recubiertos;Bio Salud;Especialidad con receta;8;7,62;10,55;
-903025;Amlodipino 5 mg 60 cápsulas;Laboratorios Cantabriaderm;Especialidad con receta;1;10,83;15,59;16/12/2027
-900384;Velvia gel íntimo 250 ml;Laboratorios Lumenfarma;Higiene;3;2,14;3,86;04/12/2028
-843486;Probiótico intestinal 20 cáps;Albamed;EFP / Publicitarios;13;0,62;0,95;
-888171;Tramadol 20 mg 56 cápsulas;Bio Salud;Especialidad con receta;1;6,16;9,02;21/12/2028
-737111;Sertralina 25 mg 28 comprimidos;Laboratorios Cantabriaderm;Especialidad con receta;1;7,82;11,37;08/01/2028
-832982;Pregabalina 5 mg 28 comprimidos;Bio Salud;Especialidad con receta;9;13,32;19,19;12/12/2026
-844763;Amlodipino 5 mg 60 cápsulas;Bio Salud;Especialidad con receta;5;3,89;5,48;10/07/2027
-992057;Sertralina 100 mg 14 comprimidos recubiertos;Laboratorios Orionfarma;Especialidad con receta;12;5,48;8,02;02/08/2027
-841714;Kerat gel íntimo 250 ml;Laboratorios Mediven;Higiene;1;5,30;9,97;
-910858;Paracetamol 1 g 40 comp;Laboratorios Galen Salud;EFP / Publicitarios;10;3,92;6,56;16/04/2027
-927299;Hidroclorotiazida 5 mg 60 comprimidos;Bio Salud;Especialidad con receta;1;5,55;7,98;13/07/2027
-943819;Mirela gel limpiador 200 ml;Laboratorios Albafarma;Dermofarmacia;1;14,38;26,96;
-611548;Gabapentina 20 mg 28 comprimidos;Bio Salud;Especialidad con receta;5;3,29;4,75;06/01/2028
-611413;Salbutamol 25 mg 30 sobres;Orionlab;Especialidad con receta;4;20,02;29,00;27/03/2027
-613231;Bioderm bálsamo atópico 400 ml;Norte Salud;Dermofarmacia;1;6,31;13,59;22/04/2027
-786092;Calmea gel íntimo 250 ml;Vitalab;Higiene;1;4,11;7,79;14/08/2027
-716135;Amlodipino 25 mg 14 cápsulas;Orionmed;Especialidad con receta;1;5,24;7,19;09/02/2028
-694319;Floris cepillo dental suave;Vitalab;Higiene;4;2,44;4,82;19/08/2028
-796643;Sertralina 25 mg 56 cápsulas;Bio Salud;Especialidad con receta;1;9,60;13,51;13/03/2028
-852468;Salbutamol 100 mg 30 comprimidos;Laboratorios Cantabriaderm;Especialidad con receta;0;13,39;18,56;02/01/2028
-800823;Lorazepam 500 mg 28 sobres;Orionlab;Especialidad con receta;1;18,27;25,34;03/04/2029
-917845;Enalapril 50 mg 30 comprimidos recubiertos;Laboratorios Hesperven;Especialidad con receta;2;9,91;13,74;
-773553;Dermaven gel limpiador 200 ml;Bio Pharma;Dermofarmacia;4;8,78;18,69;20/05/2028
-696776;Loratadina 10 mg 20 comp;Euro Salud;EFP / Publicitarios;27;8,93;13,37;18/10/2028
-888768;Calmea colutorio 500 ml;Vitalab;Higiene;74;1,45;2,88;
-600557;Amoxicilina 500 mg 30 comprimidos;Faromed;Especialidad con receta;2;6,82;9,34;15/11/2027
-642290;Metformina 25 mg 60 cápsulas;Bio Salud;Especialidad con receta;4;9,49;13,63;
-954528;Enalapril 25 mg 28 sobres;Bio Salud;Especialidad con receta;11;9,76;13,56;24/09/2027
-635594;Lenis solar facial color 50 ml;Zenit Salud;Solares;1;5,35;10,82;
-607602;Floris solar facial color 50 ml;Laboratorios Teraderm;Solares;1;4,19;8,02;
-976622;Tamsulosina 5 mg 60 comprimidos recubiertos;Orionlab;Especialidad con receta;27;20,98;30,51;30/04/2027
-937693;Rosuvastatina 25 mg 28 sobres;Orionlab;Especialidad con receta;9;4,58;6,33;12/08/2028
-693337;Metformina 10 mg 14 sobres;Orionmed;Especialidad con receta;3;2,07;2,92;
-809728;Velvia batido proteico 400 g;Laboratorios Norte Pharma;Dietética y Nutrición;1;4,52;7,78;
-868411;Hidroclorotiazida 20 mg 28 cápsulas;Laboratorios Hesperven;Especialidad con receta;2;6,59;9,30;01/07/2027
-892977;Atorvastatina 5 mg 28 sobres;Laboratorios Cantabriaderm;Especialidad con receta;6;14,89;20,66;15/11/2028
-722301;Prednisona 40 mg 60 comprimidos recubiertos;Bio Salud;Especialidad con receta;1;6,50;9,07;
-754061;Tamsulosina 5 mg 28 cápsulas;Orionmed;Especialidad con receta;1;15,07;21,98;04/11/2027
-696824;Cutis pasta dentífrica 125 ml;Vitalab;Higiene;2;4,62;8,13;18/09/2027
-832473;Lumière magnesio 60 comp;Laboratorios Eurolab;Dietética y Nutrición;2;14,88;23,44;11/04/2028
-881406;Antigripal sobres 10 uds;Laboratorios Alba Salud;EFP / Publicitarios;3;9,56;15,85;
-871287;Aqualis contorno de ojos 15 ml;Albaderm;Dermofarmacia;1;9,07;19,55;23/12/2027
-824035;Cutis bálsamo atópico 400 ml;Bio Pharma;Dermofarmacia;12;14,50;30,18;09/05/2028
-871534;Lumière colágeno 300 g;Laboratorios Delta Salud;Dietética y Nutrición;3;8,12;13,68;30/07/2027
-812076;Kerat plantillas gel;Orion Pharma;Ortopedia;2;9,20;18,24;25/10/2028
-752970;Levotiroxina 500 mg 30 comprimidos recubiertos;Orionlab;Especialidad con receta;5;10,21;14,36;04/09/2028
-971996;Kerat sérum vitamina C 30 ml;Bio Pharma;Dermofarmacia;5;6,61;12,33;26/02/2029
-866859;Budesonida 10 mg 60 cápsulas;Faromed;Especialidad con receta;1;6,81;9,59;
-971407;Loratadina 10 mg 20 comp;Euro Salud;EFP / Publicitarios;9;2,74;4,34;06/12/2028
-713869;Nativa batido proteico 400 g;Lumenmed;Dietética y Nutrición;1;9,95;16,96;
-921184;Lenis cepillo dental suave;Vitalab;Higiene;15;2,69;5,32;
-729516;Velvia batido proteico 400 g;Laboratorios Delta Salud;Dietética y Nutrición;1;22,73;36,07;22/01/2028
-686560;Pregabalina 25 mg 14 comprimidos recubiertos;Orionlab;Especialidad con receta;1;6,77;9,82;
-660051;Ramipril 25 mg 56 sobres;Laboratorios Cantabriaderm;Especialidad con receta;9;6,74;9,55;14/02/2029
-875797;Ramipril 5 mg 28 cápsulas;Bio Salud;Especialidad con receta;1;20,23;29,09;23/04/2027
-824333;Aurea fotoprotector SPF50 50 ml;Zenit Salud;Solares;8;1,53;3,04;
-831213;Tramadol 10 mg 28 comprimidos;Faromed;Especialidad con receta;2;2,91;4,07;
-756699;Pregabalina 10 mg 28 comprimidos recubiertos;Laboratorios Cantabriaderm;Especialidad con receta;10;0,93;1,30;28/03/2029
-693423;Valsartán 25 mg 14 comprimidos recubiertos;Orionlab;Especialidad con receta;11;6,28;8,76;
-929797;Levotiroxina 50 mg 28 comprimidos;Laboratorios Orionfarma;Especialidad con receta;12;8,57;12,08;07/06/2027
-993404;Calmea gel íntimo 250 ml;Vitalab;Higiene;6;5,99;11,33;05/06/2027
-741691;Lenis contorno de ojos 15 ml;Bio Pharma;Dermofarmacia;1;13,82;29,50;
-953537;Acenocumarol 500 mg 30 comprimidos;Orionmed;Especialidad con receta;1;3,41;4,72;15/06/2028
-762770;Antigripal sobres 10 uds;Euro Salud;EFP / Publicitarios;11;15,83;24,79;16/04/2029
-947195;Rosuvastatina 40 mg 56 sobres;Laboratorios Cantabriaderm;Especialidad con receta;1;7,75;10,99;05/12/2027
-851778;Aqualis crema hidratante 50 ml;Rial Pharma;Dermofarmacia;3;9,49;20,21;
-915421;Ramipril 5 mg 30 comprimidos;Laboratorios Cantabriaderm;Especialidad con receta;1;2,85;4,09;10/04/2029
-817536;Bisoprolol 20 mg 30 comprimidos;Laboratorios Orionfarma;Especialidad con receta;12;8,37;11,94;
-670032;Pantoprazol 500 mg 28 comprimidos;Laboratorios Cantabriaderm;Especialidad con receta;1;4,41;6,31;03/05/2029
-678645;Spray nasal agua de mar 100 ml;Laboratorios Galengen;EFP / Publicitarios;1;3,36;5,26;27/09/2028
-944032;Bioderm gel limpiador 200 ml;Bio Pharma;Dermofarmacia;1;13,08;27,79;
-632551;Enalapril 20 mg 14 cápsulas;Laboratorios Hesperven;Especialidad con receta;1;7,23;10,47;20/09/2028
-912667;Cutis crema hidratante 50 ml;Bio Pharma;Dermofarmacia;15;6,36;12,97;23/12/2028
-963213;Prednisona 10 mg 30 sobres;Bio Salud;Especialidad con receta;6;14,89;20,53;31/12/2027
-819654;Clopidogrel 40 mg 14 comprimidos;Laboratorios Cantabriaderm;Especialidad con receta;1;3,07;4,33;14/02/2028
-991472;Amlodipino 10 mg 14 cápsulas;Laboratorios Cantabriaderm;Especialidad con receta;1;2,83;3,94;
-802548;Acenocumarol 50 mg 14 sobres;Laboratorios Hesperven;Especialidad con receta;1;7,66;10,62;27/05/2028
-834509;Sebora faja lumbar talla L;Orion Pharma;Ortopedia;3;15,02;26,63;02/05/2028
-756836;Pantoprazol 50 mg 60 comprimidos recubiertos;Orionmed;Especialidad con receta;2;6,48;9,37;08/06/2028
-949361;Atorvastatina 20 mg 60 comprimidos recubiertos;Bio Salud;Especialidad con receta;1;4,62;6,47;19/05/2029
-798320;Ibuprofeno 400 mg 20 comp;Laboratorios Medimed;EFP / Publicitarios;10;4,70;7,34;03/08/2027
-947535;Purell solar facial color 50 ml;Zenit Salud;Solares;1;7,56;14,96;03/12/2026
-872879;Bioderm plantillas gel;Alba Pharma;Ortopedia;1;4,32;7,52;01/05/2027
-837516;Purell contorno de ojos 15 ml;Rial Pharma;Dermofarmacia;8;18,74;38,25;
-885585;Gabapentina 25 mg 28 cápsulas;Faromed;Especialidad con receta;3;3,02;4,25;
-907507;Nativa colutorio 500 ml;Vitalab;Higiene;5;3,17;6,33;16/05/2027
-645564;Lumière bálsamo atópico 400 ml;Bio Pharma;Dermofarmacia;1;18,66;38,39;21/11/2028
-833512;Sertralina 100 mg 14 comprimidos recubiertos;Faromed;Especialidad con receta;1;6,24;9,13;29/11/2027
-937902;Paracetamol 650 mg 20 comp;Albamed;EFP / Publicitarios;2;30,99;51,05;02/12/2026
-687098;Tamsulosina 5 mg 28 cápsulas;Bio Salud;Especialidad con receta;1;2,30;3,26;25/06/2027
-876381;Calmea desodorante 50 ml;Vitalab;Higiene;3;2,20;3,81;18/10/2027
-873820;Nativa contorno de ojos 15 ml;Albaderm;Dermofarmacia;7;11,88;22,87;29/09/2028
-916766;Cutis desodorante 50 ml;Laboratorios Zenitmed;Higiene;3;9,60;16,88;
-716834;Aurea batido proteico 400 g;Deltaven;Dietética y Nutrición;8;8,48;14,89;19/06/2029
-760225;Metformina 20 mg 60 sobres;Laboratorios Hesperven;Especialidad con receta;1;2,25;3,11;
-606134;Aurea multivitamínico 30 comp;Deltaven;Dietética y Nutrición;10;22,46;38,87;09/09/2027
-990349;Simvastatina 40 mg 56 cápsulas;Faromed;Especialidad con receta;3;3,21;4,49;
-635486;Omeprazol 10 mg 14 comprimidos recubiertos;Quimimed;Especialidad con receta;25;5,32;7,52;17/11/2028
-651609;Acenocumarol 40 mg 14 cápsulas;Bio Salud;Especialidad con receta;3;11,33;16,32;
-660583;Jarabe tos productiva 200 ml;Laboratorios Galen Salud;EFP / Publicitarios;2;2,83;4,36;
-747989;Metamizol 40 mg 30 sobres;Laboratorios Cantabriaderm;Especialidad con receta;1;4,45;6,16;
-600234;Lenis contorno de ojos 15 ml;Bio Pharma;Dermofarmacia;7;15,64;30,47;
-916862;Nativa sérum vitamina C 30 ml;Rial Pharma;Dermofarmacia;1;9,64;20,99;
-810890;Escitalopram 100 mg 28 comprimidos;Bio Salud;Especialidad con receta;2;7,45;10,58;18/02/2029
-992817;Aurea contorno de ojos 15 ml;Bio Pharma;Dermofarmacia;3;5,72;11,14;26/10/2028
-868995;Pregabalina 25 mg 56 comprimidos recubiertos;Faromed;Especialidad con receta;3;5,60;7,74;
-935652;Purell sérum vitamina C 30 ml;Bio Pharma;Dermofarmacia;4;5,17;9,73;16/08/2027
-919514;Gabapentina 5 mg 60 comprimidos;Faromed;Especialidad con receta;1;2,05;2,87;
-711518;Bioderm multivitamínico 30 comp;Lumenmed;Dietética y Nutrición;4;34,28;59,05;04/07/2029
-710059;Metformina 50 mg 14 comprimidos recubiertos;Laboratorios Cantabriaderm;Especialidad con receta;3;8,36;11,79;
-783157;Antigripal día y noche 16 comp;Laboratorios Medimed;EFP / Publicitarios;1;8,55;14,00;15/02/2027
-750816;Velvia gel limpiador 200 ml;Laboratorios Tera Pharma;Dermofarmacia;27;5,62;12,35;22/05/2029
-708392;Spray nasal agua de mar 100 ml;Euro Salud;EFP / Publicitarios;3;4,41;7,01;04/07/2029
-673129;Clopidogrel 50 mg 60 comprimidos recubiertos;Bio Salud;Especialidad con receta;2;5,26;7,36;
-742051;Aurea solar facial color 50 ml;Zenit Salud;Solares;6;4,09;8,68;
-774407;Amlodipino 50 mg 60 comprimidos;Laboratorios Cantabriaderm;Especialidad con receta;5;8,90;12,25;21/04/2029
-847205;Pantoprazol 25 mg 60 comprimidos recubiertos;Laboratorios Cantabriaderm;Especialidad con receta;8;3,66;5,27;06/11/2027
-898066;Colirio hidratante 10 ml;Laboratorios Galengen;EFP / Publicitarios;4;3,90;6,45;21/12/2026
-925738;Tamsulosina 100 mg 30 comprimidos recubiertos;Orionmed;Especialidad con receta;3;2,10;3,03;12/07/2028
-636589;Ramipril 40 mg 56 sobres;Laboratorios Cantabriaderm;Especialidad con receta;8;12,16;16,74;27/12/2028
-704901;Bioderm colágeno 300 g;Deltaven;Dietética y Nutrición;1;17,02;29,17;28/11/2028
-995974;Kerat leche infantil 1 800 g;Lumenmed;Dietética y Nutrición;1;13,17;23,38;25/07/2029
-893069;Purell crema antiedad 50 ml;Norteven;Dermofarmacia;22;5,85;11,63;
-933288;Bioderm plantillas gel;Galenderm;Ortopedia;4;9,26;18,01;
-757688;Kerat leche infantil 1 800 g;Eurofarma;Dietética y Nutrición;1;23,53;37,87;27/03/2029
-853912;Amlodipino 25 mg 30 sobres;Laboratorios Cantabriaderm;Especialidad con receta;42;5,00;7,09;01/02/2027
-673066;Aqualis crema antiedad 50 ml;Norteven;Dermofarmacia;3;13,33;27,14;13/08/2027
-769008;Sertralina 500 mg 14 comprimidos;Bio Salud;Especialidad con receta;9;6,70;9,67;28/06/2029
-881214;Kerat magnesio 60 comp;Deltaven;Dietética y Nutrición;2;4,57;7,63;31/07/2027
-761709;Simvastatina 20 mg 60 comprimidos;Bio Salud;Especialidad con receta;1;17,63;24,54;19/07/2029
-802203;Ramipril 25 mg 14 comprimidos recubiertos;Laboratorios Orionfarma;Especialidad con receta;1;1,51;2,16;
-824891;Lenis cepillo dental suave;Laboratorios Lumenfarma;Higiene;2;4,30;7,55;10/07/2028
-833050;Aqualis crema antiedad 50 ml;Laboratorios Tera Pharma;Dermofarmacia;1;10,40;20,52;16/01/2027
-637123;Velvia leche infantil 2 800 g;Eurofarma;Dietética y Nutrición;3;3,22;5,42;04/03/2028
-940566;Pastillas garganta miel limón 24 uds;Laboratorios Alba Salud;EFP / Publicitarios;1;5,67;9,26;05/09/2027
-906016;Hydrel batido proteico 400 g;Eurofarma;Dietética y Nutrición;2;14,40;24,09;
-951719;Probiótico intestinal 20 cáps;Euro Salud;EFP / Publicitarios;8;4,66;7,39;27/04/2028
-782356;Pastillas garganta miel limón 24 uds;Laboratorios Alba Salud;EFP / Publicitarios;5;2,52;4,06;12/10/2027
-721368;Lorazepam 25 mg 60 sobres;Bio Salud;Especialidad con receta;11;8,31;11,90;
-672289;Antigripal sobres 10 uds;Albamed;EFP / Publicitarios;1;9,81;16,38;25/06/2027
-858414;Cutis champú suave 400 ml;Vitalab;Higiene;0;4,30;7,96;21/11/2028
-827801;Velvia contorno de ojos 15 ml;Rial Pharma;Dermofarmacia;16;36,95;75,42;23/03/2027
-997476;Velvia gel íntimo 250 ml;Vitalab;Higiene;1;6,72;11,65;
-767807;Gel antiinflamatorio 100 g;Albamed;EFP / Publicitarios;1;7,70;11,70;27/03/2029
-678881;Bioderm desodorante 50 ml;Vitalab;Higiene;8;9,74;17,46;25/12/2026
-745433;Pregabalina 100 mg 60 cápsulas;Orionmed;Especialidad con receta;2;3,82;5,30;19/06/2029
-876270;Sebora colutorio 500 ml;Vitalab;Higiene;1;2,56;4,78;10/12/2027
-975160;Lorazepam 40 mg 28 comprimidos recubiertos;Faromed;Especialidad con receta;2;8,71;12,07;14/08/2027
-943393;Metamizol 100 mg 56 sobres;Quimimed;Especialidad con receta;6;8,73;12,41;16/03/2029
-959970;Bioderm crema hidratante 50 ml;Norteven;Dermofarmacia;2;31,82;67,86;03/02/2027
-765608;Probiótico intestinal 20 cáps;Albamed;EFP / Publicitarios;1;10,03;15,03;
-686247;Pantoprazol 100 mg 30 comprimidos recubiertos;Bio Salud;Especialidad con receta;8;6,87;9,56;27/08/2027
-924941;Floris pasta dentífrica 125 ml;Vitalab;Higiene;1;4,30;8,00;
-839730;Clopidogrel 20 mg 56 cápsulas;Laboratorios Orionfarma;Especialidad con receta;1;5,02;6,90;13/02/2027
-665168;Floris gel limpiador 200 ml;Laboratorios Albafarma;Dermofarmacia;2;8,59;16,35;
-861357;Pregabalina 20 mg 14 cápsulas;Laboratorios Hesperven;Especialidad con receta;2;4,44;6,31;15/06/2027
-878011;Cetirizina 10 mg 20 comp;Euro Salud;EFP / Publicitarios;8;8,50;13,23;
-890586;Pastillas garganta miel limón 24 uds;Albamed;EFP / Publicitarios;9;3,25;5,39;18/06/2028
-774130;Salbutamol 500 mg 56 comprimidos recubiertos;Faromed;Especialidad con receta;2;4,76;6,77;04/09/2027
-683097;Pastillas garganta miel limón 24 uds;Laboratorios Medimed;EFP / Publicitarios;1;5,06;8,23;
-853786;Purell cepillo dental suave;Laboratorios Zenitmed;Higiene;2;2,59;4,71;15/05/2028
-984459;Clopidogrel 50 mg 28 comprimidos recubiertos;Orionlab;Especialidad con receta;8;5,22;7,32;02/08/2029
-648934;Lorazepam 40 mg 56 cápsulas;Orionlab;Especialidad con receta;5;1,33;1,92;04/04/2028
-927594;Furosemida 10 mg 56 comprimidos recubiertos;Laboratorios Cantabriaderm;Especialidad con receta;30;7,97;11,37;18/01/2028
-641695;Ibuprofeno 400 mg 20 comp;Albamed;EFP / Publicitarios;4;3,68;6,10;14/05/2029
-987214;Aurea stick labial SPF50;Zenit Salud;Solares;1;12,83;24,85;09/06/2028
-841155;Sertralina 5 mg 28 cápsulas;Faromed;Especialidad con receta;7;7,98;11,00;19/05/2029
-643139;Lumière after sun 200 ml;Zenitgen;Solares;1;3,07;6,38;17/05/2029
-763886;Spray nasal agua de mar 100 ml;Laboratorios Galengen;EFP / Publicitarios;3;24,69;37,21;
-653860;Tamsulosina 5 mg 14 sobres;Bio Salud;Especialidad con receta;1;6,97;9,59;
-832755;Gabapentina 500 mg 14 comprimidos recubiertos;Bio Salud;Especialidad con receta;1;7,11;9,98;01/02/2029
-732546;Valsartán 40 mg 60 sobres;Orionlab;Especialidad con receta;1;1,81;2,59;09/10/2028
-830516;Sebora gel limpiador 200 ml;Bio Pharma;Dermofarmacia;11;17,89;35,26;16/12/2027
-705802;Jarabe tos seca 200 ml;Laboratorios Alba Salud;EFP / Publicitarios;2;6,32;10,28;
-923307;Sertralina 25 mg 14 cápsulas;Laboratorios Cantabriaderm;Especialidad con receta;1;5,00;7,05;22/05/2027
-694535;Sertralina 5 mg 60 comprimidos recubiertos;Laboratorios Orionfarma;Especialidad con receta;1;7,70;10,74;07/01/2029
-854302;Dermaven cepillo dental suave;Albaven;Higiene;8;9,70;18,15;
-749422;Bioderm multivitamínico 30 comp;Deltaven;Dietética y Nutrición;7;8,55;14,71;
-753893;Pregabalina 40 mg 56 comprimidos recubiertos;Bio Salud;Especialidad con receta;1;3,50;4,84;
-934796;Alprazolam 5 mg 30 comprimidos recubiertos;Laboratorios Hesperven;Especialidad con receta;1;16,82;23,95;
-979763;Calmea crema hidratante 50 ml;Albaderm;Dermofarmacia;33;14,59;27,88;30/04/2028
-742906;Kerat after sun 200 ml;Albalab;Solares;1;10,73;23,47;25/08/2028
-706303;Escitalopram 40 mg 56 comprimidos;Quimimed;Especialidad con receta;1;33,46;47,44;
-705821;Metformina 25 mg 28 sobres;Orionmed;Especialidad con receta;13;7,49;10,39;
-893919;Levotiroxina 40 mg 14 comprimidos;Quimimed;Especialidad con receta;1;5,94;8,15;
-836219;Cetirizina 10 mg 20 comp;Quimigen;EFP / Publicitarios;6;5,99;9,12;31/03/2029
-709815;Metformina 100 mg 56 comprimidos recubiertos;Bio Salud;Especialidad con receta;1;5,06;7,07;12/12/2028
-755357;Rosuvastatina 20 mg 56 comprimidos recubiertos;Bio Salud;Especialidad con receta;1;7,79;11,08;30/06/2027
-794088;Gabapentina 25 mg 60 sobres;Bio Salud;Especialidad con receta;1;7,44;10,65;02/12/2027
-997867;Omeprazol 100 mg 30 comprimidos recubiertos;Bio Salud;Especialidad con receta;8;4,23;6,07;
-761165;Nativa bálsamo atópico 400 ml;Laboratorios Albafarma;Dermofarmacia;4;10,16;20,29;15/02/2029
-714874;Lenis bálsamo atópico 400 ml;Bio Pharma;Dermofarmacia;8;15,12;31,17;21/07/2029
-732287;Alprazolam 20 mg 60 comprimidos recubiertos;Bio Salud;Especialidad con receta;3;8,72;12,39;
-674274;Metformina 500 mg 30 comprimidos recubiertos;Bio Salud;Especialidad con receta;10;10,02;13,99;17/02/2028
-840132;Caramelos balsámicos 50 g;Euro Salud;EFP / Publicitarios;0;8,55;13,03;19/07/2028
-653042;Purell cepillo dental suave;Sana Pharma;Higiene;4;4,80;8,80;02/01/2028
-651405;Velvia medias compresión normal;Galenderm;Ortopedia;8;21,23;40,19;
-902022;Tamsulosina 100 mg 14 comprimidos recubiertos;Bio Salud;Especialidad con receta;3;5,08;7,01;
-911239;Sebora champú suave 400 ml;Vitalab;Higiene;1;3,36;6,39;
-890390;Aurea plantillas gel;Laboratorios Hespermed;Ortopedia;5;30,47;51,73;18/05/2029
-907528;Alprazolam 100 mg 14 comprimidos;Laboratorios Orionfarma;Especialidad con receta;4;1,66;2,30;28/04/2028
-623390;Floris leche infantil 1 800 g;Deltaven;Dietética y Nutrición;12;14,09;24,49;01/10/2027
-600478;Tamsulosina 10 mg 30 sobres;Bio Salud;Especialidad con receta;4;60,18;86,98;21/11/2028
-772976;Gabapentina 500 mg 14 cápsulas;Faromed;Especialidad con receta;391;1,80;2,59;14/02/2027
-774594;Colirio hidratante 10 ml;Laboratorios Medimed;EFP / Publicitarios;1;13,87;22,35;04/06/2029
-660586;Lorazepam 25 mg 60 cápsulas;Laboratorios Cantabriaderm;Especialidad con receta;1;1,91;2,66;
-861904;Velvia crema hidratante 50 ml;Laboratorios Albafarma;Dermofarmacia;6;15,26;33,49;16/03/2028
-933364;Velvia cepillo dental suave;Vitalab;Higiene;2;12,24;23,15;02/08/2029
-920885;Nativa rodillera elástica talla M;Orion Pharma;Ortopedia;1;40,63;79,95;
-817856;Probiótico intestinal 20 cáps;Laboratorios Alba Salud;EFP / Publicitarios;1;2,52;4,19;
-940336;Amlodipino 100 mg 30 cápsulas;Orionlab;Especialidad con receta;1;2,58;3,59;
-695810;Lenis collarín blando;Orion Pharma;Ortopedia;2;5,19;10,32;
-610857;Lumière champú suave 400 ml;Vitalab;Higiene;7;6,37;11,14;
-730512;Lenis fotoprotector SPF50 50 ml;Albalab;Solares;5;8,79;18,14;15/12/2027
-665378;Calmea bálsamo atópico 400 ml;Bio Pharma;Dermofarmacia;1;11,58;22,45;05/10/2027
-788401;Dermaven gel limpiador 200 ml;Bio Pharma;Dermofarmacia;22;13,79;26,05;
-768481;Pantoprazol 20 mg 28 comprimidos;Laboratorios Hesperven;Especialidad con receta;6;8,40;11,94;
-639638;Ramipril 10 mg 14 comprimidos;Laboratorios Cantabriaderm;Especialidad con receta;3;9,15;12,70;31/08/2027
-948028;Sertralina 50 mg 28 cápsulas;Laboratorios Cantabriaderm;Especialidad con receta;1;6,85;9,88;09/03/2029
-937922;Lumière bálsamo atópico 400 ml;Bio Pharma;Dermofarmacia;3;3,71;7,43;17/09/2027
-648458;Pantoprazol 50 mg 30 comprimidos;Bio Salud;Especialidad con receta;1;17,36;24,18;09/12/2028
-741818;Aqualis contorno de ojos 15 ml;Norte Salud;Dermofarmacia;10;1,67;3,11;04/01/2028
-937005;Probiótico intestinal 20 cáps;Quimigen;EFP / Publicitarios;5;11,01;17,76;08/10/2027
-974134;Lactulosa jarabe 800 ml;Euro Salud;EFP / Publicitarios;1;3,04;4,87;26/03/2027
-865294;Dermaven fotoprotector SPF50 50 ml;Zenit Salud;Solares;1;9,91;21,05;11/06/2028
-852975;Pantoprazol 50 mg 30 comprimidos recubiertos;Bio Salud;Especialidad con receta;0;4,33;6,07;
-939695;Ibuprofeno 400 mg 20 comp;Albamed;EFP / Publicitarios;3;3,57;5,93;
-626569;Alprazolam 500 mg 30 comprimidos;Bio Salud;Especialidad con receta;4;6,14;8,41;16/02/2029
-703653;Calmea medias compresión normal;Galenderm;Ortopedia;1;11,39;22,45;14/01/2027
-670071;Descongestivo nasal 15 ml;Quimigen;EFP / Publicitarios;1;2,14;3,48;
-892760;Prednisona 20 mg 14 comprimidos recubiertos;Bio Salud;Especialidad con receta;7;11,27;15,53;17/04/2027
-616340;Rosuvastatina 25 mg 30 comprimidos;Bio Salud;Especialidad con receta;1;4,14;6,06;22/03/2027
-618190;Bioderm crema hidratante 50 ml;Laboratorios Tera Pharma;Dermofarmacia;2;29,00;54,74;
-771486;Amlodipino 20 mg 60 comprimidos;Faromed;Especialidad con receta;6;5,58;8,03;18/09/2028
-702683;Acenocumarol 25 mg 60 cápsulas;Bio Salud;Especialidad con receta;1;3,79;5,27;
-829832;Hidroclorotiazida 50 mg 14 sobres;Bio Salud;Especialidad con receta;7;8,43;12,08;02/10/2027
-695068;Clopidogrel 5 mg 56 cápsulas;Laboratorios Hesperven;Especialidad con receta;6;11,57;16,75;30/04/2027
-784981;Jarabe tos productiva 200 ml;Laboratorios Galen Salud;EFP / Publicitarios;5;2,41;3,63;03/11/2028
-653997;Gel antiinflamatorio 100 g;Albamed;EFP / Publicitarios;3;3,77;5,81;26/07/2029
-610840;Bioderm faja lumbar talla L;Galenderm;Ortopedia;3;37,53;73,66;07/09/2027
-623101;Dermaven plantillas gel;Galenmed;Ortopedia;3;6,87;12,55;31/05/2027
-721054;Floris faja lumbar talla L;Galenmed;Ortopedia;2;7,62;13,21;05/02/2029
-740144;Purell magnesio 60 comp;Deltaven;Dietética y Nutrición;1;11,50;18,29;18/04/2027
-648677;Probiótico intestinal 20 cáps;Laboratorios Galengen;EFP / Publicitarios;3;1,97;2,96;29/12/2026
-809949;Paracetamol 650 mg 20 comp;Euro Salud;EFP / Publicitarios;1;0,82;1,24;
-844357;Acenocumarol 500 mg 56 sobres;Bio Salud;Especialidad con receta;2;1,93;2,70;
-713849;Acenocumarol 10 mg 56 sobres;Bio Salud;Especialidad con receta;2;8,07;11,64;07/03/2028
+975583;Omeprazol 100 mg 28 cápsulas;Faroven;Especialidad con receta;1;3,98;5,70;12/03/2029
+809749;Gel antiinflamatorio 100 g;Laboratorios Norte Pharma;EFP / Publicitarios;7;5,77;9,56;22/08/2027
+958128;Lumière sérum vitamina C 30 ml;Quimimed;Dermofarmacia;4;9,82;20,69;14/05/2029
+778262;Pregabalina 40 mg 28 cápsulas;Laboratorios Vitagen;Especialidad con receta;1;2,65;3,80;25/11/2027
+970591;Valsartán 100 mg 14 cápsulas;Laboratorios Hespermed;Especialidad con receta;4;3,28;4,62;02/05/2027
+968548;Purell plantillas gel;Rialmed;Ortopedia;2;14,93;25,86;
+941518;Metformina 50 mg 28 sobres;Faroven;Especialidad con receta;6;6,39;9,18;27/12/2028
+995758;Metformina 40 mg 60 sobres;Faroven;Especialidad con receta;13;5,76;8,23;
+607480;Velvia solar facial color 50 ml;Nortemed;Solares;1;54,06;118,24;19/10/2028
+635100;Velvia crema hidratante 50 ml;Quimimed;Dermofarmacia;1;9,20;18,02;
+739565;Amoxicilina 20 mg 30 cápsulas;Iber Salud;Especialidad con receta;1;6,60;9,59;
+988179;Colirio hidratante 10 ml;Laboratorios Norte Pharma;EFP / Publicitarios;1;2,24;3,41;04/06/2028
+643079;Dermaven contorno de ojos 15 ml;Albaven;Dermofarmacia;2;8,59;18,72;
+652208;Atorvastatina 500 mg 30 comprimidos;Laboratorios Vitagen;Especialidad con receta;4;8,75;12,81;
+984184;Levotiroxina 500 mg 28 sobres;Laboratorios Hespermed;Especialidad con receta;8;9,01;12,37;23/04/2028
+644250;Nativa colágeno 300 g;Laboratorios Eurolab;Dietética y Nutrición;3;8,95;14,75;
+667245;Lumière contorno de ojos 15 ml;Laboratorios Lumen Salud;Dermofarmacia;11;14,55;32,00;26/03/2029
+790076;Jarabe tos seca 200 ml;Euro Pharma;EFP / Publicitarios;9;4,66;7,79;
+847696;Kerat cepillo dental suave;Medi Salud;Higiene;4;0,98;1,88;06/02/2028
+847041;Caramelos balsámicos 50 g;Euroderm;EFP / Publicitarios;6;0,50;0,76;
+792085;Mirela spray solar SPF30 200 ml;Laboratorios Lumengen;Solares;1;55,58;103,56;25/01/2028
+983689;Valsartán 50 mg 28 comprimidos recubiertos;Faroven;Especialidad con receta;2;10,82;15,05;
+884481;Cetirizina 10 mg 20 comp;Laboratorios Norte Pharma;EFP / Publicitarios;6;4,31;7,18;01/08/2027
+616573;Loratadina 10 mg 20 comp;Euroderm;EFP / Publicitarios;1;1,33;2,17;08/05/2028
+723836;Metformina 50 mg 60 cápsulas;Faroven;Especialidad con receta;5;2,48;3,49;
+613947;Kerat crema antiedad 50 ml;Laboratorios Lumen Salud;Dermofarmacia;7;28,48;60,05;04/12/2028
+953809;Lorazepam 40 mg 56 comprimidos;Faroven;Especialidad con receta;1;0,86;1,25;05/01/2028
+783383;Sebora desodorante 50 ml;Medi Salud;Higiene;6;2,92;5,28;
+979052;Nativa colutorio 500 ml;Pharma Salud;Higiene;2;6,74;13,31;04/07/2029
+914491;Ramipril 5 mg 14 comprimidos;Laboratorios Vitagen;Especialidad con receta;1;6,69;9,32;30/03/2027
+679774;Probiótico intestinal 20 cáps;Lumenven;EFP / Publicitarios;3;7,60;11,73;17/01/2027
+771235;Acenocumarol 25 mg 56 sobres;Faroven;Especialidad con receta;1;5,52;7,57;26/12/2026
+883597;Pregabalina 20 mg 28 comprimidos recubiertos;Iber Salud;Especialidad con receta;14;32,31;44,69;01/07/2029
+657842;Purell pasta dentífrica 125 ml;Faro Salud;Higiene;6;1,79;3,36;
+758348;Omeprazol 100 mg 14 sobres;Laboratorios Vitagen;Especialidad con receta;15;2,33;3,19;06/07/2029
+942931;Amlodipino 20 mg 14 cápsulas;Laboratorios Vitagen;Especialidad con receta;1;7,33;10,40;07/06/2028
+629972;Hydrel contorno de ojos 15 ml;Laboratorios Lumen Salud;Dermofarmacia;20;29,99;57,33;12/10/2028
+867970;Lorazepam 20 mg 56 cápsulas;Laboratorios Vitagen;Especialidad con receta;8;5,82;8,37;
+938562;Kerat medias compresión normal;Mediderm;Ortopedia;2;28,06;48,44;
+732698;Acenocumarol 40 mg 28 comprimidos recubiertos;Faroven;Especialidad con receta;8;4,17;5,78;
+853888;Gabapentina 25 mg 30 cápsulas;Laboratorios Orion Salud;Especialidad con receta;1;2,64;3,68;12/02/2027
+719103;Prednisona 40 mg 14 comprimidos;Laboratorios Vitagen;Especialidad con receta;10;16,12;22,94;16/05/2029
+671999;Acenocumarol 500 mg 28 comprimidos recubiertos;Laboratorios Orion Salud;Especialidad con receta;27;18,14;26,22;10/07/2028
+837385;Lactulosa jarabe 800 ml;Laboratorios Norte Pharma;EFP / Publicitarios;4;13,11;21,31;02/07/2027
+821101;Nativa muñequera ferulizada;Teraven;Ortopedia;1;9,91;18,93;25/05/2028
+900908;Bioderm bálsamo atópico 400 ml;Laboratorios Lumen Salud;Dermofarmacia;1;4,91;10,21;15/04/2027
+936147;Gabapentina 500 mg 56 sobres;Faroven;Especialidad con receta;2;2,67;3,79;17/02/2029
+790739;Tamsulosina 20 mg 28 cápsulas;Laboratorios Vitagen;Especialidad con receta;5;5,17;7,24;05/04/2027
+981500;Gabapentina 50 mg 60 comprimidos;Faroven;Especialidad con receta;3;9,09;12,58;29/12/2027
+868303;Mirela solar facial color 50 ml;Norte Salud;Solares;1;15,74;33,80;13/01/2028
+758111;Ibuprofeno 400 mg 20 comp;Euroderm;EFP / Publicitarios;3;1,64;2,56;
+727247;Velvia crema hidratante 50 ml;Laboratorios Albafarma;Dermofarmacia;1;12,64;26,15;04/07/2028
+839317;Lorazepam 10 mg 56 comprimidos recubiertos;Laboratorios Vitagen;Especialidad con receta;1;6,13;8,42;16/02/2027
+965694;Salbutamol 5 mg 14 comprimidos;Tera Salud;Especialidad con receta;2;6,44;9,03;04/03/2029
+871847;Calmea colutorio 500 ml;Medi Salud;Higiene;1;3,61;6,33;24/05/2028
+661483;Ibuprofeno 400 mg 20 comp;Euroderm;EFP / Publicitarios;5;3,89;6,02;
+774533;Atorvastatina 5 mg 28 sobres;Faroven;Especialidad con receta;1;9,16;13,17;20/02/2028
+699207;Clopidogrel 5 mg 28 comprimidos recubiertos;Laboratorios Vitagen;Especialidad con receta;2;6,61;9,26;04/08/2027
+971992;Clopidogrel 40 mg 60 comprimidos recubiertos;Laboratorios Vitagen;Especialidad con receta;2;7,08;10,14;
+847064;Hidroclorotiazida 20 mg 14 sobres;Iber Salud;Especialidad con receta;1;3,73;5,15;09/07/2028
+683835;Escitalopram 50 mg 56 comprimidos recubiertos;Tera Salud;Especialidad con receta;1;7,98;11,20;18/12/2028
+989982;Calmea colutorio 500 ml;Medi Salud;Higiene;11;3,37;6,18;
+663538;Lactulosa jarabe 800 ml;Eurogen;EFP / Publicitarios;3;1,02;1,61;
+668286;Lorazepam 40 mg 60 comprimidos;Faroven;Especialidad con receta;1;8,49;11,79;20/01/2028
+640790;Dermaven crema hidratante 50 ml;Albaven;Dermofarmacia;0;9,16;19,11;21/08/2028
+739218;Atorvastatina 5 mg 60 comprimidos recubiertos;Faroven;Especialidad con receta;2;11,57;16,81;
+755682;Bisoprolol 10 mg 28 comprimidos recubiertos;Tera Salud;Especialidad con receta;1;5,40;7,81;09/07/2028
+926912;Bioderm gel limpiador 200 ml;Laboratorios Albafarma;Dermofarmacia;1;10,31;19,29;27/07/2029
+981805;Aurea pasta dentífrica 125 ml;Pharma Salud;Higiene;10;4,26;7,91;04/06/2027
+816300;Gabapentina 40 mg 14 comprimidos;Laboratorios Orion Salud;Especialidad con receta;1;6,00;8,40;
+877052;Dermaven colutorio 500 ml;Medi Salud;Higiene;10;2,68;5,05;05/02/2027
+663762;Enalapril 25 mg 60 comprimidos;Laboratorios Vitagen;Especialidad con receta;3;1,72;2,37;25/12/2027
+673927;Enalapril 25 mg 28 comprimidos recubiertos;Laboratorios Vitagen;Especialidad con receta;1;21,97;31,58;
+961916;Metformina 5 mg 56 cápsulas;Laboratorios Vitagen;Especialidad con receta;2;2,00;2,82;28/01/2028
+644387;Prednisona 25 mg 56 cápsulas;Faroven;Especialidad con receta;1;4,76;6,95;
+797782;Purell bálsamo atópico 400 ml;Laboratorios Albafarma;Dermofarmacia;2;17,41;32,50;26/12/2027
+826289;Descongestivo nasal 15 ml;Laboratorios Norte Pharma;EFP / Publicitarios;8;5,85;9,13;26/12/2027
+656094;Purell colutorio 500 ml;Medi Salud;Higiene;19;5,46;10,14;18/01/2029
+804549;Amlodipino 500 mg 28 cápsulas;Laboratorios Vitagen;Especialidad con receta;6;10,36;15,00;
+855546;Rosuvastatina 40 mg 14 cápsulas;Laboratorios Vitagen;Especialidad con receta;1;14,65;21,10;08/03/2029
+811965;Rosuvastatina 50 mg 30 sobres;Laboratorios Vitagen;Especialidad con receta;8;7,45;10,32;15/06/2029
+896876;Cutis fotoprotector SPF50 50 ml;Laboratorios Lumengen;Solares;1;84,32;164,77;27/11/2028
+665416;Bioderm solar facial color 50 ml;Rialderm;Solares;12;5,42;11,37;
+661238;Furosemida 100 mg 30 comprimidos recubiertos;Faroven;Especialidad con receta;7;7,09;9,97;
+869124;Sertralina 10 mg 14 sobres;Tera Salud;Especialidad con receta;3;4,70;6,54;07/04/2027
+618229;Hidroclorotiazida 20 mg 28 comprimidos recubiertos;Laboratorios Hespermed;Especialidad con receta;1;4,13;6,02;07/09/2028
+741899;Dermaven multivitamínico 30 comp;Laboratorios Galenfarma;Dietética y Nutrición;3;12,20;21,80;02/10/2028
+832757;Metamizol 5 mg 60 comprimidos recubiertos;Laboratorios Vitagen;Especialidad con receta;1;16,79;23,52;25/12/2027
+960765;Lorazepam 500 mg 60 comprimidos;Laboratorios Vitagen;Especialidad con receta;2;3,68;5,22;
+952107;Bisoprolol 20 mg 56 comprimidos recubiertos;Faroven;Especialidad con receta;1;3,68;5,37;16/06/2027
+728301;Metamizol 25 mg 30 comprimidos recubiertos;Iber Salud;Especialidad con receta;3;10,05;13,95;
+974241;Velvia cepillo dental suave;Medi Salud;Higiene;6;5,37;10,67;
+715315;Cutis batido proteico 400 g;Laboratorios Faroderm;Dietética y Nutrición;1;39,27;70,63;13/01/2027
+718697;Probiótico intestinal 20 cáps;Euroderm;EFP / Publicitarios;4;9,20;14,90;23/06/2027
+937205;Bioderm contorno de ojos 15 ml;Laboratorios Lumen Salud;Dermofarmacia;31;12,95;26,95;29/07/2028
+723416;Dermaven crema antiedad 50 ml;Albaven;Dermofarmacia;15;8,75;18,21;07/04/2027
+610684;Hydrel magnesio 60 comp;Laboratorios Faroderm;Dietética y Nutrición;1;11,60;19,77;15/04/2027
+709105;Hydrel medias compresión normal;Laboratorios Deltafarma;Ortopedia;3;11,91;22,14;
+644528;Ramipril 10 mg 14 comprimidos recubiertos;Rial Pharma;Especialidad con receta;7;2,33;3,23;02/07/2029
+672221;Bioderm crema antiedad 50 ml;Laboratorios Lumen Salud;Dermofarmacia;9;11,09;22,60;
+924000;Levotiroxina 10 mg 56 comprimidos recubiertos;Laboratorios Vitagen;Especialidad con receta;1;5,35;7,66;23/01/2028
+669421;Ibuprofeno 400 mg 20 comp;Euroderm;EFP / Publicitarios;1;3,81;5,99;26/03/2027
+794498;Lumière multivitamínico 30 comp;Hesper Pharma;Dietética y Nutrición;3;7,39;12,86;27/05/2029
+640496;Mirela pasta dentífrica 125 ml;Pharma Salud;Higiene;7;11,98;22,16;
+892327;Nativa leche infantil 2 800 g;Laboratorios Faroderm;Dietética y Nutrición;1;16,24;28,83;
+820590;Metamizol 50 mg 30 cápsulas;Iber Salud;Especialidad con receta;2;11,66;16,75;
+777482;Ramipril 500 mg 14 sobres;Rial Pharma;Especialidad con receta;3;3,95;5,44;02/07/2029
+994806;Simvastatina 50 mg 28 comprimidos recubiertos;Faroven;Especialidad con receta;4;2,96;4,26;03/01/2029
+635191;Dermaven spray solar SPF30 200 ml;Rialderm;Solares;1;9,04;17,59;
+934317;Tamsulosina 40 mg 30 cápsulas;Tera Salud;Especialidad con receta;7;7,18;9,88;27/03/2029
+711063;Ramipril 10 mg 28 cápsulas;Laboratorios Vitagen;Especialidad con receta;0;4,75;6,55;19/07/2028
+694903;Prednisona 5 mg 30 comprimidos recubiertos;Laboratorios Vitagen;Especialidad con receta;1;5,30;7,42;30/12/2028
+676187;Tramadol 40 mg 56 cápsulas;Laboratorios Hespermed;Especialidad con receta;6;11,86;16,81;29/08/2027
+649800;Lumière pasta dentífrica 125 ml;Medi Salud;Higiene;6;4,52;8,20;09/02/2027
+849671;Cutis sérum vitamina C 30 ml;Laboratorios Albafarma;Dermofarmacia;1;5,54;10,65;22/12/2027
+731582;Furosemida 50 mg 28 comprimidos recubiertos;Laboratorios Vitagen;Especialidad con receta;20;4,48;6,46;
+608662;Colirio hidratante 10 ml;Laboratorios Norte Pharma;EFP / Publicitarios;12;2,83;4,39;29/03/2029
+847919;Pantoprazol 25 mg 28 comprimidos recubiertos;Laboratorios Hespermed;Especialidad con receta;7;6,87;9,97;
+607159;Dermaven gel limpiador 200 ml;Laboratorios Biomed;Dermofarmacia;7;4,87;9,43;12/06/2029
+950148;Metformina 40 mg 28 cápsulas;Galenlab;Especialidad con receta;20;5,34;7,65;24/10/2027
+618171;Salbutamol 40 mg 28 comprimidos recubiertos;Rial Pharma;Especialidad con receta;1;9,82;13,76;22/01/2029
+950585;Amlodipino 40 mg 28 cápsulas;Faroven;Especialidad con receta;6;6,17;8,94;06/01/2029
+705568;Antiácido 30 sobres;Eurogen;EFP / Publicitarios;2;2,36;3,79;28/04/2028
+800361;Floris bálsamo atópico 400 ml;Laboratorios Albafarma;Dermofarmacia;4;7,16;14,88;06/06/2027
+743765;Sertralina 5 mg 14 comprimidos recubiertos;Laboratorios Vitagen;Especialidad con receta;1;6,60;9,09;
+963739;Dermaven contorno de ojos 15 ml;Laboratorios Albafarma;Dermofarmacia;1;15,46;32,54;
+992074;Metamizol 25 mg 56 cápsulas;Rial Pharma;Especialidad con receta;4;10,87;15,23;
+871083;Salbutamol 5 mg 14 comprimidos recubiertos;Iber Salud;Especialidad con receta;1;5,46;7,85;
+949307;Valsartán 500 mg 14 sobres;Laboratorios Orion Salud;Especialidad con receta;3;2,41;3,49;
+715110;Amlodipino 100 mg 56 cápsulas;Laboratorios Hespermed;Especialidad con receta;3;16,40;22,62;04/01/2028
+779284;Lumière medias compresión normal;Mediderm;Ortopedia;2;16,59;28,14;10/03/2029
+939744;Metamizol 25 mg 30 sobres;Laboratorios Hespermed;Especialidad con receta;4;8,04;11,58;27/04/2029
+934136;Sertralina 100 mg 14 cápsulas;Faroven;Especialidad con receta;2;7,49;10,95;30/04/2029
+874541;Pastillas garganta miel limón 24 uds;Laboratorios Norte Pharma;EFP / Publicitarios;5;2,17;3,60;12/02/2028
+642823;Cutis after sun 200 ml;Rialderm;Solares;1;8,82;17,59;09/08/2028
+905831;Floris faja lumbar talla L;Nortegen;Ortopedia;7;16,12;31,30;
+672729;Calmea sérum vitamina C 30 ml;Laboratorios Biomed;Dermofarmacia;2;22,71;42,43;28/11/2028
+916010;Omeprazol 25 mg 30 comprimidos recubiertos;Laboratorios Vitagen;Especialidad con receta;1;6,31;8,66;
+992249;Bioderm pasta dentífrica 125 ml;Pharma Salud;Higiene;1;0,50;0,94;31/10/2027
+968465;Cutis sérum vitamina C 30 ml;Laboratorios Lumen Salud;Dermofarmacia;1;9,31;18,86;
+928228;Acenocumarol 5 mg 60 sobres;Laboratorios Vitagen;Especialidad con receta;1;7,74;11,20;15/04/2028
+725058;Lactulosa jarabe 800 ml;Lumenven;EFP / Publicitarios;2;11,09;16,93;
+955363;Atorvastatina 5 mg 28 cápsulas;Tera Salud;Especialidad con receta;5;9,95;14,04;01/01/2027
+849700;Bioderm cepillo dental suave;Laboratorios Medilab;Higiene;26;20,97;42,22;10/06/2027
+880864;Aurea sérum vitamina C 30 ml;Laboratorios Delta Salud;Dermofarmacia;2;29,88;58,35;19/05/2027
+741274;Sebora gel íntimo 250 ml;Biogen;Higiene;7;9,42;17,28;
+941320;Nativa colágeno 300 g;Laboratorios Faroderm;Dietética y Nutrición;4;19,30;33,21;01/10/2028
+787280;Acenocumarol 100 mg 30 cápsulas;Laboratorios Vitagen;Especialidad con receta;31;2,30;3,37;
+779355;Calmea multivitamínico 30 comp;Laboratorios Faroderm;Dietética y Nutrición;1;18,05;29,13;05/12/2028
+981061;Prednisona 5 mg 60 sobres;Tera Salud;Especialidad con receta;2;9,20;13,19;
